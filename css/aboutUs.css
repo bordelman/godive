@@ -1,0 +1,23 @@
+p{
+    margin: 0 auto;
+    padding-top: 15px;
+}
+.licenses {
+    margin:0 auto;
+    width: 85%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: left;
+}
+
+.licenses ul {
+    margin: 0.5em;
+}
+@media (max-width:1185px) {
+    .licenses {
+        flex-direction: column;
+        width:fit-content;
+    }
+}

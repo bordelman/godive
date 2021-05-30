@@ -1,0 +1,51 @@
+body {
+    text-align: center;
+}
+
+p {
+    margin: 0 auto;
+}
+
+#pricelistContainer {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+#pricelistContainer table {
+    margin: 15px;
+    border-radius: 15px;
+}
+
+tbody td {
+    padding: 5px;
+}
+
+table {
+    background-size: cover;
+    border-spacing: 0;
+}
+
+.value {
+    width: 85px;
+}
+
+#others {
+    background-image: url('/sources/nitroxBlur.png');
+}
+
+#goDive {
+    background-image: url('/sources/airBlur.png');
+}
+
+td {
+    font-weight: bold;
+}
+
+.price::after {
+    content: ",-";
+}
+
+.countInput {
+    width: 30px;
+}

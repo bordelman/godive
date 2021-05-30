@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang='cs'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>GoDive | Plnění lahví</title>
+    <link rel='stylesheet' href='/css/main.css'>
+    <link rel='stylesheet' href='/css/filling.css'>
+    <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
+    <script src='index.js?2' defer></script>
+    <script>
+        (function fillTables() {
+
+            let waitForElement = setInterval(function a() {
+                if (document.getElementById('pricelistContainer')) {
+                    clearInterval(waitForElement)
+                    let data = {
+                        goDive: {
+                            mixture: 'GoDive klub 10,-Kč/litr (vzduch)',
+                            collumnHead: 'Zbytkový tlak (bar)',
+                            pricelist: [
+                                ['0-50', 57, 100, 111, 120, 150],
+                                [60, 40, 70, 78, 84, 105],
+                                [70, 37, 65, 73, 78, 98],
+                                [80, 35, 60, 67, 72, 90],
+                                [90, 32, 55, 61, 66, 83],
+                                [100, 29, 50, 56, 60, 75],
+                                [110, 26, 45, 50, 54, 68],
+                                [120, 23, 40, 45, 48, 60],
+                                [130, 20, 35, 39, 42, 53],
+                                [140, 18, 30, 34, 36, 45],
+                                ['150 a více', 15, 25, 28, 30, 38]
+                            ]
+                        },
+                        others: {
+                            mixture: 'Ostatní 15 kč/litr (vzduch)',
+                            collumnHead: 'Zbytkový tlak (bar)',
+                            pricelist: [
+                                ['0-50', 81, 150, 167, 180, 225],
+                                [60, 57, 105, 117, 126, 158],
+                                [70, 53, 98, 109, 117, 147],
+                                [80, 49, 90, 101, 108, 135],
+                                [90, 45, 83, 92, 99, 124],
+                                [100, 41, 75, 84, 90, 113],
+                                [110, 37, 68, 76, 81, 102],
+                                [120, 33, 60, 67, 72, 90],
+                                [130, 29, 53, 59, 63, 79],
+                                [140, 25, 45, 51, 54, 68],
+                                ['150 a více', 21, 38, 42, 45, 57]
+                            ]
+                        }
+                    }
+                    Object.keys(data).forEach(mixture => {
+                        let table = document.createElement('table')
+                        table.id = mixture
+                        let thead = document.createElement('thead')
+                        let theadRow = document.createElement('tr')
+                        let theadRowData = document.createElement('td')
+                        theadRowData.colSpan = 6
+                        let theadRowDataH1 = document.createElement('h1')
+                        let tbody = document.createElement('tbody')
+                        tbody.id = mixture + 'Data'
+                        tbody.innerHTML = `
+                <tr>
+                    <td>Objem lahve</td>
+                    <td>S40 (5,7l)</td>
+                    <td>10</td>
+                    <td>S80 (11,1l)</td>
+                    <td>12</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>${data[mixture].collumnHead}</td>
+                </tr>
+                `
+                        theadRowDataH1.innerText = data[mixture].mixture
+                        theadRowData.append(theadRowDataH1)
+                        theadRow.append(theadRowData)
+                        thead.append(theadRow)
+                        table.append(thead)
+                        table.append(tbody)
+                        document.getElementById('pricelistContainer').append(table)
+                        data[mixture].pricelist.forEach(row => {
+                            let tr = document.createElement('tr')
+                            row.forEach((value, index) => {
+                                let td = document.createElement('td')
+                                if (index && value !== "---")
+                                    td.className = "price"
+                                td.innerText = value
+                                tr.appendChild(td)
+                            })
+                            document.getElementById(mixture + 'Data').appendChild(tr)
+                        })
+                    })
+
+                }
+            }, 50)
+        })()
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>Plnění potápěčských lahví</h1>
+        <p class='condition'>! Plníme výhradně láhve pro potápěče v dobrém technickém stavu a s platnou tlakovou zkouškou !</p>
+        <div id='pricelistContainer'></div>
+        <p>Cena kyslíku určeného pro dýchání 0,35 Kč/litr pro členy klubu a 0,40 Kč/litr pro nečleny.<br>Cena hélia 4.6 (99,996%) určeného pro dýchání 2 Kč/litr pro členy klubu a 2,30 Kč/litr pro nečleny.<br> Potápěčské láhve plníme do druhého dne od jejich převzetí nebo dle domluvy. U vzduchu, trimixových směsí, EANx směsí, kyslíku a
+            hélia odečítáme zbytkový tlak v lahvích. Plyny plníme na tlak 200bar pomocí kompresoru <span  class="tooltiped" title='Technická data:
+      Rychloběžný, třívalcový, třístupňový
+      Plnící tlak: max.232 bar
+      Výkon: 200litr./za minutu
+      Chlazení: vzduchem
+      Čističe vzduchu: aktivní uhlí, silikagel
+      Odkalování kondenzu: manuální, centrální
+      Průměr válců:
+          1.st: 72mm, tlak 7,5 bar
+          2.st: 28mm, tlak 57 bar
+          3.st: 14mm, 300 bar'>Trident III</span> a pomocí boosteru <span class="tooltiped"  title='Technická data:
+      Tlakový poměr: 25/1
+      Hnací vzduch: 9-10 bar
+      Zdvih pístu: 60 mm
+      Zdvih: 20 cm3
+      Maximální plnicí tlak: 232 bar
+      Minimální sací tlak: 5 bar
+      Minimální rychlost čerpání: 15 cyklů / minutu
+      Maximální rychlost čerpání: 140 cyklů / minutu'>MPS C2</span></p>
+        <div class="buttons">
+            <a href="/sources/plneni-lahvi-godive.pdf" class="btn" download>Stáhnout ceník plnění lahví - GoDive klub</a>
+            <a href="/sources/plneni-lahvi-ostatni.pdf" class="btn" download>Stáhnout ceník plnění lahví - ostatní</a>
+        </div>
+    </main>
+</body>
+
+</html>

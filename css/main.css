@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+.print {
+    display: none;
+}
+
+* {
+    font-family: 'Play', sans-serif;
+    color: white;
+    text-shadow: black 1px 1px 3px;
+    text-decoration: none;
+    margin: 0;
+}
+
+u {
+    text-decoration: underline !important;
+}
+
+article {
+    text-align: left;
+}
+
+h1 {
+    margin-block: 0;
+    padding: 15px 0;
+}
+
+h2 {
+    padding: 10px;
+}
+
+h3 {
+    padding: 5px 0;
+}
+
+p {
+    padding: 5px 0;
+    max-width: 70ch;
+    font-size: 1.1em;
+}
+
+main {
+    background-image: linear-gradient(rgb(95 204 254), rgb(8 58 30));
+    min-height: 73vh;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+article {
+    padding-top: 0.5em;
+}
+
+.buttons {
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+.modalContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 48, 98, 0.7);
+    z-index: 1111111;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
+.modalBody {
+    width: fit-content;
+    height: auto;
+    margin: 20px auto;
+}
+
+.modalBody img {
+    border-radius: 15px;
+    max-height: 90vh;
+    max-width: 90vw;
+}
+
+@media (max-width: 499px) {
+    main {
+        padding-bottom: 5px;
+    }
+}
+
+.buttons {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-evenly
+}
+
+.btn {
+    border: none;
+    margin: 0 15px;
+    padding: 5px 7px 3px 7px;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: red
+}
+
+button {
+    cursor: pointer;
+    background-color: unset;
+}
+
+p.condition {
+    color: red;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+td.item {
+    text-align: left;
+}
+
+.content {
+    width: 70ch;
+    max-width: 90%;
+    margin: 0 auto;
+    padding-bottom: 1em;
+}
+
+
+/*navigation*/
+
+#header-nav {
+    text-align: center;
+    background: linear-gradient(transparent 80%, rgb(98, 204, 254)), url('/sources/header.jpeg');
+    background-size: cover;
+    width: 100%;
+    margin-block: 0;
+    height: max-content;
+}
+
+#logo {
+    margin: 15px 15px 0 0;
+    padding: 3px;
+    border-radius: 50% 50% 30% 30%;
+    background-color: white;
+    transition: 0.3s;
+}
+
+#logo:hover {
+    background-color: rgb(46, 45, 45);
+}
+
+#logoIantd {
+    border-radius: 50%;
+    margin: 15px 0 0 15px;
+    transition: 0.3s;
+    border: rgba(255, 255, 255, 0) solid 3px
+}
+
+#logoIantdSmall {
+    display: none;
+    border-radius: 50%;
+    margin: 15px 0 0 15px;
+    transition: 0.3s;
+    border: rgba(255, 255, 255, 0) solid 3px
+}
+
+#logoIantd:hover,
+#logoIantdSmall:hover {
+    border: white solid 3px
+}
+
+#header-nav ul {
+    display: block;
+    list-style: none;
+    padding-inline: 0;
+    margin-block: 0;
+    margin-inline: 0;
+    margin-block-end: 15px;
+}
+
+@media (max-width: 1380px) {
+    #logoIantd {
+        display: none
+    }
+    #logoIantdSmall {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 1381px) {
+    #header-nav ul {
+        display: inline-block;
+        position: relative;
+        top: -45px;
+    }
+    #header-nav ul li {
+        margin-bottom: auto;
+    }
+}
+
+#header-nav li {
+    transition: 0.3s;
+    border-radius: 5px;
+    padding: 3px 7px 3px 7px;
+    display: inline-block;
+    margin-bottom: 5px;
+    background-color: rgb(0, 0, 0)
+}
+
+#header-nav li a {
+    color: inherit;
+    text-shadow: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#header-nav li:hover {
+    color: black;
+    background-color: white;
+}
+
+#transition {
+    background-image: linear-gradient(rgba(108, 208, 255, 0), rgb(98 204 254));
+    height: 15px
+}
+
+
+/*footer*/
+
+footer {
+    background-image: linear-gradient(rgb(8 58 30), rgb(0 0 0));
+    opacity: 0.9
+}
+
+footer a:hover {
+    color: black;
+    text-shadow: none;
+}
+
+.addressBlock {
+    padding-left: 15px;
+}
+
+@media (max-width: 399px) {
+    footer .addressBlock {
+        text-align: center;
+    }
+    .socialMedia {
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-evenly;
+    }
+    .addressBlock {
+        padding-left: 0;
+        width: 100%;
+    }
+}
+
+@media (min-width: 400px) {
+    footer .footerContent {
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-evenly;
+    }
+    .addressBlock {
+        width: fit-content;
+        text-align: left;
+    }
+    .socialMedia {
+        width: auto;
+        display: inline-flex;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width: 500px) {
+    footer .footerContent {
+        width: 100%;
+        display: inline-flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .socialMedia {
+        display: inline-flex;
+        flex-direction: row;
+        align-content: space-around;
+        justify-content: space-between;
+        margin: auto 0;
+    }
+    .socialMedia svg {
+        margin: 5px;
+    }
+}
+
+.addressBlock {
+    min-width: fit-content;
+}
+
+.addressBlock a {
+    text-decoration: underline;
+}
+
+.warning {
+    color: red;
+    font-weight: bold;
+}
+
+.socialMedia svg {
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+#instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+#facebook:hover {
+    background-color: rgb(0 50 153);
+}
+
+#youtube:hover {
+    background-color: rgb(244 1 1);
+}
+
+.cookieBar {
+    position: fixed;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.cookieClose {
+    border: transparent 2px solid;
+    font-size: large;
+}
+
+.cookieClose:hover {
+    border: darkgray 2px solid;
+}
+
+.tooltiped {
+    text-decoration: underline;
+    cursor: help;
+}

@@ -1,0 +1,126 @@
+form {
+    margin: 0;
+    display: inline-flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+
+input,
+select,
+option,
+textarea {
+    border-radius: 5px;
+    color: black;
+    text-shadow: none;
+    width: 160px;
+}
+
+[type="radio"],
+[type="checkbox"] {
+    width: auto;
+}
+
+p {
+    margin: 0 auto;
+}
+
+.row {
+    color: black;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.healthData {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 80%;
+}
+
+.healthData .row {
+    width: 168px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+#agreement {
+    width: auto;
+}
+
+.agreementText {
+    font-size: 0.6em;
+    margin: 0 auto
+}
+
+p a:hover {
+    color: black;
+    text-shadow: none;
+}
+
+p a {
+    text-decoration: underline;
+}
+
+.warning {
+    display: none;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    cursor: help;
+    color: red;
+    font-weight: bold;
+    transition: .3s;
+}
+
+table {
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+thead td {
+    min-width: 80px;
+}
+
+#diveWeight {
+    width: 30px
+}
+
+#rentForm {
+    padding: 20px 0;
+}
+
+#daysCount {
+    width: 30px;
+}
+
+#price {
+    width: 50px;
+    text-align: center;
+    cursor: context-menu;
+}
+
+input[disabled] {
+    background-color: white;
+}
+
+#hidden {
+    display: none;
+}
+
+.voucher {
+    border-radius: 15px;
+    margin: 15px;
+    max-width: 450px;
+    transition: .3s;
+}
+
+@media (max-width: 500px) {
+    .voucher {
+        max-width: 80%;
+    }
+}
+
+.voucher:hover {
+    transform: scale(1.1);
+}

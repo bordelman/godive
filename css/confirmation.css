@@ -1,0 +1,86 @@
+
+@page {
+        size: A4 portrait;
+        margin: 0;
+}
+
+.page {
+    font-family: sans-serif;
+    width: 21cm;
+    height: 29.7cm;
+    padding: 30mm 45mm 30mm 45mm;
+    margin: auto
+}
+
+.page header p,
+h3 {
+    margin: auto;
+}
+
+.page header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.page header img {
+    width: 150px;
+}
+
+.headerText {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.line {
+    text-decoration: underline;
+}
+
+.underaged {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.parent {
+    width: 55ch;
+    margin: auto
+}
+
+.sign {
+    width: 30ch;
+    margin: auto
+}
+
+table {
+    margin: 3em auto;
+}
+
+td .item {
+    width: 360px;
+}
+
+.centered {
+    margin: auto;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-right {
+    text-align: right;
+}
+.countInput {
+    width: 30px;
+}
+
+td {
+    border: solid 1px black
+}

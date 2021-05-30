@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="index.js?" defer></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
+    <script>
+        function course() {
+            url = window.location.href
+            selectValue = url.includes("?") ? url.slice(url.indexOf("?") + 1) : ""
+            editPage(selectValue)
+            if (selectValue && window.location.href.includes(selectValue)) {
+                $("#course")[0].value = selectValue
+            }
+        }
+        const showModal = function (modal) {
+            $(`#${modal}`).css('display', 'block')
+        }
+        const hideModal = function (modal) {
+            $(`#${modal}`).css('display', 'none')
+        }
+
+        function editPage(course) {
+            $('#EANxLabel').css('display', course === "owd" ? "block" : "none")
+            $('#EANxLabel input').prop('disabled', course !== "owd")
+        }
+    </script>
+    <title>GoDive | Dárkový poukaz</title>
+</head>
+
+<body onload="course()">
+    <main>
+        <form action="odeslani-voucheru.php" method="POST">
+            <div class="row">
+                <label for="course">Zvolený kurz:</label><br>
+                <select id="course" name="course" required onchange="editPage(this.value)">
+                    <option selected hidden value disabled>Vyberte kurz</option>
+                    <option value="trialDive">Ponor na zkoušku</option>
+                    <option value="owd">OWD</option>
+                    <option value="aowd">AOWD</option>
+                    <option value="nd">Nitrox Diver</option>
+                    <option value="dd">Deep Diver</option>
+                    <option value="and">Advanced Nitrox Diver</option>
+                    <option value="artd">Advanced Recreational Trimix Diver</option>
+                    <option value="ntd">Normoxic Trimix Diver</option>
+                    <option value="td">Trimix Diver</option>
+                    <option value="rd">Rescue Diver</option>
+                    <option value="dm">Divemaster</option>
+                    <option value="id">Ice Diver</option>
+                    <option value="dsd">Dry Suit Diver</option>
+                </select>
+            </div>
+            <label id="EANxLabel" for="EANx"><input type="checkbox" name="EANx" id="EANx"> rozšíření EANx</label>
+            <p></p>
+            <h3>Objednavatel - fakturační údaje</h3>
+            <div class="row">
+                <label for="firstName">Křestní jméno:</label><br>
+                <input type="text" id="firstName" name="firstName" required placeholder="Jméno" autofocus>
+            </div>
+            <div class="row">
+                <label for="lastName">Příjmení:</label><br>
+                <input type="text" id="lastName" name="lastName" required placeholder="Příjmení">
+            </div>
+            <div class="row">
+                <label for="street">Adresa:</label><br>
+                <input type="text" id="street" name="street" required placeholder="Uličnická 33">
+            </div>
+            <div class="row">
+                <label for="city">Město:</label><br>
+                <input type="text" id="city" name="city" required placeholder="Městečko">
+            </div>
+
+            <div class="row">
+                <label for="zip">PSČ:</label><br>
+                <input type="text" id="zip" name="zip" pattern="([0-9] *){5}" required placeholder="111 02">
+            </div>
+            <div class="row">
+                <label for="state">Stát:</label><br>
+                <input type="text" id="state" name="state" required placeholder="Česká republika">
+            </div>
+            <div class="row">
+                <label for="email" title="Na tento E-mail bude zaslána faktura, po jejím uhrazení bude zaslán dárkový poukaz.">
+                    Email:
+                </label><br>
+                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                    required placeholder="muj@email.cz">
+            </div>
+            <div class="row">
+                <label for="phone">Telefonní číslo - nepovinné:</label><br>
+                <input type="tel" id="phone" name="phone" pattern="(\+420 *){0,1}(([0-9] *)){9}"
+                    placeholder="123 456 789">
+            </div>
+            <div class="row">
+                <label for="note">Vzkaz na voucher:</label><br>
+                <textarea id="note" maxlength="40" style="resize: none" name="note"
+                    placeholder="Sem vepište vzkaz, který chcete mít na voucheru."></textarea>
+            </div>
+            <div class="buttons">
+                <button class="btn" type="submit">Odeslat žádost</button>
+            </div>
+        </form>
+        <img class="voucher" src="/sources/vouchers/example.jpg" alt="Náhled voucheru" onclick="showModal('voucher')">
+    </main>
+    <div class="modalContainer" id="voucher" onclick="hideModal('voucher')">
+        <div class="modalBody">
+            <img src="/sources/vouchers/example1024.jpg" alt="Náhled voucheru">
+        </div>
+    </div>
+</body>
+
+</html>

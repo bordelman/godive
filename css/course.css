@@ -1,0 +1,15 @@
+section {
+    text-align: left;
+}
+
+article li > a {
+    text-decoration: underline;
+}
+
+article li > a:hover {
+    color: black;
+    text-shadow: none;
+    text-decoration: line;
+}
+
+

@@ -1,0 +1,133 @@
+.courses {
+    text-align: center;
+}
+
+.courseList {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.courseItemContainer {
+    border: 1px solid white;
+    margin: 15px 5px;
+    display: inline-block;
+    width: 350px;
+    height: 220px;
+    border-radius: 5px;
+    transition: 0.3s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 5px;
+}
+
+.schema, .schemaSmall {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.schemaSmall {
+    display: none;
+}
+
+.schemaSmall img {
+    cursor: zoom-in;
+    width: 150px;
+    height: 148px;
+    margin: 25px 0 25px 0;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.schemaSmall img:hover {
+    transform: scale(1.1);
+}
+
+.schemaSmallColumn {
+    width: 50px
+}
+
+.schema img {
+    cursor: zoom-in;
+    width: 350px;
+    height: auto;
+    margin: 15px 5px;
+    border-radius: 5px;
+    transition: 0.3s
+}
+.schema img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1919px) {
+    .schema img {
+        width: 250px;
+    }
+}
+
+@media (max-width: 1085px) {
+    .schema img {
+        margin-top: 80px;
+        width: 150px;
+    }
+}
+
+@media (max-width: 723px) {
+    .schema img {
+        display: none
+    }
+
+    .schemaSmall {
+        display: inline-flex;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 360px) {
+    .courseItemContainer {
+        box-sizing: border-box;
+        width: 318px;
+        height: fit-content;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .schemaSmallColumn{
+        display: none;
+    }
+    .schemaSmall{
+        justify-content: space-evenly;
+    }
+}
+
+.courseInfo {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.courseInfo h2 {
+    transition: 0.3s;
+}
+
+.courseInfo:hover h2 {
+    transform: scale(1.3);
+}
+
+.courseInfo tbody tr {
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.courseInfo:hover tbody tr {
+    opacity: 0;
+}
+
+.courseInfo tbody td {
+    border-radius: 5px;
+}

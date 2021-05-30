@@ -1,0 +1,76 @@
+.partnersContent {
+    padding-top: 15px;
+    margin: auto;
+    text-align: center;
+    max-width: 70ch;
+    margin-bottom: 10px;
+}
+
+#finnsubLogo, #soprasLogo, #garminLogo, #shearwaterLogo, #apeksLogo{
+    max-height: 80%;
+    max-width: 100%;
+    mix-blend-mode: multiply;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+#finnsubLogo:hover, #soprasLogo:hover, #garminLogo:hover,  #shearwaterLogo:hover, #apeksLogo:hover, .partnerLogo:hover, .partner > a:hover{
+    transform: scale(1.2);
+}
+
+.logoContainer {
+    text-align: center;
+    height: 140px;
+}
+
+.partnersContainer {
+    width: 100%;
+    text-align: center;
+}
+
+.partners {
+    max-width: 500px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.partner {
+    width: 160px;
+    height: 70px;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.partner > a {
+    transition: .3s;
+}
+
+.other-partners {
+    margin: auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 699px){
+    .other-partners {
+flex-direction: column;
+    }
+}
+
+.partnerLogo {
+    transition: .3s;
+    height: 125px;
+    max-width: 250px;
+    width: auto;
+    margin:15px;
+    border-radius: 6px
+}
+
+#cck{
+    border-radius: 10000px;
+}

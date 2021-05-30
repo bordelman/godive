@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <title>GoDive | Přihláška</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="index.js?" defer></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
+    <script>
+        function toggleInput(name, disabled) {
+            $("#" + name)[0].disabled = disabled
+        }
+
+        function prep() {
+            url = window.location.href
+            selectValue = url.includes("?") ? url.slice(url.indexOf("?") + 1) : ""
+            editPage(selectValue)
+            if (selectValue && window.location.href.includes(selectValue)) {
+                $("#course")[0].value = selectValue
+            }
+
+            $('#birthDate')[0].max = new Date().toLocaleDateString('en-ca')
+        }
+
+        function visibleWarning(id, show) {
+            $(`#${id}`).find(".warning").css("display", show ? 'inline-block' : 'none');
+        }
+
+        function editPage(course) {
+            $('#memberBlock').css('display', ['trialDive', 'owd'].includes(course) ? 'none' : 'block')
+            $('#EANxLabel input').prop('disabled', course !== "owd")
+            $('#EANxLabel').css('display', course === "owd" ? "block" : "none")
+        }
+    </script>
+</head>
+
+<body onload="prep()">
+    <main>
+        <form id="prihlaska" name="prihlaska" action="odeslani-prihlasky.php" method="POST">
+            <h3>Základní informace:</h3>
+            <div class="row">
+                <label for="course">Zvolený kurz:</label><br>
+                <select id="course" name="course" required onchange="editPage(this.value)">
+                    <optgroup label="Kurzy"></optgroup>
+                    <option selected hidden value disabled></option>
+                    <option value="trialDive">Ponor na zkoušku</option>
+                    <option value="owd">OWD</option>
+                    <option value="aowd">AOWD</option>
+                    <option value="nd">Nitrox Diver</option>
+                    <option value="dd">Deep Diver</option>
+                    <option value="and">Advanced Nitrox Diver</option>
+                    <option value="artd">Advanced Recreational Trimix Diver</option>
+                    <option value="ntd">Normoxic Trimix Diver</option>
+                    <option value="td">Trimix Diver</option>
+                    <option value="rd">Rescue Diver</option>
+                    <option value="dm">Divemaster</option>
+                    <option value="id">Ice Diver</option>
+                    <option value="dsd">Dry Suit Diver</option>
+                    <option value="tecd">Technical Diver</option>
+                    <option value="instructor">IANTD instruktor</option>
+                </select>
+            </div>
+            <label id="EANxLabel" for="EANx"><input type="checkbox" name="EANx" id="EANx"> rozšíření EANx</label>
+            <div class="row">
+                <label for="firstName">Křestní jméno:</label><br>
+                <input type="text" id="firstName" name="firstName" required placeholder="Jméno" autofocus>
+            </div>
+            <div class="row">
+                <label for="lastName">Příjmení:</label><br>
+                <input type="text" id="lastName" name="lastName" required placeholder="Příjmení">
+            </div>
+            <div class="row">
+                <label for="birthDate">Datum narození:</label><br>
+                <input type="date" id="birthDate" name="birthDate" required>
+            </div>
+            <div class="row">
+                <label for="phone">Telefonní číslo:</label><br>
+                <input type="tel" id="phone" name="phone" pattern="(\+420 *){0,1}(([0-9] *)){9}" required placeholder="123 456 789">
+            </div>
+            <div class="row">
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required placeholder="muj@email.cz">
+            </div>
+            <div class="row">
+                <label for="city">Město:</label><br>
+                <input type="text" id="city" name="city" required placeholder="Městečko">
+            </div>
+            <div class="row">
+                <label for="street">Adresa:</label><br>
+                <input type="text" id="street" name="street" required placeholder="Uličnická">
+            </div>
+            <div class="row">
+                <label for="zip">PSČ:</label><br>
+                <input type="text" id="zip" name="zip" pattern="([0-9] *){5}" required placeholder="111 02">
+            </div>
+            <div class="row">
+                <label for="state">Stát:</label><br>
+                <input type="text" id="state" name="state" required placeholder="Česká republika">
+            </div>
+            <div class="row">
+                <label for=height>Výška postavy (cm):</label><br>
+                <input type="number" id="height" name="height" min=100 max=250 required placeholder="190">
+            </div>
+            <div class="row">
+                <label for="weight">Váha (kg):</label><br>
+                <input type="number" id="weight" name="weight" min=40 max=250 required placeholder="90">
+            </div>
+            <div class="row">
+                <label for="shoeSize">Velikost boty:</label><br>
+                <input type="number" id="shoeSize" name="shoeSize" min=20 max=50 required placeholder="47">
+            </div>
+            <div id="memberBlock">
+                <div class="row">
+                    <label>Člen IANTD</label><br>
+                    <input type="radio" id="member" name="member" value=true required onchange=" {toggleInput('memberId', !this.checked)}">
+                    <label for="member">Ano</label>
+                    <input type="radio" id="notMember" name="member" checked value=false required onchange=" {toggleInput('memberId', this.checked)}">
+                    <label for="notMember">Ne</label>
+                </div>
+                <div class="row" id="memberIdRow" style="transition: 0.3s;">
+                    <label for="memberId">IANTD Id</label><br>
+                    <input type="number" name="memberId" id="memberId" required min=0 disabled>
+                </div>
+            </div>
+            <h3>Dotazník o zdravotním stavu:</h3>
+            <div class="healthData">
+                <div id="breathing" class="row">
+                    <lablel>Dýchací problémy</lablel><br>
+                    <input required type="radio" name="breathingProblems" id="breathingProblem" value=true onchange="visibleWarning('breathing', this.checked)">
+                    <label for="breathingProblem">Ano</label>
+                    <input required type="radio" name="breathingProblems" id="breathingOk" value=false onchange="visibleWarning('breathing', !this.checked)">
+                    <label for="breathingOk">Ne</label>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="breathingWarning">Bude požadován souhlas lékaře!</p> -->
+                </div>
+                <div id="balance" class="row">
+                    <lablel>Poruchy rovnováhy</lablel><br>
+                    <input required type="radio" name="balanceProblem" id="balanceProblem" value=true onchange="visibleWarning('balance', this.checked)">
+                    <label for="balanceProblem">Ano</label>
+                    <input required type="radio" name="balanceProblem" id="balanceOk" value=false onchange="visibleWarning('balance', !this.checked)">
+                    <label for="balanceOk">Ne</label>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="balanceWarning">Bude požadován souhlas lékaře!</p> -->
+                </div>
+                <div class="row">
+                    <lablel>Alkoholismus</lablel><br>
+                    <input required type="radio" name="alkoholProblem" id="alkoholProblem" value=true>
+                    <label for="alkoholProblem">Ano</label>
+                    <input required type="radio" name="alkoholProblem" id="alkoholOk" value=false>
+                    <label for="alkoholOk">Ne</label>
+                </div>
+                <div class="row">
+                    <lablel>Cukrovka</lablel><br>
+                    <input required type="radio" name="diabetesProblem" id="diabetesProblem" value=true>
+                    <label for="diabetesProblem">Ano</label>
+                    <input required type="radio" name="diabetesProblem" id="diabetesOk" value=false>
+                    <label for="diabetesOk">Ne</label>
+                </div>
+                <div id="asthma" class="row">
+                    <lablel>Astma</lablel><br>
+                    <input required type="radio" name="asthmaProblem" id="asthmaProblem" value=true onchange="visibleWarning('asthma', this.checked)">
+                    <label for="asthmaProblem">Ano</label>
+                    <input required type="radio" name="asthmaProblem" id="asthmaOk" value=false onchange="visibleWarning('asthma', !this.checked)">
+                    <label for="asthmaOk">Ne</label>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="asthmaWarning">Bude požadován souhlas lékaře!</p> -->
+                </div>
+                <div class="row">
+                    <lablel>Kouření</lablel><br>
+                    <input required type="radio" name="smokingProblem" id="smokingProblem" value=true>
+                    <label for="smokingProblem">Ano</label>
+                    <input required type="radio" name="smokingProblem" id="smokingOk" value=false>
+                    <label for="smokingOk">Ne</label>
+                </div>
+                <div id="epilepsy" class="row">
+                    <lablel>Epilepsie</lablel><br>
+                    <input required type="radio" name="epilepsyProblem" id="epilepsyProblem" value=true onchange="visibleWarning('epilepsy', this.checked)">
+                    <label for="epilepsyProblem">Ano</label>
+                    <input required type="radio" name="epilepsyProblem" id="epilepsyOk" value=false onchange="visibleWarning('epilepsy', !this.checked)">
+                    <label for="epilepsyOk">Ne</label>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="epilepsyWarning">Bude požadován souhlas lékaře!</p> -->
+                </div>
+                <div class="row">
+                    <lablel>Opakovené záněty uší</lablel><br>
+                    <input required type="radio" name="earsProblem" id="earsProblem" value=true>
+                    <label for="earsProblem">Ano</label>
+                    <input required type="radio" name="earsProblem" id="earsOk" value=false>
+                    <label for="earsOk">Ne</label>
+                </div>
+                <div id="drugs" class="row">
+                    <lablel>Drogy / léky</lablel><br>
+                    <input required type="radio" name="drugsProblem" id="drugsProblem" value=true onchange="visibleWarning('drugs', this.checked)">
+                    <label for="drugsProblem">Ano</label>
+                    <input required type="radio" name="drugsProblem" id="drugsOk" value=false onchange="visibleWarning('drugs', !this.checked)">
+                    <label for="drugsOk">Ne</label>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="drugsWarning">Bude požadován souhlas lékaře!</p> -->
+                </div>
+                <div id="cardiac" class="row">
+                    <lablel>Srdeční problémy</lablel><br>
+                    <input required type="radio" name="cardiacProblem" id="cardiacProblem" value=true onchange="visibleWarning('cardiac', this.checked)">
+                    <label for="cardiacProblem">Ano</label>
+                    <input required type="radio" name="cardiacProblem" id="cardiacOk" value=false onchange="visibleWarning('cardiac', !this.checked)">
+                    <label for="cardiacOk">Ne</label>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="cardiacWarning">Bude požadován souhlas lékaře!</p> -->
+                </div>
+                <div class="row">
+                    <lablel>Klaustrofobie</lablel><br>
+                    <input required type="radio" name="claustrofobiaProblem" id="claustrofobiaProblem" value=true>
+                    <label for="claustrofobiaProblem">Ano</label>
+                    <input required type="radio" name="claustrofobiaProblem" id="claustrofobiaOk" value=false>
+                    <label for="claustrofobiaOk">Ne</label>
+                </div>
+                <div class="row">
+                    <lablel>Nedávná operace</lablel><br>
+                    <input required type="radio" name="recentSurgeryProblem" id="recentSurgeryProblem" value=true>
+                    <label for="recentSurgeryProblem">Ano</label>
+                    <input required type="radio" name="recentSurgeryProblem" id="recentSurgeryOk" value=false>
+                    <label for="recentSurgeryOk">Ne</label>
+                </div>
+                <div class="row">
+                    <lablel>Bolesti hlavy</lablel><br>
+                    <input required type="radio" name="headacheProblem" id="headacheProblem" value=true>
+                    <label for="headacheProblem">Ano</label>
+                    <input required type="radio" name="headacheProblem" id="headacheOk" value=false>
+                    <label for="headacheOk">Ne</label>
+                </div>
+                <div class="row">
+                    <lablel>Deprese / nervozita</lablel><br>
+                    <input required type="radio" name="depressionProblem" id="depressionProblem" value=true>
+                    <label for="depressionProblem">Ano</label>
+                    <input required type="radio" name="depressionProblem" id="depressionOk" value=false>
+                    <label for="depressionOk">Ne</label>
+                </div>
+                <div class="row">
+                    <lablel>Závratě / mdloby</lablel><br>
+                    <input required type="radio" name="dizzinessProblem" id="dizzinessProblem" value=true>
+                    <label for="dizzinessProblem">Ano</label>
+                    <input required type="radio" name="dizzinessProblem" id="dizzinessOk" value=false>
+                    <label for="dizzinessOk">Ne</label>
+                </div>
+                <div class="row">
+                    <lablel>Zažívací potíže</lablel><br>
+                    <input required type="radio" name="digestingProblem" id="digestingProblem" value=true>
+                    <label for="digestingProblem">Ano</label>
+                    <input required type="radio" name="digestingProblem" id="digestingOk" value=false>
+                    <label for="digestingOk">Ne</label>
+                </div>
+                <div id="pregnancy" class="row">
+                    <lablel>Těhotenství</lablel><br>
+                    <input required type="radio" name="pregnancyProblem" id="pregnancyProblem" value=true onchange="visibleWarning('pregnancy', this.checked)">
+                    <label for="pregnancyProblem">Ano</label>
+                    <input required type="radio" name="pregnancyProblem" id="pregnancyOk" value=false onchange="visibleWarning('pregnancy', !this.checked)">
+                    <label for="pregnancyOk">Ne</label>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="pregnancyWarning">Bude požadován souhlas lékaře!</p> -->
+                </div>
+            </div>
+            <div class="row">
+                <label for="botControl">Kontrolní otázka: Jaký je dnes rok?</label><br>
+                <input type="number" id="botControl" name="botControl" min=2000 required placeholder="1415">
+            </div>
+            <div>
+                <input name="agreement" type="checkbox" id="agreement" required>
+                <label class="agreementText" for="agreement">Prohlašuji, že jsem
+                    uvedl pravdivé údaje. Všemu uvedenému rozumím a se všemi body souhlasím. Jsem si vědom,
+                    že potápění v sobě skrývá určitá nebezpečí a jsem připraven veškerá rizika a odpovědnost
+                    související s mojí potápěčskou činností plně nést. Za zapůjčenou výstroj nesu plnou
+                    odpovědnost a její ztrátu či poškození nahradím v plné výši, a to do 14 dnů. Jsem
+                    srozuměn s tím, že můj instruktor mi může příslušnou kvalifikaci potvrdit a nechat
+                    vystavit průkaz pouze tehdy, budou-li moje potápěčské znalosti a dovednosti odpovídat
+                    stanoveným požadavkům.</label>
+                <p class="agreementText" title="informační povinnost vůči objednateli v souladu s Nařízením Evropského parlamentu a Rady 2016/679 o ochraně fyzických osob v souvislosti se zpracováním osobních údajů a o volném pohybu těchto údajů a o zrušení směrnice 95/46/ES (obecné nařízení o ochraně osobních údajů) (dále jen „nařízení“) ke zpracování osobních údajů, a to za podmínek uvedených na těchto stránkách (pokud údaje převzaté tímto formulářem dále zpracováváme.">
+                    Odesláním formuláře prohlašuji, že beru na vědomí zpracování osobních údajů (informační povinnost vůči objednateli v souladu s Nařízením Evropského parlamentu a Rady 2016/679 o ochraně fyzických osob).
+                </p>
+                <p class="agreementText">Odesláním formuláře souhlasíte se <a href=gdpr.html target="_blank">zpracováním
+                        osobních
+                        údajů</a> pro účely vyřízení objednávky a oprávněných zájmů.</p>
+            </div>
+            <div class="buttons">
+                <button class="btn" type="submit">Odeslat přihlášku</button>
+            </div>
+        </form>
+    </main>
+</body>

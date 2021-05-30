@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Naučte se potápět podle IANTD pod vedením zkušeného instruktora s mnoholetou praxí a velice přátelským přístupem.">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/courses.css">
+    <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <script src="index.js?a" defer></script>
+    <script src="courseList.js?b" defer></script>
+    <script>
+        const showModal = function (modal) {
+            document.getElementById(modal).style.display = 'block'
+        }
+        const hideModal = function (modal) {
+            document.getElementById(modal).style.display = 'none'
+        }
+    </script>
+    <title>Kurzy potápění | Potápěčská škola Godive Plzeň</title>
+</head>
+
+<body>
+    <main>
+        <div class="welcome">
+            <h1>Potápěčská škola GoDive Plzeň</h1>
+            <p style="margin: auto; padding: 5px 15px">Škola potápění GoDive byla založena v lednu roku 2018 pod patronací
+                celosvětově uznávaného výcvikového systému IANTD rekreačního a
+                technického potápění. Svým studentům se věnuje od úplně prvních
+                začátečnických krůčků až po náročné trimixové potápění do hloubek 100 metrů
+                a potápění s uzavřeným okruhem eCCR. V roce 2019 byl společně se studenty
+                GoDive školy založen potápěčský klub pro společné cestování za vodou a
+                potápěním &#x1F642; Od roku 2020 škola rozšířila svou činnost také o prodej
+                potápěčské techniky, půjčovnu potápěčského vybavení a plnění potápěčských
+                tlakových lahví vzduch, nitrox, kyslík, hélium, trimix. Od prosince 2022 se škola
+                GoDive stala základnou také pro výcvik nových IANTD instruktorů potápění. Od
+                12/2022 tedy nabízíme všem aktivním Divemasterům i instruktorům jiných
+                světových a mezinárodně uznávaných potápěčských asociací než je IANTD si
+                rozšířit své potápěčské vzdělání o IANTD licence instruktora potápění
+                k výcviku nových studentů (Instruktor crossover) do úrovně Divemaster a
+                v technickém potápění do úrovně Adv.Rec. Trimix Instruktora potápění.
+                Potápěčská škola GoDive neustále rozšiřuje své působení a své služby, aby
+                uměla a dokázala uspokojit i ta nejnáročnější přání a požadavky ze strany
+                široké potápěčské veřejnosti. Zakládáme si na individuálním přístupu ke
+                každému z vás jak během samotného průběhu výcvikové části, tak po
+                ukončení výcviku včetně neomezeného poradenství…</p>
+        </div>
+        <div id="courses">
+            <h2>Kurzy potápění</h2>
+            <div class="schemaSmall">
+                <img src="sources/courseScheme.png" alt="Schema kurzů IANTD" onclick="showModal('courses-enlarged')">
+                <div class="schemaSmallColumn"></div>
+                <img src="sources/iantd-hloubky-cas.png" alt="Schema hloubek a časů IANTD"
+                    onclick="showModal('depths-enlarged')">
+
+            </div>
+            <div class="schema">
+                <img src="sources/courseScheme.png" alt="Schema kurzů IANTD" onclick="showModal('courses-enlarged')">
+                <section class="courses">
+                    <h3>Základní kurz potápění</h3>
+                    <div class="courseList" id="basic"></div>
+                </section>
+                <img src="sources/iantd-hloubky-cas.png" alt="Schema hloubek a časů IANTD"
+                    onclick="showModal('depths-enlarged')">
+
+            </div>
+            <section class="courses">
+                <h3>Navazující kurzy potápění</h3>
+                <div class="courseList" id="advanced"></div>
+            </section>
+        </div>
+        <div class="buttons">
+            <span class="btn" onclick="location.href=`/prihlaska.html`">Přihlásit se na kurz</span>
+            <span class="btn" onclick="location.href=`/voucher.html`">Koupit kurz jako dárek</span>
+        </div>
+    </main>
+    <div class="modalContainer" id="courses-enlarged" onclick="hideModal('courses-enlarged')">
+        <div class="modalBody">
+            <img src="sources/courseScheme.png" alt="Schema kurzů IANTD">
+        </div>
+    </div>
+    <div class="modalContainer" id="depths-enlarged" onclick="hideModal('depths-enlarged')">
+        <div class="modalBody">
+            <img src="sources/iantd-hloubky-cas.png" alt="Schema hloubek a časů IANTD">
+        </div>
+    </div>
+</body>
+
+</html>
