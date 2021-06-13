@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cz">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
     <title>Plnění lahví</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/filling.css">
     <script src="index.js" type="text/javascript" defer></script>
     <script>
         (function fillTables() {
@@ -18,7 +19,7 @@
                     let data = {
                         air: {
                             mixture: "Vzduch",
-                            collumnHead: "Zbytkový tlak(bar)",
+                            collumnHead: "Zbytkový tlak (bar)",
                             pricelist: [
                                 ["0-50", 40, 70, 78, 84, 105],
                                 [60, 28, 49, 55, 59, 74],
@@ -45,45 +46,35 @@
                                 ["36-37", 114, 200, 222, 240, 300],
                                 ["38-39", 123, 215, 239, 259, 323],
                                 [40, 127, 222, 247, 266, 332],
-                                [50, 171, "", 310],
-                                [80, 309, "", 599],
-                                [100, 399, "", 777]
+                                [50, 171, "---", 310, "---", "---"],
+                                [80, 309, "---", 599, "---", "---"],
+                                [100, 399, "---", 777, "---", "---"]
                             ]
                         }
                     }
                     Object.keys(data).forEach(mixture => {
                         console.log(mixture)
                         let table = document.createElement('table')
+                        table.id = mixture
                         let thead = document.createElement('thead')
                         let theadRow = document.createElement('tr')
                         let theadRowData = document.createElement('td')
                         theadRowData.colSpan = 6
                         let theadRowDataH1 = document.createElement('h1')
                         let tbody = document.createElement('tbody')
-                        tbody.id = mixture
+                        tbody.id = mixture + "Data"
                         tbody.innerHTML = `
                 <tr>
-                    <td>
-                        <table style="transform:rotate(45deg)">
-                            <tbody>
-                                <tr>
-                                    <td>Objem lahve
-                                </tr>
-                                </td>
-                                <tr>
-                                    <td>${data[mixture].collumnHead}
-                                </tr>
-                                </td>
-                            </tbody>
-                        </table>
-                    </td>
+                    <td>Objem lahve</td>
                     <td>S40 (5,7l)</td>
                     <td>10</td>
                     <td>S80 (11,1l)</td>
                     <td>12</td>
                     <td>15</td>
                 </tr>
-                <td style="height: 30px;"> </td>
+                <tr>
+                    <td>${data[mixture].collumnHead}</td>
+                </tr>
                 `
                         theadRowDataH1.innerText = data[mixture].mixture
                         theadRowData.append(theadRowDataH1)
@@ -94,12 +85,15 @@
                         document.getElementById('pricelist').append(table)
                         data[mixture].pricelist.forEach(row => {
                             let tr = document.createElement('tr')
-                            row.forEach(value => {
+                            row.forEach((value, index) => {
                                 let td = document.createElement('td')
                                 td.innerText = value
+                                if (index) {
+                                    td.className = "value"
+                                }
                                 tr.appendChild(td)
                             })
-                            document.getElementById(mixture).appendChild(tr)
+                            document.getElementById(mixture + "Data").appendChild(tr)
                         })
                     })
 
@@ -112,9 +106,27 @@
 <body>
     <main style="text-align: center;">
         <h1>Plnění potápěčských lahví</h1>
-        <p>Plnění lahví vzduchem provádíme na kompresoru Trident III, jehož technická data naleznete níže. Plnění kyslíku, Helia, EANx a Trimix pomocí boosteru MPS C2 (maximální tlak 200bar)</p>
+        <p>Plnění lahví vzduchem provádíme na kompresoru <u title="Technická data:
+    Rychloběžný, třívalcový, třístupňový
+    Plnící tlak: max.232 bar
+    Výkon: 200litr./za minutu
+    Chlazení: vzduchem
+    Čističe vzduchu: aktivní uhlí, silikagel
+    Odkalování kondenzu: manuální, centrální
+    Průměr válců:
+        1.st: 72mm, tlak 7,5 bar
+        2.st: 28mm, tlak 57 bar
+        3.st: 14mm, 300 bar">Trident III</u>. Plnění kyslíku, Helia, EANx a Trimix pomocí boosteru <u title="Technická data:
+    Tlakový poměr: 25/1
+    Hnací vzduch: 9-10 bar
+    Zdvih pístu: 60 mm
+    Zdvih: 20 cm3
+    Maximální plnicí tlak: 232 bar
+    Minimální sací tlak: 5 bar
+    Minimální rychlost čerpání: 15 cyklů / minutu
+    Maximální rychlost čerpání: 140 cyklů / minutu">MPS C2</u> (maximální tlak 200bar)</p>
         <p class="condition">! Plníme výhradně láhve v dobrém technickém stavu a s platnou tlakovou zkouškou !</p>
-        <div id="pricelist" style="display: inline-block;"></div>
+        <div id="pricelist"></div>
     </main>
 </body>
 

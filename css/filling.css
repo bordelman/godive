@@ -1,0 +1,39 @@
+#pricelist {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+#pricelist table {
+    margin: 15px;
+    border-radius: 15px;
+}
+
+tbody td {
+    padding: 5px;
+    /* border: solid 1px white */
+}
+
+table {
+    border-spacing: 0;
+}
+
+.value {
+    width: 85px;
+}
+
+#nitrox {
+    background-image: url(/sources/nitroxBlur.png);
+    background-size: cover;
+}
+
+#air {
+    background-image: url(/sources/airBlur.png);
+    background-size: cover;
+}
+
+td {
+    color: white;
+    font-weight: bold;
+    text-shadow: black 2px 1px 6px;
+}

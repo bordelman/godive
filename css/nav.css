@@ -4,8 +4,17 @@
 
 body {
     margin: 0;
-    /* background-image: linear-gradient(rgb(108, 208, 255), rgb(60, 60, 60)); */
-    min-height: 100vh;
+}
+
+main {
+    margin: 0;
+    background-image: linear-gradient(rgb(95 204 254), rgb(8 58 30));
+    min-height: 85vh;
+}
+
+h1 {
+    margin-block: 0;
+    padding-top: 15px
 }
 
 #header-nav {
@@ -22,14 +31,11 @@ body {
     padding: 3px;
     border-radius: 50% 50% 30% 30%;
     background-color: white;
-    border: 1px solid red;
     transition: 0.3s;
 }
 
 #logo:hover {
     background-color: rgb(46, 45, 45);
-    border: 1px rgb(46, 45, 45) solid;
-    /* transition: 0.3s */
 }
 
 #header-nav ul {
@@ -56,7 +62,6 @@ body {
     transition: 0.3s;
     border-radius: 5px;
     padding: 5px 7px 3px 7px;
-    border: 1px solid red;
     display: inline-block;
     margin-bottom: 5px;
     background-color: rgb(46, 45, 45);
@@ -74,13 +79,10 @@ body {
 }
 
 #header-nav li:hover {
-    /* transition: 0.3s; */
-    border: 1px solid white;
     background-color: white;
 }
 
 #transition {
-    background-image: linear-gradient(rgb(108, 208, 255, 0), rgb(255, 255, 255, 1));
-    /* background-image: linear-gradient(rgb(108, 208, 255, 0),rgb(108, 208, 255, 1)); */
-    height: 10px
+    background-image: linear-gradient(rgb(108, 208, 255, 0), rgb(98 204 254));
+    height: 15px
 }
