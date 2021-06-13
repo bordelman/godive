@@ -1,11 +1,20 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    /* background-image: linear-gradient(rgb(108, 208, 255), rgb(60, 60, 60)); */
+    min-height: 100vh;
+}
+
 #header-nav {
     text-align: center;
-    background-image: url("https://www.phocuswire.com/uploadedImages/Articles/Opinion/2020/July/travel-bubbles-covid-19.jpeg?width=800&height=400&scale=both&mode=crop");
+    background-image: url("/sources/header.jpeg");
     background-position: center;
     width: 100%;
     margin-block: 0;
     height: max-content;
-    /* border-bottom: 3px solid red */
 }
 
 #logo {
@@ -14,11 +23,13 @@
     border-radius: 50% 50% 30% 30%;
     background-color: white;
     border: 1px solid red;
+    transition: 0.3s;
 }
 
 #logo:hover {
     background-color: rgb(46, 45, 45);
-    border: 1px rgb(46, 45, 45) solid
+    border: 1px rgb(46, 45, 45) solid;
+    /* transition: 0.3s */
 }
 
 #header-nav ul {
@@ -42,6 +53,7 @@
 }
 
 #header-nav li {
+    transition: 0.3s;
     border-radius: 5px;
     padding: 5px 7px 3px 7px;
     border: 1px solid red;
@@ -57,16 +69,18 @@
     text-transform: uppercase;
 }
 
-#header-nav li a:hover {
+#header-nav li:hover a {
     color: red;
 }
 
 #header-nav li:hover {
+    /* transition: 0.3s; */
     border: 1px solid white;
     background-color: white;
 }
 
 #transition {
-    background-image: linear-gradient(rgb(108, 208, 255, 0), rgb(108, 208, 255, 1));
+    background-image: linear-gradient(rgb(108, 208, 255, 0), rgb(255, 255, 255, 1));
+    /* background-image: linear-gradient(rgb(108, 208, 255, 0),rgb(108, 208, 255, 1)); */
     height: 10px
 }

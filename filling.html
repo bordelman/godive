@@ -3,13 +3,161 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Plnění lahví</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/nav.css">
     <script src="index.js" type="text/javascript" defer></script>
+    <script>
+        (function fillTables() {
+
+            let waitForElement = setInterval(function a() {
+                if (document.getElementById('pricelist')) {
+                    clearInterval(waitForElement)
+                    let data = {
+                        air: {
+                            mixture: "Vzduch",
+                            rowHead: "Objem lahve",
+                            collumnHead: "Zbytkový tlak(bar)",
+                            pricelist: [
+                                ["0-50", 40, 70, 78, 84, 105],
+                                [60, 28, 49, 55, 59, 74],
+                                [70, 26, 46, 51, 55, 69],
+                                [80, 24, 42, 47, 51, 63],
+                                [90, 22, 39, 43, 47, 58],
+                                [100, 20, 35, 39, 42, 53],
+                                [110, 18, 32, 36, 38, 48],
+                                [12, 16, 28, 32, 34, 42],
+                                [130, 14, 25, 28, 30, 39],
+                                [140, 12, 21, 24, 26, 32],
+                                [150, 10, 18, 20, 21, 27],
+                                ["160 a více", 8, 14, 16, 17, 21]
+                            ]
+                        },
+                        nitrox: {
+                            mixture: "Nitrox",
+                            rowHead: "Objem lahve",
+                            collumnHead: "EANx",
+                            pricelist: [
+                                ["28-29", 78, 137, 152, 165, 205],
+                                ["30-31", 87, 152, 170, 184, 229],
+                                ["32-33", 96, 169, 187, 202, 252],
+                                ["34-35", 105, 184, 206, 221, 276],
+                                ["36-37", 114, 200, 222, 240, 300],
+                                ["38-39", 123, 215, 239, 259, 323],
+                                [40, 127, 222, 247, 266, 332]
+                            ]
+                        }
+                    }
+                    Object.keys(data).forEach(mixture => {
+                        console.log(mixture)
+                        let table = document.createElement('table')
+                        let thead = document.createElement('thead')
+                        let theadRow = document.createElement('tr')
+                        let theadRowData = document.createElement('td')
+                        theadRowData.colSpan = 6
+                        let theadRowDataH1 = document.createElement('h1')
+                        theadRowDataH1.innerText = data[mixture].mixture
+                        theadRowData.append(theadRowDataH1)
+                        theadRow.append(theadRowData)
+                        thead.append(theadRow)
+                        document.getElementById('pricelist').append(thead)
+                        data[mixture].pricelist.forEach(row => {
+                            let tr = document.createElement('tr')
+                            row.forEach(value => {
+                                let td = document.createElement('td')
+                                td.innerText = value
+                                tr.appendChild(td)
+                            })
+                            document.getElementById(mixture).appendChild(tr)
+                        })
+                    })
+
+                }
+            }, 50)
+        })()
+    </script>
 </head>
 
 <body>
+    <main style="text-align: center;">
+        <h1>Plnění potápěčských lahví</h1>
+        <p>Plnění lahví vzduchem provádíme na kompresoru Trident III, jehož technická data naleznete níže. Plnění kyslíku, Helia, EANx a Trimix pomocí boosteru MPS C2 (maximální tlak 200bar)</p>
+        <p class="condition">! Plníme výhradně láhve v dobrém technickém stavu a s platnou tlakovou zkouškou !</p>
+        <div id="pricelist"></div>
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="6">
+                        <h1>Vzduch</h1>
+                        <p>cena 7,- za 1 litr vodního objemu lahve, plněno na tlak 200 bar</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="air">
+                <tr>
+                    <td>
+                        <table style="transform:rotate(45deg)">
+                            <tbody>
 
+                                <tr>
+                                    <td>Objem lahve
+                                </tr>
+                                </td>
+                                <tr>
+                                    <td>Zbytkový tlak
+                                </tr>
+                                </td>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>S40 (5,7l)</td>
+                    <td>10</td>
+                    <td>S80 (11,1l)</td>
+                    <td>12</td>
+                    <td>15</td>
+                </tr>
+                <td style="height: 30px;"> </td>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="6">
+                        <h1>Vzduch</h1>
+                        <p>cena 7,- za 1 litr vodního objemu lahve, plněno na tlak 200 bar</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="nitrox">
+                <tr>
+                    <td>
+                        <table style="transform:rotate(45deg)">
+                            <tr>
+                                <td>Objem lahve
+                            </tr>
+                            </td>
+                            <tr>
+                                <td>Zbytkový tlak
+                            </tr>
+                            </td>
+                        </table>
+                    </td>
+                    <td>S40 (5,7l)</td>
+                    <td>10</td>
+                    <td>S80 (11,1l)</td>
+                    <td>12</td>
+                    <td>15</td>
+                </tr>
+                <td style="height: 30px;"> </td>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 </body>
 
 </html>
