@@ -47,7 +47,7 @@ h1 {
     margin-block-end: 15px;
 }
 
-@media (min-device-width:925px) {
+@media (min-width:925px) {
     #header-nav ul {
         display: inline-block;
         position: relative;
