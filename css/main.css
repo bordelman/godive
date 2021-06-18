@@ -1,7 +1,26 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    margin: 0;
+    background-image: linear-gradient(rgb(95 204 254), rgb(8 58 30));
+    min-height: 85vh;
+}
+
+
 #partners {
     margin: auto;
     text-align: center;
     max-width: 500px;
+}
+
+#partners a {
+    text-decoration: none;
 }
 
 .partner {
@@ -13,3 +32,109 @@ p.condition {
     font-weight: bold;
     font-size: 2em;
 }
+
+footer {
+    background-image: linear-gradient(rgb(8 58 30), rgb(0 0 0));
+    opacity: 0.9
+
+}
+
+footer .footerContent {
+    color: white;
+}
+
+.addressBlock {
+    padding-left: 15px;
+}
+
+@media (min-width: 10px) {
+    footer .footerContent {
+        text-align: center;
+    }
+
+    .socialMedia {
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-evenly;
+    }
+
+    .addressBlock {
+        padding-left: 0;
+        width: 100%;
+    }
+}
+
+@media (min-width: 400px) {
+    footer .footerContent {
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-evenly;
+    }
+
+    .addressBlock {
+        width: fit-content;
+        text-align: left;
+    }
+
+    .socialMedia {
+        width: auto;
+        display: inline-flex;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width: 500px) {
+
+    footer .footerContent {
+        width: 100%;
+
+        display: inline-flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .socialMedia {
+        display: inline-flex;
+        flex-direction: row;
+        align-content: space-around;
+        justify-content: space-between;
+        margin: auto 0;
+    }
+
+    .socialMedia svg {
+        margin: 5px;
+    }
+}
+
+.addressBlock {
+    min-width: fit-content;
+}
+
+.socialMedia a {
+    text-decoration: none;
+}
+
+.addressBlock a {
+    color: white
+}
+
+.socialMedia svg {
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+#instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+#facebook:hover {
+    background-color: rgb(58 89 153);
+}
+
+#youtube:hover {
+    background-color: rgb(244 1 1);
+}
+

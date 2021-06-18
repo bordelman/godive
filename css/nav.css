@@ -1,16 +1,4 @@
-* {
-    font-family: sans-serif;
-}
 
-body {
-    margin: 0;
-}
-
-main {
-    margin: 0;
-    background-image: linear-gradient(rgb(95 204 254), rgb(8 58 30));
-    min-height: 85vh;
-}
 
 h1 {
     margin-block: 0;
@@ -64,7 +52,8 @@ h1 {
     padding: 5px 7px 3px 7px;
     display: inline-block;
     margin-bottom: 5px;
-    background-color: rgb(46, 45, 45);
+    text-shadow: 1px 1px 3px black;
+    /*background-color: rgba(46, 45, 45, 0.5);*/
 }
 
 #header-nav li a {

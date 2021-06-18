@@ -24,18 +24,22 @@
 }
 
 .courseInfo h2 {
-    color: black;
+    color: white;
     transition: 0.3s;
+    text-shadow: 1px 1px 3px black;
+
 }
 
 .courseInfo:hover h2 {
     color: white;
+    text-shadow: 1px 1px 3px black;
     font-size: 2em;
     /* margin: 15px 0; */
 }
 
 .courseInfo tbody tr {
-    background-color: rgb(46, 45, 45);
+    /*background-color: rgb(46, 45, 45);*/
+    text-shadow: 1px 1px 3px black;
     color: white;
     font-weight: bold;
     transition: 0.3s;
