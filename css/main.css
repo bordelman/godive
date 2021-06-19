@@ -1,5 +1,17 @@
 * {
     font-family: sans-serif;
+    color: white;
+    text-shadow: black 1px 1px 3px;
+    text-decoration: none;
+}
+
+h1 {
+    margin-block: 0;
+    padding-top: 15px;
+}
+
+p {
+    max-width: 70ch;
 }
 
 body {
@@ -12,24 +24,11 @@ main {
     min-height: 85vh;
     padding-bottom: 10px;
 }
+
 @media (max-width: 499px) {
     main {
         padding-bottom: 5px;
     }
-}
-
-#partners {
-    margin: auto;
-    text-align: center;
-    max-width: 500px;
-}
-
-#partners a {
-    text-decoration: none;
-}
-
-.partner {
-    margin: 30px;
 }
 
 p.condition {
@@ -38,21 +37,97 @@ p.condition {
     font-size: 2em;
 }
 
+td.item {
+    text-align: left;
+}
+
+/*navigation*/
+
+#header-nav {
+    text-align: center;
+    background-image: url('/sources/header.jpeg');
+    background-position: center;
+    width: 100%;
+    margin-block: 0;
+    height: max-content;
+}
+
+#logo {
+    margin: 15px 15px 0 0;
+    padding: 3px;
+    border-radius: 50% 50% 30% 30%;
+    background-color: white;
+    transition: 0.3s;
+}
+
+#logo:hover {
+    background-color: rgb(46, 45, 45);
+}
+
+#header-nav ul {
+    display: block;
+    list-style: none;
+    padding-inline: 0;
+    margin-block: 0;
+    margin-inline: 0;
+    margin-block-end: 15px;
+}
+
+@media (min-width: 925px) {
+    #header-nav ul {
+        display: inline-block;
+        position: relative;
+        top: -45px;
+    }
+
+    #header-nav ul li {
+        margin-bottom: auto;
+    }
+}
+
+#header-nav li {
+    transition: 0.3s;
+    border-radius: 5px;
+    padding: 5px 7px 3px 7px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+#header-nav li a {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#header-nav li:hover a {
+    color: red;
+}
+
+#header-nav li:hover {
+    background-color: white;
+}
+
+#transition {
+    background-image: linear-gradient(rgba(108, 208, 255, 0), rgb(98 204 254));
+    height: 15px
+}
+
+/*footer*/
+
 footer {
     background-image: linear-gradient(rgb(8 58 30), rgb(0 0 0));
     opacity: 0.9
-
 }
 
-footer .footerContent {
-    color: white;
+footer a:hover {
+    color: black;
+    text-shadow: none;
 }
 
 .addressBlock {
     padding-left: 15px;
 }
 
-@media (min-width: 10px) {
+@media (max-width: 399px) {
     footer .footerContent {
         text-align: center;
     }
@@ -118,12 +193,8 @@ footer .footerContent {
     min-width: fit-content;
 }
 
-.socialMedia a {
-    text-decoration: none;
-}
-
 .addressBlock a {
-    color: white
+    text-decoration: underline;
 }
 
 .socialMedia svg {
@@ -136,7 +207,7 @@ footer .footerContent {
 }
 
 #facebook:hover {
-    background-color: rgb(58 89 153);
+    background-color: rgb(0 50 153);
 }
 
 #youtube:hover {

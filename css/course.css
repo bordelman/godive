@@ -7,17 +7,18 @@
 }
 
 .localityLink {
-    color: black
+    text-decoration: underline;
 }
 
 .localityLink:hover {
-    color: white
+    color: black;
+    text-shadow: none;
 }
 
 .content {
     width: 70ch;
     max-width: 90%;
     margin: 0 auto;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     padding: 1em;
 }

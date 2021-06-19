@@ -1,8 +1,6 @@
 .welcome {
     margin: auto;
-    color: white;
     text-align: center;
-    text-shadow: black 1px 1px 3px;
     padding-top: 1.5em;
     max-width: 70ch;
 }
@@ -11,15 +9,36 @@
     max-height: 80%;
     mix-blend-mode: multiply;
     transition: 0.3s;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 #finnsubLogo:hover {
-    margin-top:0;
+    margin-top: 0;
     max-height: 100%;
 }
 
 .logoContainer {
     text-align: center;
     height: 100px;
+}
+
+.partnersContainer {
+    width: 100%;
+    text-align: center;
+}
+
+.partners {
+    max-width: 500px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.partner {
+    width: 160px;
+    height: 70px;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
 }

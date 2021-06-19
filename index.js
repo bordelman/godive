@@ -2,7 +2,7 @@ const navigation = document.createElement('header');
 navigation.id = 'header-nav';
 navigation.innerHTML = `
 <nav>
-	<a href="/index.html"><img id="logo" src="http://www.godive.cz/userFiles/system/logo.png" alt="GoDive logo"
+	<a href="/index.html"><img id="logo" src="/sources/logo.png" alt="GoDive logo"
 		height="100px" width="auto"></a>
 	<!--todo "Chci se přihlásit na kurz"-->
 	<ul class="menu-item-container" id="navMenu">
