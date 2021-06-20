@@ -1,0 +1,38 @@
+form {
+    margin: 0;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.applicationContainer {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.formContainer {
+    width: 100%
+}
+
+form input {
+    margin-left: 10px;
+    color: black;
+    text-shadow: none;
+    width: 160px;
+}
+
+[type="radio"] {
+    width: auto;
+}
+
+form input:focus-visible {
+    padding: auto;
+}
+
+p {
+    margin-block: 0
+}
+
+.row {
+    color: black;
+    margin: 5px
+}

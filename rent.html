@@ -9,75 +9,72 @@
     <script src='index.js' type='text/javascript' defer></script>
     <title>Půjčovna</title>
     <script>
-      (function fillTables() {
+        (function fillTables() {
 
-        let waitForElement = setInterval(function a() {
-          if (document.getElementById('pricelistContainer')) {
-            clearInterval(waitForElement)
-            let data = [
-              ["Maska", 40],
-              ["Ploutve", 40],
-              ["Neoprenové boty", 30],
-              ["Neoprenový oblek", 50],
-              ["Kukla", 20],
-              ["Rukavice", 20],
-              ["Suchý oblek", 100],
-              ["Žaket/křídlo", 70],
-              ["Zátěžový opasek", 10],
-              ["Kostka závaží 1kg, 1,5kg, 2kg", 5],
-              ["Plicní automatika, včetně octopusu", 70],
-              ["Ocelová láhev, 10 litrů, plná/200 bar (vzduch)", 100],
-              ["Ocelová láhev, 12 litrů, plná/200 bar (vzduch)", 120],
-              ["Ocelová láhev, 15 litrů, plná/200 bar (vzduch)", 140],
-              ["Dekompresní počítač Suunto Vyber/Vytec/atd.", 70],
-              ["Potápěčské hlavní světlo", 150],
-              ["Potápěčské světlo malé", 50],
-              ["Potápěčský nůž", 20],
-              ["Potápěčský kompas", 30],
-              ["Dekompresní bójka (včetně bubínku)", 20],
-            ]
-            let table = document.createElement('table')
-            table.id = 'rentTable'
-            table.innerHTML = `
-              <thead>
-                <tr>
-                  <td colspan="2">
-                    <h1>Ceník</h1>
-                  </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Kč/den</td>
-                </tr>
-            </thead>
-              `
-            let tbody = document.createElement('tbody')
-            data.forEach((row) => {
-              let tr = document.createElement(`tr`)
-              tr.innerHTML = `
-                <td class="item">${row[0]}</td>
-                <td>${row[1]},-</td>
-                `
-              tbody.appendChild(tr)
-            })
-            table.append(tbody)
-            document.getElementById('pricelistContainer').appendChild(table)
-          }
-        }, 50)
-      })()
+            let waitForElement = setInterval(function a() {
+                if (document.getElementById('pricelistContainer')) {
+                    clearInterval(waitForElement)
+                    let data = [
+                        ["Maska", 40],
+                        ["Ploutve", 40],
+                        ["Neoprenové boty", 30],
+                        ["Neoprenový oblek", 50],
+                        ["Kukla", 20],
+                        ["Rukavice", 20],
+                        ["Suchý oblek", 100],
+                        ["Žaket/křídlo", 70],
+                        ["Zátěžový opasek", 10],
+                        ["Kostka závaží 1kg, 1,5kg, 2kg", 5],
+                        ["Plicní automatika, včetně octopusu", 70],
+                        ["Ocelová láhev, 10 litrů, plná/200 bar (vzduch)", 100],
+                        ["Ocelová láhev, 12 litrů, plná/200 bar (vzduch)", 120],
+                        ["Ocelová láhev, 15 litrů, plná/200 bar (vzduch)", 140],
+                        ["Dekompresní počítač Suunto Vyber/Vytec/atd.", 70],
+                        ["Potápěčské hlavní světlo", 150],
+                        ["Potápěčské světlo malé", 50],
+                        ["Potápěčský nůž", 20],
+                        ["Potápěčský kompas", 30],
+                        ["Dekompresní bójka (včetně bubínku)", 20],
+                    ]
+                    let table = document.createElement('table')
+                    table.id = 'rentTable'
+                    table.innerHTML = `
+<thead>
+    <tr>
+        <td colspan="2">
+            <h1>Ceník</h1>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Kč/den</td>
+    </tr>
+</thead>`
+                    let tbody = document.createElement('tbody')
+                    data.forEach((row) => {
+                        let tr = document.createElement(`tr`)
+                        tr.innerHTML = `
+<td class="item">${row[0]}</td>
+<td>${row[1]},-</td>`
+                        tbody.appendChild(tr)
+                    })
+                    table.append(tbody)
+                    document.getElementById('pricelistContainer').appendChild(table)
+                }
+            }, 50)
+        })()
     </script>
 </head>
 
 <body>
-<main>
-    <h1>Půjčovna potápěčského vybavení</h1>
-    <p>Podmínkou zapůjčení potápěčské výstroje je předložení potápěčské certifikace, některé z mezinárodně uznávaných
-        potápěčských škol a občanského průkazu</p>
-    <p class='condition'>Jdnotlivé součásti výstroje k zapůjčení je nutné předem rezervoat.</p>
-    <div id='pricelistContainer'></div>
-    <p>Zapůjčení 3-10 dní sleva 10%</p>
-    <p>Zapůjčení 11 dní a více sleva 10%</p>
-</main>
+    <main>
+        <h1>Půjčovna potápěčského vybavení</h1>
+        <p>Podmínkou zapůjčení potápěčské výstroje je předložení potápěčské certifikace, některé z mezinárodně uznávaných potápěčských škol a občanského průkazu</p>
+        <p class='condition'>Jednotlivé součásti výstroje k zapůjčení je nutné předem rezervoat.</p>
+        <div id='pricelistContainer'></div>
+        <p>Zapůjčení 3-10 dní sleva 10%</p>
+        <p>Zapůjčení 11 dní a více sleva 10%</p>
+    </main>
 </body>
 
 </html>

@@ -31,6 +31,31 @@ main {
     }
 }
 
+.buttons {
+    display: inline-flex;
+    width: inherit;
+    justify-content: space-evenly
+}
+
+.btn {
+    margin: 0 15px;
+    padding: 5px 7px 3px 7px;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: white;
+    color: red
+}
+
+button {
+    cursor: pointer;
+    background-color: unset;
+}
+
 p.condition {
     color: red;
     font-weight: bold;
@@ -40,6 +65,7 @@ p.condition {
 td.item {
     text-align: left;
 }
+
 
 /*navigation*/
 
@@ -79,7 +105,6 @@ td.item {
         position: relative;
         top: -45px;
     }
-
     #header-nav ul li {
         margin-bottom: auto;
     }
@@ -111,6 +136,7 @@ td.item {
     height: 15px
 }
 
+
 /*footer*/
 
 footer {
@@ -131,13 +157,11 @@ footer a:hover {
     footer .footerContent {
         text-align: center;
     }
-
     .socialMedia {
         width: 100%;
         display: inline-flex;
         justify-content: space-evenly;
     }
-
     .addressBlock {
         padding-left: 0;
         width: 100%;
@@ -150,12 +174,10 @@ footer a:hover {
         display: inline-flex;
         justify-content: space-evenly;
     }
-
     .addressBlock {
         width: fit-content;
         text-align: left;
     }
-
     .socialMedia {
         width: auto;
         display: inline-flex;
@@ -166,16 +188,13 @@ footer a:hover {
 }
 
 @media (min-width: 500px) {
-
     footer .footerContent {
         width: 100%;
-
         display: inline-flex;
         flex-wrap: nowrap;
         flex-direction: row;
         justify-content: space-around;
     }
-
     .socialMedia {
         display: inline-flex;
         flex-direction: row;
@@ -183,7 +202,6 @@ footer a:hover {
         justify-content: space-between;
         margin: auto 0;
     }
-
     .socialMedia svg {
         margin: 5px;
     }
@@ -213,4 +231,3 @@ footer a:hover {
 #youtube:hover {
     background-color: rgb(244 1 1);
 }
-

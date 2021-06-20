@@ -2,16 +2,31 @@
     text-align: center;
 }
 
+.courseList {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
 .courseItemContainer {
     border: 1px solid white;
     margin: 15px 5px;
     display: inline-block;
-    width: 320px;
-    height: 147px;
+    width: 350px;
+    height: 165px;
     border-radius: 5px;
     transition: 0.3s;
     background-size: cover;
     background-repeat: no-repeat;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 350px) {
+    .courseItemContainer {
+        box-sizing: border-box;
+        width: 318px;
+        height: fit-content;
+    }
 }
 
 .courseInfo {
@@ -40,12 +55,4 @@
 
 .courseInfo tbody td {
     border-radius: 5px;
-}
-
-#owd {
-    background-image: url('/sources/OWD.png');
-}
-
-#aowd {
-    background-image: url('/sources/AOWD.png');
 }
