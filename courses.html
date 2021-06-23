@@ -8,20 +8,43 @@
     <link rel="stylesheet" href="css/courses.css">
     <script src="index.js" type="text/javascript" defer></script>
     <script src="courseList.js" type="text/javascript" defer></script>
+    <script>
+      const showModal = function (modal) {
+        document.getElementById(modal).style.display = `block`
+      }
+      const hideModal = function (modal) {
+        document.getElementById(modal).style.display = 'none'
+      }
+    </script>
     <title>Kurzy</title>
 </head>
 
 <body>
-    <main>
+<main>
+    <div class="schema">
+        <img src="sources/courseScheme.png" alt="Schema kurzů IANTD"
+             onclick="showModal('courses')">
         <section class="courses">
             <h1>Základní kurz</h1>
             <div class="courseList" id="basic"></div>
         </section>
-        <section class="courses">
-            <h1>Navazující kurzy</h1>
-            <div class="courseList" id="advanced"></div>
-        </section>
-    </main>
-</body>
+        <img src="sources/iantd-hloubky-cas.png" alt="Schema hloubek a časů IANTD" onclick="showModal('depths')">
 
+    </div>
+    <section class="courses">
+        <h1>Navazující kurzy</h1>
+        <div class="courseList" id="advanced"></div>
+    </section>
+</main>
+<div class="modalContainer" id="courses" onclick="hideModal(`courses`)">
+    <div class="modalBody">
+        <img src="sources/courseScheme.png" alt="Schema kurzů IANTD">
+    </div>
+</div>
+<div class="modalContainer" id="depths" onclick="hideModal('depths')">
+    <div class="modalBody">
+        <img src="sources/iantd-hloubky-cas.png" alt="Schema hloubek a časů IANTD">
+    </div>
+</div>
+</body>
 </html>

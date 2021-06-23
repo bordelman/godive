@@ -23,6 +23,30 @@ main {
     background-image: linear-gradient(rgb(95 204 254), rgb(8 58 30));
     min-height: 85vh;
     padding-bottom: 10px;
+    text-align: center;
+}
+
+.modalContainer {
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 1111111;
+    bottom: 0;
+    right: 0;
+    display: none;
+    transition: 0.3s;
+}
+
+.modalBody {
+    width:fit-content;
+    height:auto;
+    margin: 20px auto;
+}
+
+.modalBody img {
+    border-radius: 15px;
+    max-height: 100vh;
 }
 
 @media (max-width: 499px) {
@@ -105,6 +129,7 @@ td.item {
         position: relative;
         top: -45px;
     }
+
     #header-nav ul li {
         margin-bottom: auto;
     }
@@ -157,11 +182,13 @@ footer a:hover {
     footer .footerContent {
         text-align: center;
     }
+
     .socialMedia {
         width: 100%;
         display: inline-flex;
         justify-content: space-evenly;
     }
+
     .addressBlock {
         padding-left: 0;
         width: 100%;
@@ -174,10 +201,12 @@ footer a:hover {
         display: inline-flex;
         justify-content: space-evenly;
     }
+
     .addressBlock {
         width: fit-content;
         text-align: left;
     }
+
     .socialMedia {
         width: auto;
         display: inline-flex;
@@ -195,6 +224,7 @@ footer a:hover {
         flex-direction: row;
         justify-content: space-around;
     }
+
     .socialMedia {
         display: inline-flex;
         flex-direction: row;
@@ -202,6 +232,7 @@ footer a:hover {
         justify-content: space-between;
         margin: auto 0;
     }
+
     .socialMedia svg {
         margin: 5px;
     }

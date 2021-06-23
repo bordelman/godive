@@ -29,6 +29,22 @@
     }
 }
 
+.schema {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.schema img {
+    width: 350px;
+    height: auto;
+    margin: 15px 5px;
+    border-radius: 5px;
+}
+
 .courseInfo {
     width: 100%;
     height: 100%;
