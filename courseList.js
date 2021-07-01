@@ -29,7 +29,7 @@ courses = [{
     "price": "8 000",
     "img": "and"
 }, {
-    "title": "Advanced Recreational Trimix Diver",
+    "title": "Advanced Recreational Trimix&nbsp;Diver",
     "maxDepth": 45,
     "gas": "Směs N/O<sub>2</sub>/He",
     "price": "7 900",
@@ -73,13 +73,13 @@ courses = [{
 }, {
     "title": "Plně uzavřené okruhy",
     "img": "ccr"
-}]
+}];
 courses.forEach((course, index) => {
-    console.log(course.img)
-    let a = document.createElement("a")
-    a.href = `courses/${course.img}.html`
+    console.log(course.img);
+    let a = document.createElement("a");
+    a.href = `courses/${course.img}.html`;
     if (index !== courses.length - 1) {
-        console.log(course.title, index, courses.length - 1)
+        console.log(course.title, index, courses.length - 1);
         a.innerHTML = `
 <div class="courseItemContainer" style="background-image: url(/sources/${course.img}.png);">
     <table class="courseInfo">
@@ -91,11 +91,11 @@ courses.forEach((course, index) => {
         <tbody>
             <tr>
                 <td>Maximální hloubka ponoru</td>
-                <td>${course.maxDepth? course.maxDepth + " m" : "Beze změny"}</td>
+                <td>${course.maxDepth ? course.maxDepth + " m" : "Beze změny"}</td>
             </tr>
             <tr>
                 <td>Dýchací plyn</td>
-                <td>${course.gas? course.gas: "Beze změny"}</td>
+                <td>${course.gas ? course.gas : "Beze změny"}</td>
             </tr>
             <tr>
                 <td>Cena</td>
@@ -104,16 +104,16 @@ courses.forEach((course, index) => {
         </tbody>
     </table>
 </div>
-`
+`;
     } else {
-        console.log("Kuk")
+        console.log("Kuk");
         a.innerHTML = `
 <div class="courseItemContainer" style="background-image: url(/sources/${course.img}.png);">
     <div class="courseInfo">
         <h2>${course.title}</h2>
     </div>
 </div>
-`
+`;
     }
-    document.getElementById(index ? "advanced" : "basic").appendChild(a)
-})
+    document.getElementById(index ? "advanced" : "basic").appendChild(a);
+});

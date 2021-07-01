@@ -57,7 +57,7 @@
 }
 
 .courseInfo:hover h2 {
-    font-size: 2em;
+    transform: scale(1.3);
 }
 
 .courseInfo tbody tr {
