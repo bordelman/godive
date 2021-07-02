@@ -75,9 +75,9 @@ courses = [{
     "img": "ccr"
 }];
 courses.forEach((course, index) => {
-    console.log(course.img);
     let a = document.createElement("a");
-    a.href = `courses/${course.img}.html`;
+    let link = course.img !== "ccr"?  `courses/${course.img}.html` : "http://www.ccr-meg.cz/"
+    a.href = link;
     if (index !== courses.length - 1) {
         console.log(course.title, index, courses.length - 1);
         a.innerHTML = `
