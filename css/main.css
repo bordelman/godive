@@ -179,7 +179,7 @@ footer a:hover {
 }
 
 @media (max-width: 399px) {
-    footer .footerContent {
+    footer .addressBlock {
         text-align: center;
     }
 

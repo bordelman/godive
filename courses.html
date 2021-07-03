@@ -6,52 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/courses.css">
+    <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
     <script src="index.js" type="text/javascript" defer></script>
     <script src="courseList.js" type="text/javascript" defer></script>
     <script>
-      const showModal = function (modal) {
-        document.getElementById(modal).style.display = `block`
-      }
-      const hideModal = function (modal) {
-        document.getElementById(modal).style.display = 'none'
-      }
+        const showModal = function (modal) {
+            document.getElementById(modal).style.display = `block`
+        }
+        const hideModal = function (modal) {
+            document.getElementById(modal).style.display = 'none'
+        }
     </script>
-    <title>Kurzy</title>
+    <title>GoDive - Kurzy</title>
 </head>
 
 <body>
-<main>
-    <div class="schemaSmall">
-        <img src="sources/courseScheme.png" alt="Schema kurzů IANTD"
-             onclick="showModal('courses')">
-        <div class="schemaSmallColumn"></div>
-        <img src="sources/iantd-hloubky-cas.png" alt="Schema hloubek a časů IANTD" onclick="showModal('depths')">
+    <main>
+        <div class="schemaSmall">
+            <img src="sources/courseScheme.png" alt="Schema kurzů IANTD" onclick="showModal('courses')">
+            <div class="schemaSmallColumn"></div>
+            <img src="sources/iantd-hloubky-cas.png" alt="Schema hloubek a časů IANTD" onclick="showModal('depths')">
 
-    </div>
-    <div class="schema">
-        <img src="sources/courseScheme.png" alt="Schema kurzů IANTD"
-             onclick="showModal('courses')">
+        </div>
+        <div class="schema">
+            <img src="sources/courseScheme.png" alt="Schema kurzů IANTD" onclick="showModal('courses')">
+            <section class="courses">
+                <h1>Základní kurz</h1>
+                <div class="courseList" id="basic"></div>
+            </section>
+            <img src="sources/iantd-hloubky-cas.png" alt="Schema hloubek a časů IANTD" onclick="showModal('depths')">
+
+        </div>
         <section class="courses">
-            <h1>Základní kurz</h1>
-            <div class="courseList" id="basic"></div>
+            <h1>Navazující kurzy</h1>
+            <div class="courseList" id="advanced"></div>
         </section>
-        <img src="sources/iantd-hloubky-cas.png" alt="Schema hloubek a časů IANTD" onclick="showModal('depths')">
-
+    </main>
+    <div class="modalContainer" id="courses" onclick="hideModal(`courses`)">
+        <div class="modalBody">
+            <img src="sources/courseScheme.png" alt="Schema kurzů IANTD">
+        </div>
     </div>
-    <section class="courses">
-        <h1>Navazující kurzy</h1>
-        <div class="courseList" id="advanced"></div>
-    </section>
-</main>
-<div class="modalContainer" id="courses" onclick="hideModal(`courses`)">
-    <div class="modalBody">
-        <img src="sources/courseScheme.png" alt="Schema kurzů IANTD">
+    <div class="modalContainer" id="depths" onclick="hideModal('depths')">
+        <div class="modalBody">
+            <img src="sources/iantd-hloubky-cas.png" alt="Schema hloubek a časů IANTD">
+        </div>
     </div>
-</div>
-<div class="modalContainer" id="depths" onclick="hideModal('depths')">
-    <div class="modalBody">
-        <img src="sources/iantd-hloubky-cas.png" alt="Schema hloubek a časů IANTD">
-    </div>
-</div>
 </body>
+
 </html>

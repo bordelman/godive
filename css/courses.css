@@ -79,7 +79,7 @@
 }
 
 
-@media (max-width: 350px) {
+@media (max-width: 360px) {
     .courseItemContainer {
         box-sizing: border-box;
         width: 318px;
@@ -87,9 +87,11 @@
         margin-left: 0;
         margin-right: 0;
     }
-
-    .schema img {
-        width: 315px;
+    .schemaSmallColumn{
+        display: none;
+    }
+    .schemaSmall{
+        justify-content: space-evenly;
     }
 }
 

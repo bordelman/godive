@@ -7,11 +7,11 @@ navigation.innerHTML = `
 	<!--todo "Chci se přihlásit na kurz"-->
 	<ul class="menu-item-container" id="navMenu">
 		<li><a href="/courses.html" title="Kurzy">Kurzy</a></li>
-		<li><a href="/trialDive.html" title="Ponor na zkoušku">Ponor&nbspna&nbspzkoušku</a></li>
-		<li><a href="/filling.html" title="Plnění lahví">Plnění&nbsplahví</a></li>
+		<li><a href="/trialDive.html" title="Ponor na zkoušku">Ponor&nbsp;na&nbsp;zkoušku</a></li>
+		<li><a href="/filling.html" title="Plnění lahví">Plnění&nbsp;lahví</a></li>
 		<li><a href="/rent.html" title="Půjčovna">Půjčovna</a></li>
-		<li><a href="/searching.html" title="Vyhledávání pod vodou">Vyhledávání&nbsppod&nbspvodou</a></li>
-		<li><a href="/aboutUs.html" title="O nás">O&nbspnás</a></li>
+		<li><a href="/searching.html" title="Vyhledávání pod vodou">Vyhledávání&nbsp;pod&nbsp;vodou</a></li>
+		<li><a href="/aboutUs.html" title="O nás">O&nbsp;nás</a></li>
 	</ul>
 </nav>
 <div id="transition"></div>
