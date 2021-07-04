@@ -20,37 +20,37 @@ courses = [{
     "title": "Deep Diver",
     "maxDepth": 40,
     "gas": "",
-    "price": "13 900",
+    "price": "7 900",
     "img": "dd"
 }, {
     "title": "Advanced Nitrox Diver",
     "maxDepth": 40,
     "gas": "Až 100% O<sub>2</sub>",
-    "price": "8 000",
+    "price": "7 900",
     "img": "and"
 }, {
     "title": "Advanced Recreational Trimix&nbsp;Diver",
     "maxDepth": 45,
-    "gas": "Směs N/O<sub>2</sub>/He",
+    "gas": "Směs N<sub>2</sub>/O<sub>2</sub>/He",
     "price": "7 900",
     "img": "artd"
 }, {
     "title": "Normoxic Trimix Diver",
     "maxDepth": 60,
-    "gas": "Směs N/O<sub>2</sub>/He",
+    "gas": "Směs N<sub>2</sub>/O<sub>2</sub>/He",
     "price": "17 900",
     "img": "ntd"
 }, {
     "title": "Trimix Diver",
     "maxDepth": 100,
-    "gas": "Směs N/O<sub>2</sub>/He",
+    "gas": "Směs N<sub>2</sub>/O<sub>2</sub>/He",
     "price": "17 900",
     "img": "td"
 }, {
     "title": "Rescue Diver",
     "maxDepth": "",
     "gas": "",
-    "price": "17 900",
+    "price": "7 900",
     "img": "rd"
 }, {
     "title": "Divemaster",
