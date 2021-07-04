@@ -13,96 +13,106 @@
     <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script language="javascript">
-      function testResults(form) {
-        console.log(Object.entries(form))
-        Object.entries(form).forEach(input => {
-          console.log(input[1].value, input[1].attributes.name.value)
-          if (input[1].attributes.name.value === "member") console.log("checked", input[1].checked)
-        })
-        console.log("F ORm", form.firstName)
-      }
-
+        function testResults(form) {
+            console.log(Object.entries(form))
+            Object.entries(form).forEach(input => {
+                console.log(input[1].value, input[1].attributes.name.value)
+                if (input[1].attributes.name.value === "member") console.log("checked", input[1].checked)
+            })
+        }
     </script>
     <script type="text/javascript">
-      $(document).ready(function () {
-        $("#firstName").keyup(function () {
-          var value = $(this).val();
-          $("#firstName2").val(value);
+        $(document).ready(function () {
+            $("#firstName").keyup(function () {
+                var value = $(this).val();
+                $("#firstName2").val(value);
+            });
         });
-      });
+    </script>
+    <script type="text/javascript">
+        function toggleInput(name, disabled) {
+            $("#" + name)[0].disabled=disabled
+        }
+
     </script>
 </head>
 
 <body>
-<main>
-    <div class="applicationContainer">
-        <div class="formContainer">
-            <form name="applicationForm" action="" method="POST">
-                <div class="row">
-                    <label for="firstName">Křestní jméno:</label><br>
-                    <input type="text" id="firstName" name="firstName" required placeholder="Jméno">
-                </div>
-                <div class="row">
-                    <label for="lastName">Příjmení:</label><br>
-                    <input type="text" id="lastName" name="lastName" required placeholder="Příjmení">
-                </div>
-                <div class="row">
-                    <label for="birthDate">Datum narození:</label><br>
-                    <input type="date" id="birthDate" name="birthDate" required placeholder="01.01.2000">
-                </div>
-                <div class="row">
-                    <label for="phone">Telefonní číslo:</label><br>
-                    <input type="tel" id="phone" name="phone" pattern="(\+420 *){0,1}(([0-9] *)){9}" required
-                           placeholder="123 456 789">
-                </div>
-                <div class="row">
-                    <label for="email">E-mail:</label><br>
-                    <input type="email" id="email" name="email" pattern="([a-zA-Z.])+@([a-zA-Z.])+\.([a-zA-Z.]){2,}"
-                           required placeholder="muj@email.cz">
-                </div>
-                <div class="row">
-                    <label for="city">Město:</label><br>
-                    <input type="text" id="city" name="city" required placeholder="Městečko">
-                </div>
-                <div class="row">
-                    <label for="street">Adresa:</label><br>
-                    <input type="text" id="street" name="street" required placeholder="Uličnická">
-                </div>
-                <div class="row">
-                    <label for="zip">PSČ:</label><br>
-                    <input type="text" id="zip" name="zip" pattern="([0-9] *){5}" required placeholder="111 02">
-                </div>
-                <div class="row">
-                    <label for="state">Stát:</label><br>
-                    <input type="text" id="state" name="state" required placeholder="Česká republika">
-                </div>
-                <div class="row">
-                    <label for=height>Výška postavy(cm):</label><br>
-                    <input type="number" id="height" name="height" min=0 max=250 required
-                           placeholder="Výška postavy">
-                </div>
-                <div class="row">
-                    <label for="weight">Váha(kg):</label><br>
-                    <input type="number" id="weight" name="weight" min=0 max=250 required placeholder="Váha">
-                </div>
-                <div class="row">
-                    <label for="shoeSize">Velikost boty</label><br>
-                    <input type="number" id="shoeSize" name="shoeSize" min=0 max=50 required
-                           placeholder="Velikost boty">
-                </div>
-                <div class="row">
-                    <label for="member">Člen IANTD</label><br>
-                    <input type="radio" id="member" name="member" value=true required>
-                    <label for="member">Ano</label><br>
-                    <input type="radio" id="notMember" name="member" checked value=false required>
-                    <label for="notMember">Ne</label><br>
-                </div>
-                <INPUT TYPE="button" NAME="button" value="Click" onClick="testResults(this.form)">
-            </form>
+    <main>
+        <div class="applicationContainer">
+            <div class="formContainer">
+                <form name="applicationForm" method="GET" action="AAAAA.html">
+                    <div class="row">
+                        <label for="firstName">Křestní jméno:</label><br>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Jméno">
+                    </div>
+                    <div class="row">
+                        <label for="lastName">Příjmení:</label><br>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Příjmení">
+                    </div>
+                    <div class="row">
+                        <label for="birthDate">Datum narození:</label><br>
+                        <input type="date" id="birthDate" name="birthDate" required placeholder="01.01.2000">
+                    </div>
+                    <div class="row">
+                        <label for="phone">Telefonní číslo:</label><br>
+                        <input type="tel" id="phone" name="phone" pattern="(\+420 *){0,1}(([0-9] *)){9}" required
+                            placeholder="123 456 789">
+                    </div>
+                    <div class="row">
+                        <label for="email">E-mail:</label><br>
+                        <input type="email" id="email" name="email" pattern="([a-zA-Z.])+@([a-zA-Z.])+\.([a-zA-Z.]){2,}"
+                            required placeholder="muj@email.cz">
+                    </div>
+                    <div class="row">
+                        <label for="city">Město:</label><br>
+                        <input type="text" id="city" name="city" required placeholder="Městečko">
+                    </div>
+                    <div class="row">
+                        <label for="street">Adresa:</label><br>
+                        <input type="text" id="street" name="street" required placeholder="Uličnická">
+                    </div>
+                    <div class="row">
+                        <label for="zip">PSČ:</label><br>
+                        <input type="text" id="zip" name="zip" pattern="([0-9] *){5}" required placeholder="111 02">
+                    </div>
+                    <div class="row">
+                        <label for="state">Stát:</label><br>
+                        <input type="text" id="state" name="state" required placeholder="Česká republika">
+                    </div>
+                    <div class="row">
+                        <label for=height>Výška postavy (cm):</label><br>
+                        <input type="number" id="height" name="height" min=0 max=250 required
+                            placeholder="190">
+                    </div>
+                    <div class="row">
+                        <label for="weight">Váha (kg):</label><br>
+                        <input type="number" id="weight" name="weight" min=0 max=250 required placeholder="90">
+                    </div>
+                    <div class="row">
+                        <label for="shoeSize">Velikost boty</label><br>
+                        <input type="number" id="shoeSize" name="shoeSize" min=0 max=50 required
+                            placeholder="47">
+                    </div>
+                    <div class="row">
+                        <label for="member">Člen IANTD</label><br>
+                        <input type="radio" id="member" name="member" value=true required
+                            onchange=" if (this.checked) {toggleInput('memberId', false)}">
+                        <label for="member">Ano</label><br>
+                        <input type="radio" id="notMember" name="member" checked value=false required
+                        onchange=" if (this.checked) {toggleInput('memberId', true)}">
+                        <label for="notMember">Ne</label><br>
+                    </div>
+                    <div class="row" id="memberIdRow" style="transition: 0.3s;">
+                        <label for="memberId">IANTD Id</label><br>
+                        <input type="number" name="memberId" id="memberId" disabled>
+                    </div>
+                    <input type="submit" name="button" value="Odeslat přihlášku"><!--  onClick="testResults(this.form)">-->
+                </form>
+            </div>
+            <div class="applicationDocuments">
+                <input type="text" id="firstName2" disabled>
+            </div>
         </div>
-        <div class="applicationDocuments">
-            <input type="text" id="firstName2" disabled>
-        </div>
-    </div>
-</main>
+    </main>
 </body>

@@ -21,7 +21,7 @@ body {
 main {
     margin: 0;
     background-image: linear-gradient(rgb(95 204 254), rgb(8 58 30));
-    min-height: 85vh;
+    min-height: 80vh;
     padding-bottom: 10px;
     text-align: center;
 }
