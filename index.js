@@ -6,13 +6,15 @@ navigation.innerHTML = `
 		height="100px" width="auto"></a>
 	<!--todo "Chci se přihlásit na kurz"-->
 	<ul class="menu-item-container" id="navMenu">
-		<li><a href="/courses.html" title="Kurzy">Kurzy</a></li>
 		<li><a href="/trialDive.html" title="Ponor na zkoušku">Ponor&nbsp;na&nbsp;zkoušku</a></li>
 		<li><a href="/filling.html" title="Plnění lahví">Plnění&nbsp;lahví</a></li>
 		<li><a href="/rent.html" title="Půjčovna">Půjčovna</a></li>
 		<li><a href="/searching.html" title="Vyhledávání pod vodou">Vyhledávání&nbsp;pod&nbsp;vodou</a></li>
+		<li><a href="/club.html" title="Klub">Klub</a></li>
 		<li><a href="/aboutUs.html" title="O nás">O&nbsp;nás</a></li>
 	</ul>
+    <a href="https://www.iantd.cz/"><img id="logoIantd" src="/sources/logoIantd.png" alt="GoDive logo"
+		height="100px" width="auto"></a>
 </nav>
 <div id="transition"></div>
 `;

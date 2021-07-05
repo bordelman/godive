@@ -76,12 +76,12 @@ courses = [{
 }];
 courses.forEach((course, index) => {
     let a = document.createElement("a");
-    let link = course.img !== "ccr"?  `courses/${course.img}.html` : "http://www.ccr-meg.cz/"
+    let link = course.img !== "ccr" ? `courses/${course.img}.html` : "http://www.ccr-meg.cz/"
     a.href = link;
+    a.style.backgroundImage= `url('/sources/${course.img}.png')`
+    a.className = "courseItemContainer"
     if (index !== courses.length - 1) {
-        console.log(course.title, index, courses.length - 1);
         a.innerHTML = `
-<div class="courseItemContainer" style="background-image: url(/sources/${course.img}.png);">
     <table class="courseInfo">
         <thead>
             <th colspan="2">
@@ -103,16 +103,13 @@ courses.forEach((course, index) => {
             </tr>
         </tbody>
     </table>
-</div>
 `;
     } else {
         console.log("Kuk");
         a.innerHTML = `
-<div class="courseItemContainer" style="background-image: url(/sources/${course.img}.png);">
     <div class="courseInfo">
         <h2>${course.title}</h2>
     </div>
-</div>
 `;
     }
     document.getElementById(index ? "advanced" : "basic").appendChild(a);
