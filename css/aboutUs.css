@@ -1,0 +1,13 @@
+p{
+    margin: 0 auto;
+    padding-top: 15px;
+    text-align: left;
+}
+.licenses {
+    margin:0 auto;
+    width: 85%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

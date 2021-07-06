@@ -1,0 +1,7 @@
+.calendar {
+    border: 0px;
+    width:  85%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    min-height: 500px;
+}

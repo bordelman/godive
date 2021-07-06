@@ -4,6 +4,8 @@ navigation.innerHTML = `
 <nav>
 	<a href="/index.html"><img id="logo" src="/sources/logo.png" alt="GoDive logo"
 		height="100px" width="auto"></a>
+    <a href="https://www.iantd.cz/" target="_blank"><img id="logoIantdSmall" src="/sources/logoIantd.png" alt="IANTD logo"
+		height="100px" width="auto"></a>
 	<!--todo "Chci se přihlásit na kurz"-->
 	<ul class="menu-item-container" id="navMenu">
 		<li><a href="/trialDive.html" title="Ponor na zkoušku">Ponor&nbsp;na&nbsp;zkoušku</a></li>
