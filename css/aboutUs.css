@@ -10,4 +10,15 @@ p{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
+    text-align: left;
+}
+
+.licenses ul {
+    margin: 0.5em;
+}
+@media (max-width:1185px) {
+    .licenses {
+        flex-direction: column;
+        width:fit-content;
+    }
 }

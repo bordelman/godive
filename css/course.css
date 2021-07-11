@@ -10,10 +10,3 @@ section {
     color: black;
     text-shadow: none;
 }
-
-.content {
-    width: 70ch;
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 1em;
-}

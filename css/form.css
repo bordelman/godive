@@ -2,19 +2,11 @@ form {
     margin: 0;
     display: inline-flex;
     flex-direction: column;
+    width: 80%;
+    align-items: center;
 }
 
-.applicationContainer {
-    display: inline-flex;
-    flex-direction: row;
-}
-
-.formContainer {
-    width: 100%
-}
-
-form input {
-    margin-left: 10px;
+input {
     color: black;
     text-shadow: none;
     width: 160px;
@@ -24,7 +16,7 @@ form input {
     width: auto;
 }
 
-form input:focus-visible {
+input:focus-visible {
     padding: auto;
 }
 
@@ -34,5 +26,40 @@ p {
 
 .row {
     color: black;
-    margin: 5px
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.healthData {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 80%;
+}
+
+.healthData .row {
+    width: 168px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+#agreement {
+    width: auto;
+}
+
+.agreementText {
+    font-size: 0.6em;
+    margin: 0 auto
+}
+p a:hover {
+    color: black;
+    text-shadow: none;
+}
+p a{
+    text-decoration: underline;
+}
+.formWarning{
+    display: none;
+    color:red;
+
 }

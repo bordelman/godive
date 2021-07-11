@@ -105,7 +105,6 @@ courses.forEach((course, index) => {
     </table>
 `;
     } else {
-        console.log("Kuk");
         a.innerHTML = `
     <div class="courseInfo">
         <h2>${course.title}</h2>
