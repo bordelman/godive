@@ -6,6 +6,9 @@
     text-decoration: none;
     margin: 0;
 }
+u{
+    text-decoration: underline !important;
+}
 
 h1 {
     margin-block: 0;
@@ -21,7 +24,7 @@ h3 {
 }
 
 p {
-    padding: 5px 0 5px 0;
+    padding: 5px 0;
     max-width: 70ch;
     font-size: 1.1em;
 }

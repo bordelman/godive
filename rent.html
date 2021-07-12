@@ -6,75 +6,182 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href='css/main.css'>
     <link rel='stylesheet' href='css/filling.css'>
+    <link rel="stylesheet" href="css/form.css">
     <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
     <script src='index.js' type='text/javascript' defer></script>
-    <title>GoDive | Půjčovna</title>
     <script>
-        (function fillTables() {
-
-            let waitForElement = setInterval(function a() {
-                if (document.getElementById('pricelistContainer')) {
-                    clearInterval(waitForElement)
-                    let data = [
-                        ["Maska", 40],
-                        ["Ploutve", 40],
-                        ["Neoprenové boty", 30],
-                        ["Neoprenový oblek", 50],
-                        ["Kukla", 20],
-                        ["Rukavice", 20],
-                        ["Suchý oblek", 100],
-                        ["Žaket/křídlo", 70],
-                        ["Zátěžový opasek", 10],
-                        ["Kostka závaží 1kg, 1,5kg, 2kg", 5],
-                        ["Plicní automatika, včetně octopusu", 70],
-                        ["Ocelová láhev, 10 litrů, plná/200 bar (vzduch)", 100],
-                        ["Ocelová láhev, 12 litrů, plná/200 bar (vzduch)", 120],
-                        ["Ocelová láhev, 15 litrů, plná/200 bar (vzduch)", 140],
-                        ["Dekompresní počítač Suunto Vyber/Vytec/atd.", 70],
-                        ["Potápěčské hlavní světlo", 150],
-                        ["Potápěčské světlo malé", 50],
-                        ["Potápěčský nůž", 20],
-                        ["Potápěčský kompas", 30],
-                        ["Dekompresní bójka (včetně bubínku)", 20],
-                    ]
-                    let table = document.createElement('table')
-                    table.id = 'rentTable'
-                    table.innerHTML = `
-<thead>
-    <tr>
-        <td colspan="2">
-            <h1>Ceník</h1>
-        </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Kč/den</td>
-    </tr>
-</thead>`
-                    let tbody = document.createElement('tbody')
-                    data.forEach((row) => {
-                        let tr = document.createElement(`tr`)
-                        tr.innerHTML = `
-<td class="item">${row[0]}</td>
-<td>${row[1]},-</td>`
-                        tbody.appendChild(tr)
-                    })
-                    table.append(tbody)
-                    document.getElementById('pricelistContainer').appendChild(table)
-                }
-            }, 50)
-        })()
+        let price = 0
+        function changePrice(value) {
+            let daysCount = document.getElementById("daysCount").value
+            price += value;
+            document.getElementById("price").value = price * (daysCount >10 ? daysCount*0.8 : daysCount > 2 ? daysCount*0.9 : daysCount)
+        }
     </script>
+    <title>GoDive | Půjčovna</title>
 </head>
 
 <body>
     <main>
         <h1>Půjčovna potápěčského vybavení</h1>
-        <p>Podmínkou zapůjčení potápěčské výstroje je předložení potápěčské certifikace, některé z mezinárodně uznávaných potápěčských škol a občanského průkazu</p>
-        <p class='condition'>Jednotlivé součásti výstroje k zapůjčení je nutné předem rezervoat.</p>
-        <div id='pricelistContainer'></div>
+        <p>Podmínkou zapůjčení potápěčské výstroje je předložení potápěčské certifikace, některé z mezinárodně
+            uznávaných potápěčských škol a občanského průkazu</p>
+        <p class='condition'>Jednotlivé součásti výstroje k zapůjčení je nutné předem rezervovat.</p>
+        <form action="" id=rentForm>
+            <table id="rentTable">
+                <thead>
+                    <tr>
+                        <td colspan="3">
+                            <h1>Ceník</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Kč/den</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="mask" id="mask" onchange="changePrice(40*(this.checked?1:-1))">
+                        </td>
+                        <td class="item"><label for="mask">Maska</label></td>
+                        <td>40,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="fin" id="fin" onchange="changePrice(40*(this.checked?1:-1))">
+                        </td>
+                        <td class="item"><label for="fin">Ploutve</label></td>
+                        <td>40,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="shoes" id="shoes"
+                                onchange="changePrice(30*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="shoes">Neoprenové boty</label></td>
+                        <td>30,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="neoprene" id="neoprene"
+                                onchange="changePrice(50*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="neoprene">Neoprenový oblek</label></td>
+                        <td>50,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="balaclavaHelmet" id="balaclavaHelmet"
+                                onchange="changePrice(20*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="balaclavaHelmet">Kukla</label></td>
+                        <td>20,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="gloves" id="gloves"
+                                onchange="changePrice(20*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="gloves">Rukavice</label></td>
+                        <td>20,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="drySuit" id="drySuit"
+                                onchange="changePrice(100*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="drySuit">Suchý oblek</label></td>
+                        <td>100,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="wing" id="wing" onchange="changePrice(70*(this.checked?1:-1))">
+                        </td>
+                        <td class="item"><label for="wing">Žaket/křídlo</label></td>
+                        <td>70,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="weightBelt" id="weightBelt"
+                                onchange="changePrice(10*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="weightBelt">Zátěžový opasek</label></td>
+                        <td>10,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" min=0 max=40 name="weight" id="weight"><span>Kg</span></td>
+                        <td class="item"><label for="weight">Kostka závaží 1kg, 1,5kg, 2kg</label></td>
+                        <td>5,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="automatika" id="automatika"
+                                onchange="changePrice(70*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="automatika">Plicní automatika, včetně octopusu</label></td>
+                        <td>70,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="tank10" id="tank10"
+                                onchange="changePrice(100*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="tank10">Ocelová láhev, 10 litrů, plná/200 bar (vzduch)</label>
+                        </td>
+                        <td>100,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="tank12" id="tank12"
+                                onchange="changePrice(120*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="tank12">Ocelová láhev, 12 litrů, plná/200 bar (vzduch)</label>
+                        </td>
+                        <td>120,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="tank15" id="tank15"
+                                onchange="changePrice(140*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="tank15">Ocelová láhev, 15 litrů, plná/200 bar (vzduch)</label>
+                        </td>
+                        <td>140,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="computer" id="computer"
+                                onchange="changePrice(70*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="computer">Dekompresní počítač Suunto Vyber/Vytec/atd.</label>
+                        </td>
+                        <td>70,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="primaryLight" id="primaryLight"
+                                onchange="changePrice(150*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="primaryLight">Potápěčské hlavní světlo</label></td>
+                        <td>150,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="secundaryLight" id="secundaryLight"
+                                onchange="changePrice(50*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="secundaryLight">Potápěčské světlo malé</label></td>
+                        <td>50,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="knife" id="knife"
+                                onchange="changePrice(20*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="knife">Potápěčský nůž</label></td>
+                        <td>20,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="compass" id="compass"
+                                onchange="changePrice(30*(this.checked?1:-1))"></td>
+                        <td class="item"><label for="compass">Potápěčský kompas</label></td>
+                        <td>30,-</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="buoy" id="buoy" onchange="changePrice(20*(this.checked?1:-1))">
+                        </td>
+                        <td class="item"><label for="buoy">Dekompresní bójka (včetně bubínku)</label></td>
+                        <td>20,-</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><label for="daysCount">Počet dní: </label><input type="number" name="daysCount" id="daysCount"
+                                value=1 min=1 max=30 onchange="changePrice(0)"></label></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><label>Přibližná cena: </label><input type="text" name="price" id="price"
+                                disabled ></label></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
         <p>Zapůjčení 3-10 dní sleva 10%<br>
-        Zapůjčení 11 dní a více sleva 20%</p>
+            Zapůjčení 11 dní a více sleva 20%</p>
+        <div class="buttons"><button type="submit" form="rentForm" class="btn">Rezervovat vybavení</button></div>
     </main>
 </body>
 

@@ -3,7 +3,7 @@ body {
 }
 
 p {
-    margin: 20px auto;
+    margin: 0 auto;
 }
 
 #pricelistContainer {
@@ -36,10 +36,6 @@ table {
 
 #air {
     background-image: url('/sources/airBlur.png');
-}
-
-#rentTable {
-    background-image: url('/sources/rent.png');
 }
 
 td {

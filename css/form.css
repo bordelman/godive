@@ -7,12 +7,13 @@ form {
 }
 
 input {
+    border-radius: 5px;
     color: black;
     text-shadow: none;
     width: 160px;
 }
 
-[type="radio"] {
+[type="radio"], [type="checkbox"] {
     width: auto;
 }
 
@@ -21,7 +22,7 @@ input:focus-visible {
 }
 
 p {
-    margin-block: 0
+    margin: 0 auto;
 }
 
 .row {
@@ -61,5 +62,29 @@ p a{
 .formWarning{
     display: none;
     color:red;
-
 }
+
+table {
+    border-radius: 15px;
+}
+thead td{
+   min-width: 80px;
+}
+#weight {
+    width:30px
+}
+ #rentForm {
+     padding: 20px 0;
+ }
+
+ #daysCount {
+    width: 30px;
+ }
+
+ #price {
+    width: 50px;
+    text-align: center;
+ }
+ input[disabled]{
+     background-color: white;
+ }
