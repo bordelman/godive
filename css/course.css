@@ -2,11 +2,13 @@ section {
     text-align: left;
 }
 
-.localityLink {
+article li > a {
     text-decoration: underline;
 }
 
-.localityLink:hover {
+article li > a:hover {
     color: black;
     text-shadow: none;
 }
+
+
