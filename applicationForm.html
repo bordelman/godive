@@ -34,13 +34,16 @@
 
     </script>
     <script type="text/javascript">
-        function course() {
-            url = window.location.href
-            selectValue = url.includes("?") ? url.slice(url.indexOf("?") + 1) : ""
+        function course(selectValue) {
+            console.log("Kurz", selectValue)
+            if (!selectValue) {
+                url = window.location.href
+                selectValue = url.includes("?") ? url.slice(url.indexOf("?") + 1) : ""
+            }
             if (["trialDive", "owd"].includes(selectValue)) {
                 document.getElementById("memberBlock").style = "display: none"
             }
-            if (selectValue) {
+            if (selectValue && window.location.href.includes(selectValue)) {
                 document.getElementById("course").disabled = true
                 document.getElementById("course").value = selectValue
             }
@@ -54,20 +57,21 @@
             <h3>Základní informace:</h3>
             <div class="row">
                 <label for="course">Zvolený kurz:</label><br>
-                <select id="course" name="course" required placeholder="Kurz">
+                <select id="course" name="course" required placeholder="Kurz" onchange="if (['trialDive', 'owd'].includes(this.value)) {
+                    document.getElementById('memberBlock').style = 'display: none'} else {document.getElementById('memberBlock').style = 'display: block'}">
                     <option value="trialDive">Ponor na zkoušku</option>
                     <option value="owd">OWD</option>
-                   <option value="aowd">AOWD</option>
-                   <option value="nd">Nitrox Diver</option>
-                   <option value="dd">Deep Diver</option>
-                   <option value="and">Advanced Nitrox Diver</option>
-                   <option value="artd">Advanced Recreational Trimix Diver</option>
-                   <option value="ntd">Normoxic Trimix Diver</option>
-                   <option value="td">Trimix Diver</option>
-                   <option value="rd">Rescue Diver</option>
-                   <option value="dm">Divemaster</option>
-                   <option value="id">Ice Diver</option>
-                   <option value="dsd">Dry Suit Diver</option>
+                    <option value="aowd">AOWD</option>
+                    <option value="nd">Nitrox Diver</option>
+                    <option value="dd">Deep Diver</option>
+                    <option value="and">Advanced Nitrox Diver</option>
+                    <option value="artd">Advanced Recreational Trimix Diver</option>
+                    <option value="ntd">Normoxic Trimix Diver</option>
+                    <option value="td">Trimix Diver</option>
+                    <option value="rd">Rescue Diver</option>
+                    <option value="dm">Divemaster</option>
+                    <option value="id">Ice Diver</option>
+                    <option value="dsd">Dry Suit Diver</option>
                 </select>
 
             </div>
