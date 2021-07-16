@@ -10,11 +10,16 @@
     <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
     <script src='index.js' type='text/javascript' defer></script>
     <script>
+        let weightPrice = 0
+        function chengWieghtPices(pieces) {
+            weightPrice = pieces * 5
+            changePrice(0)
+        }
         let price = 0
         function changePrice(value) {
             let daysCount = document.getElementById("daysCount").value
             price += value;
-            document.getElementById("price").value = price * (daysCount >10 ? daysCount*0.8 : daysCount > 2 ? daysCount*0.9 : daysCount)
+            document.getElementById("price").value = (weightPrice + price) * (daysCount > 10 ? daysCount * 0.8 : daysCount > 2 ? daysCount * 0.9 : daysCount)
         }
     </script>
     <title>GoDive | Půjčovna</title>
@@ -96,7 +101,7 @@
                         <td>10,-</td>
                     </tr>
                     <tr>
-                        <td><input type="number" min=0 max=40 name="diveWeight" id="diveWeight"><span> ks</span></td>
+                        <td><input type="number" min=0 max=40 name="diveWeight" id="diveWeight" onchange="chengWieghtPices(this.value)"><span> ks</span></td>
                         <td class="item"><label for="diveWeight">Kostka závaží 1kg, 1,5kg, 2kg</label></td>
                         <td>5,-</td>
                     </tr>
@@ -166,14 +171,14 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><label for="daysCount">Počet dní: </label><input type="number" name="daysCount" id="daysCount"
-                                value=1 min=1 max=30 onchange="changePrice(0)"></label></td>
+                        <td><label for="daysCount">Počet dní: </label><input type="number" name="daysCount"
+                                id="daysCount" value=1 min=1 max=30 onchange="changePrice(0)"></label></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><label>Přibližná cena: </label><input type="text" name="price" id="price"
-                                disabled ></label></td>
+                        <td><label>Přibližná cena: </label><input type="text" name="price" id="price" disabled></label>
+                        </td>
                         <td></td>
                     </tr>
                 </tbody>
