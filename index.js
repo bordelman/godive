@@ -31,6 +31,8 @@ footer.innerHTML = `
         <p>Mobil: <a href="tel:+420 602 148 026">+420 602 148 026</a></p>
         <p>Mobil: <a href='tel:+420 733 116 827'>+420 733 116 827</a></p>
         <p>Email: <a href="mailto:info@godive.cz">info@godive.cz</a></p>
+        <p>IČ: 63541033</p>
+        <p>DIČ: CZ6905012048</p>
         <p>Bankovní účet: 282610674/0300 ČSOB</p>
     </section>
     <section class="socialMedia">

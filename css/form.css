@@ -6,7 +6,7 @@ form {
     align-items: center;
 }
 
-input {
+input, select {
     border-radius: 5px;
     color: black;
     text-shadow: none;
@@ -70,7 +70,7 @@ table {
 thead td{
    min-width: 80px;
 }
-#weight {
+#diveWeight {
     width:30px
 }
  #rentForm {
@@ -88,3 +88,4 @@ thead td{
  input[disabled]{
      background-color: white;
  }
+

@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="index.js" type="text/javascript" defer></script>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,12 +33,44 @@
         }
 
     </script>
+    <script type="text/javascript">
+        function course() {
+            url = window.location.href
+            selectValue = url.includes("?") ? url.slice(url.indexOf("?") + 1) : ""
+            if (["trialDive", "owd"].includes(selectValue)) {
+                document.getElementById("memberBlock").style = "display: none"
+            }
+            if (selectValue) {
+                document.getElementById("course").disabled = true
+                document.getElementById("course").value = selectValue
+            }
+        }
+    </script>
 </head>
 
-<body>
+<body onload="course()">
     <main>
         <form id="applicationForm" name="applicationForm" method="GET">
             <h3>Základní informace:</h3>
+            <div class="row">
+                <label for="course">Zvolený kurz:</label><br>
+                <select id="course" name="course" required placeholder="Kurz">
+                    <option value="trialDive">Ponor na zkoušku</option>
+                    <option value="owd">OWD</option>
+                   <option value="aowd">AOWD</option>
+                   <option value="nd">Nitrox Diver</option>
+                   <option value="dd">Deep Diver</option>
+                   <option value="and">Advanced Nitrox Diver</option>
+                   <option value="artd">Advanced Recreational Trimix Diver</option>
+                   <option value="ntd">Normoxic Trimix Diver</option>
+                   <option value="td">Trimix Diver</option>
+                   <option value="rd">Rescue Diver</option>
+                   <option value="dm">Divemaster</option>
+                   <option value="id">Ice Diver</option>
+                   <option value="dsd">Dry Suit Diver</option>
+                </select>
+
+            </div>
             <div class="row">
                 <label for="firstName">Křestní jméno:</label><br>
                 <input type="text" id="firstName" name="firstName" required placeholder="Jméno" autofocus>
@@ -90,34 +121,40 @@
                 <label for="shoeSize">Velikost boty:</label><br>
                 <input type="number" id="shoeSize" name="shoeSize" min=20 max=50 required placeholder="47">
             </div>
-            <div class="row">
-                <label >Člen IANTD</label><br>
-                <input type="radio" id="member" name="member" value=member required
-                    onchange=" if (this.checked) {toggleInput('memberId', false)}">
-                <label for="member">Ano</label>
-                <input type="radio" id="notMember" name="member" checked value=notMember required
-                    onchange=" if (this.checked) {toggleInput('memberId', true)}">
-                <label for="notMember">Ne</label>
-            </div>
-            <div class="row" id="memberIdRow" style="transition: 0.3s;">
-                <label for="memberId">IANTD Id</label><br>
-                <input type="number" name="memberId" id="memberId" min=0 disabled>
+            <div id="memberBlock">
+                <div class="row">
+                    <label>Člen IANTD</label><br>
+                    <input type="radio" id="member" name="member" value=member required
+                        onchange=" if (this.checked) {toggleInput('memberId', false)}">
+                    <label for="member">Ano</label>
+                    <input type="radio" id="notMember" name="member" checked value=notMember required
+                        onchange=" if (this.checked) {toggleInput('memberId', true)}">
+                    <label for="notMember">Ne</label>
+                </div>
+                <div class="row" id="memberIdRow" style="transition: 0.3s;">
+                    <label for="memberId">IANTD Id</label><br>
+                    <input type="number" name="memberId" id="memberId" min=0 disabled>
+                </div>
             </div>
             <h3>Dotazník o zdravotním stavu:</h3>
             <div class="healthData">
                 <div class="row">
                     <lablel>Dýchací problémy</lablel><br>
-                    <input required type="radio" name="breathingProblems" id="breathingProblem" value=true onchange="if (this.checked) document.getElementById('breathingWarning').style='display: block'">
+                    <input required type="radio" name="breathingProblems" id="breathingProblem" value=true
+                        onchange="if (this.checked) document.getElementById('breathingWarning').style='display: block'">
                     <label for="breathingProblem">Ano</label>
-                    <input required type="radio" name="breathingProblems" id="breathingOk" value=false onchange="if (this.checked) document.getElementById('breathingWarning').style='display: none'">
+                    <input required type="radio" name="breathingProblems" id="breathingOk" value=false
+                        onchange="if (this.checked) document.getElementById('breathingWarning').style='display: none'">
                     <label for="breathingOk">Ne</label>
                     <p class="formWarning" id="breathingWarning">Bude požadován souhlas lékaře!</p>
                 </div>
                 <div class="row">
                     <lablel>Poruchy rovnováhy</lablel><br>
-                    <input required type="radio" name="balanceProblem" id="balanceProblem" value=true onchange="if (this.checked) document.getElementById('balanceWarning').style='display: block'">
+                    <input required type="radio" name="balanceProblem" id="balanceProblem" value=true
+                        onchange="if (this.checked) document.getElementById('balanceWarning').style='display: block'">
                     <label for="balanceProblem">Ano</label>
-                    <input required type="radio" name="balanceProblem" id="balanceOk" value=false onchange="if (this.checked) document.getElementById('balanceWarning').style='display: none'">
+                    <input required type="radio" name="balanceProblem" id="balanceOk" value=false
+                        onchange="if (this.checked) document.getElementById('balanceWarning').style='display: none'">
                     <label for="balanceOk">Ne</label>
                     <p class="formWarning" id="balanceWarning">Bude požadován souhlas lékaře!</p>
                 </div>
@@ -137,9 +174,11 @@
                 </div>
                 <div class="row">
                     <lablel>Astma</lablel><br>
-                    <input required type="radio" name="asthmaProblem" id="asthmaProblem" value=true onchange="if (this.checked) document.getElementById('asthmaWarning').style='display: block'">
+                    <input required type="radio" name="asthmaProblem" id="asthmaProblem" value=true
+                        onchange="if (this.checked) document.getElementById('asthmaWarning').style='display: block'">
                     <label for="asthmaProblem">Ano</label>
-                    <input required type="radio" name="asthmaProblem" id="asthmaOk" value=false onchange="if (this.checked) document.getElementById('asthmaWarning').style='display: none'">
+                    <input required type="radio" name="asthmaProblem" id="asthmaOk" value=false
+                        onchange="if (this.checked) document.getElementById('asthmaWarning').style='display: none'">
                     <label for="asthmaOk">Ne</label>
                     <p class="formWarning" id="asthmaWarning">Bude požadován souhlas lékaře!</p>
                 </div>
@@ -152,9 +191,11 @@
                 </div>
                 <div class="row">
                     <lablel>Epilepsie</lablel><br>
-                    <input required type="radio" name="epilepsyProblem" id="epilepsyProblem" value=true onchange="if (this.checked) document.getElementById('epilepsyWarning').style='display: block'">
+                    <input required type="radio" name="epilepsyProblem" id="epilepsyProblem" value=true
+                        onchange="if (this.checked) document.getElementById('epilepsyWarning').style='display: block'">
                     <label for="epilepsyProblem">Ano</label>
-                    <input required type="radio" name="epilepsyProblem" id="epilepsyOk" value=false onchange="if (this.checked) document.getElementById('epilepsyWarning').style='display: none'">
+                    <input required type="radio" name="epilepsyProblem" id="epilepsyOk" value=false
+                        onchange="if (this.checked) document.getElementById('epilepsyWarning').style='display: none'">
                     <label for="epilepsyOk">Ne</label>
                     <p class="formWarning" id="epilepsyWarning">Bude požadován souhlas lékaře!</p>
                 </div>
@@ -167,17 +208,21 @@
                 </div>
                 <div class="row">
                     <lablel>Drogy / léky</lablel><br>
-                    <input required type="radio" name="drugsProblem" id="drugsProblem" value=true onchange="if (this.checked) document.getElementById('drugsWarning').style='display: block'">
+                    <input required type="radio" name="drugsProblem" id="drugsProblem" value=true
+                        onchange="if (this.checked) document.getElementById('drugsWarning').style='display: block'">
                     <label for="drugsProblem">Ano</label>
-                    <input required type="radio" name="drugsProblem" id="drugsOk" value=false onchange="if (this.checked) document.getElementById('drugsWarning').style='display: none'">
+                    <input required type="radio" name="drugsProblem" id="drugsOk" value=false
+                        onchange="if (this.checked) document.getElementById('drugsWarning').style='display: none'">
                     <label for="drugsOk">Ne</label>
                     <p class="formWarning" id="drugsWarning">Bude požadován souhlas lékaře!</p>
                 </div>
                 <div class="row">
                     <lablel>Srdeční problémy</lablel><br>
-                    <input required type="radio" name="cardiacProblem" id="cardiacProblem" value=true onchange="if (this.checked) document.getElementById('cardiacWarning').style='display: block'">
+                    <input required type="radio" name="cardiacProblem" id="cardiacProblem" value=true
+                        onchange="if (this.checked) document.getElementById('cardiacWarning').style='display: block'">
                     <label for="cardiacProblem">Ano</label>
-                    <input required type="radio" name="cardiacProblem" id="cardiacOk" value=false onchange="if (this.checked) document.getElementById('cardiacWarning').style='display: none'">
+                    <input required type="radio" name="cardiacProblem" id="cardiacOk" value=false
+                        onchange="if (this.checked) document.getElementById('cardiacWarning').style='display: none'">
                     <label for="cardiacOk">Ne</label>
                     <p class="formWarning" id="cardiacWarning">Bude požadován souhlas lékaře!</p>
                 </div>
@@ -225,9 +270,11 @@
                 </div>
                 <div class="row">
                     <lablel>Těhotenství</lablel><br>
-                    <input required type="radio" name="pregnancyProblem" id="pregnancyProblem" value=true onchange="if (this.checked) document.getElementById('pregnancyWarning').style='display: block'">
+                    <input required type="radio" name="pregnancyProblem" id="pregnancyProblem" value=true
+                        onchange="if (this.checked) document.getElementById('pregnancyWarning').style='display: block'">
                     <label for="pregnancyProblem">Ano</label>
-                    <input required type="radio" name="pregnancyProblem" id="pregnancyOk" value=false onchange="if (this.checked) document.getElementById('pregnancyWarning').style='display: none'">
+                    <input required type="radio" name="pregnancyProblem" id="pregnancyOk" value=false
+                        onchange="if (this.checked) document.getElementById('pregnancyWarning').style='display: none'">
                     <label for="pregnancyOk">Ne</label>
                     <p class="formWarning" id="pregnancyWarning">Bude požadován souhlas lékaře!</p>
                 </div>
