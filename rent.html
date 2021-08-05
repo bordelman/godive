@@ -19,9 +19,9 @@
         let price = 0
 
         function changePrice(value) {
-            let daysCount = document.getElementById("daysCount").value
+            let days = document.getElementById("days").value
             price += value;
-            document.getElementById("price").value = (weightPrice + price) * (daysCount > 10 ? daysCount * 0.8 : daysCount > 2 ? daysCount * 0.9 : daysCount)
+            document.getElementById("price").value = parseInt((weightPrice + price) * (days > 10 ? days * 0.8 : days > 2 ? days * 0.9 : days))
         }
     </script>
     <title>GoDive | Půjčovna</title>
@@ -32,7 +32,7 @@
         <h1>Půjčovna potápěčského vybavení</h1>
         <p>Podmínkou zapůjčení potápěčské výstroje je předložení potápěčské certifikace, některé z mezinárodně uznávaných potápěčských škol a občanského průkazu</p>
         <p class='condition'>Jednotlivé součásti výstroje k zapůjčení je nutné předem rezervovat.</p>
-        <form action="formEvaluation.php" method="POST" id=rentForm>
+        <form action="rentFormEvaluation.php" method="POST" id=rentForm>
             <table id="rentTable">
                 <thead>
                     <tr>
@@ -157,7 +157,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><label for="daysCount">Počet dní: </label><input type="number" name="daysCount" id="daysCount" value=1 min=1 max=30 onchange="changePrice(0)"></label>
+                        <td><label for="days">Počet dní: </label><input type="number" name="days" id="days" value=1 min=1 max=30 onchange="changePrice(0)"></label>
                         </td>
                         <td></td>
                     </tr>
