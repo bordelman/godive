@@ -12,7 +12,7 @@
 
 <body>
 	<main>
-		<page>
+		<div class="page">
 			<header>
 				<img src="sources/logo.png" alt="godive logo">
 				<div class="headerText">
@@ -77,7 +77,7 @@
 			</div>";
 				?>
 			</div>
-		</page>
+		</div>
 	</main>
 </body>
 

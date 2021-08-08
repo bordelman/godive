@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+.print {
+    display:none;
+}
+@media print {
+    .thankUPage, #header-nav, footer{
+        display: none
+    }
+    .print {
+        display: block
+    }
+}
+
 * {
     font-family: 'Play', sans-serif;
     color: white;
@@ -6,7 +18,8 @@
     text-decoration: none;
     margin: 0;
 }
-u{
+
+u {
     text-decoration: underline !important;
 }
 
@@ -81,7 +94,7 @@ article {
 }
 
 .btn {
-    border:none;
+    border: none;
     margin: 0 15px;
     padding: 5px 7px 3px 7px;
     border-radius: 5px;
@@ -294,6 +307,11 @@ footer a:hover {
 
 .addressBlock a {
     text-decoration: underline;
+}
+
+.warning {
+    color:red;
+    font-weight: bold;
 }
 
 .socialMedia svg {
