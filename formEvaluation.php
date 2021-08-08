@@ -42,6 +42,25 @@
 
 		<?php
 		if ($_POST["botControl"] == date("Y")) {
+			$conditions = [
+				"breathingProblems" => "Dýchání",
+				"balanceProblem" => "Rovnováha",
+				"alkoholProblem" => "Alkohol",
+				"diabetesProblem" => "Cukrovka",
+				"asthmaProblem" => "Astma",
+				"smokingProblem" => "Kouření",
+				"epilepsyProblem" => "Epilepsie",
+				"earsProblem" => "Uši",
+				"drugsProblem" => "Léky",
+				"cardiacProblem" => "Srdce",
+				"claustrofobiaProblem" => "Klaustrofobie",
+				"recentSurgeryProblem" => "Operace",
+				"headacheProblem" => "Hlava",
+				"depressionProblem" => "Deprese",
+				"dizzinessProblem" => "Závratě",
+				"digestingProblem" => "Trávení",
+				"pregnancyProblem" => "Těhotenství"
+			];
 			$date = new DateTime($_POST["birthDate"]);
 			$date = $date->format('d.m.Y');
 			$lineSpace = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -149,6 +168,9 @@
 			<div class=\"underaged\">
 				<p class=\"parent\">jméno, příjmení, datum narození, vztah k nezletilému</p>
 				<p class=\"sign\">podpis</p>
+			</div>
+			<div>
+				<p>$otherInfo</p>
 			</div>			
 		</div>
 		</div>
@@ -176,6 +198,16 @@
 			)
 				echo "<p class=\"warning\">Z důvodu zdravotních komplikací bude pro účast vyžadován souhlas lékaře!</p>";
 		}
+
+		$otherInfo = "Výška: " . $_POST["height"] . "<br>";
+		$otherInfo .= "Váha: " . $_POST["weight"] . "<br>";
+		$otherInfo .= "Velikost boty: " . $_POST["shoeSize"] . "<br>";
+
+		foreach ($conditions as $key => $condition) {
+			if ($_POST[$key] == "true")
+				$otherInfo .= "POZOR! " . $condition . "<br>";
+		}
+		echo $otherInfo;
 		?>
 		</div>
 
