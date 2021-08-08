@@ -34,15 +34,14 @@
 			<p>Email: <b>${_POST["email"]}</b> telefon: <b>${_POST["phone"]}</b></p>
 			<h3>POŽADOVANÝ KURZ/kvalifikace: <b>${courses[$_POST["course"]]}</b></h3>
 			<p>Já níže podepsaný, se přihlašuji do označeného kurzu potápění vedeného instruktorem - členem IANTD <br> a k
-				členství v IANTD.</p>";
-				if ($_POST["course"] != "trialDive" && $_POST["course"] != "owd")
-					echo "<p>Prohlašuji, že již jsem kvalifikovaný potápěč a že jsem svoji kvalifikaci
+				členství v IANTD.</p>
+				<p>Prohlašuji, že již jsem kvalifikovaný potápěč a že jsem svoji kvalifikaci
 				<span class=\"line\">$lineSpace</span> získal/a u následující organizace
-				<span class=\"line\">$lineSpace</span>, což dokládám.</p>";
-				echo "<p>Jsem již členem IANTD
+				<span class=\"line\">$lineSpace</span>, což dokládám.</p>
+			<p>Jsem již členem IANTD
 				<input type=\"checkbox\" id=member " . ($_POST["member"] == "true" ? "checked" : "") . " disabled> <label>ANO</label>
-        <input type=\"checkbox\" id=member " . ($_POST["member"] == "false" ? "checked" : "") . " disabled> <label>NE</label></p>";
-				echo "<p>Jsem srozuměn s tím, že aktivace mého členství v IANTD i aktivace platnosti mé kvalifikace je podmíněna
+        <input type=\"checkbox\" id=member " . ($_POST["member"] == "false" ? "checked" : "") . " disabled> <label>NE</label></p>
+			<p>Jsem srozuměn s tím, že aktivace mého členství v IANTD i aktivace platnosti mé kvalifikace je podmíněna
 				úspěšným absolvováním kurzu a přijetím smluních podmínek členství v IANTD , které mne opravňuje k prokazování
 				mnou dosažené potápěčské
 				IANTD kvalifikace vůči třetím osobám. Dále beru na vědomí, že platný průkaz člena IANTD stvrzující moji
