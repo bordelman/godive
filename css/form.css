@@ -66,6 +66,7 @@ p a{
 
 table {
     border-radius: 15px;
+    margin-bottom: 15px;
 }
 thead td{
    min-width: 80px;
@@ -87,5 +88,9 @@ thead td{
  }
  input[disabled]{
      background-color: white;
+ }
+
+ #hidden {
+     display: none;
  }
 

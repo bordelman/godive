@@ -5,7 +5,7 @@
 	<meta charset='UTF-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<link rel='stylesheet' href='css/main.css'>
-	<link rel='stylesheet' href='css/mail.css'>
+	<link rel='stylesheet' href='css/confirmation.css'>
 	<link rel="icon" href="/sources/logo.ico" type="image/x-icon">
 	<script src='index.js' type='text/javascript' defer></script>
 	<title>GoDive | Potvrzení</title>
@@ -39,7 +39,6 @@
 			}
 			?>
 		</div>
-
 		<?php
 		if ($_POST["botControl"] == date("Y")) {
 			$conditions = [
@@ -169,9 +168,6 @@
 				<p class=\"parent\">jméno, příjmení, datum narození, vztah k nezletilému</p>
 				<p class=\"sign\">podpis</p>
 			</div>
-			<div>
-				<p>$otherInfo</p>
-			</div>			
 		</div>
 		</div>
 		</main>
@@ -207,10 +203,8 @@
 			if ($_POST[$key] == "true")
 				$otherInfo .= "POZOR! " . $condition . "<br>";
 		}
-		echo $otherInfo;
 		?>
 		</div>
-
 	</main>
 	<div class="print">
 		<?= $message ?>
