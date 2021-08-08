@@ -45,7 +45,7 @@
 
 <body onload="course()">
     <main>
-        <form id="applicationForm" name="applicationForm" action="formEvaluation.php" method="POST">
+        <form id="applicationForm" name="applicationForm" action="email.php" method="POST">
             <h3>Základní informace:</h3>
             <div class="row">
                 <label for="course">Zvolený kurz:</label><br>
@@ -119,14 +119,14 @@
             <div id="memberBlock">
                 <div class="row">
                     <label>Člen IANTD</label><br>
-                    <input type="radio" id="member" name="member" value=member required onchange=" if (this.checked) {toggleInput('memberId', false)}">
+                    <input type="radio" id="member" name="member" value=true required onchange=" if (this.checked) {toggleInput('memberId', false)}">
                     <label for="member">Ano</label>
-                    <input type="radio" id="notMember" name="member" checked value=notMember required onchange=" if (this.checked) {toggleInput('memberId', true)}">
+                    <input type="radio" id="notMember" name="member" checked value=false required onchange=" if (this.checked) {toggleInput('memberId', true)}">
                     <label for="notMember">Ne</label>
                 </div>
                 <div class="row" id="memberIdRow" style="transition: 0.3s;">
                     <label for="memberId">IANTD Id</label><br>
-                    <input type="number" name="memberId" id="memberId" min=0 disabled>
+                    <input type="number" name="memberId" id="memberId" required min=0 disabled>
                 </div>
             </div>
             <h3>Dotazník o zdravotním stavu:</h3>

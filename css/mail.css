@@ -1,0 +1,29 @@
+body {
+    font-family: sans-serif;
+    width: 21cm;
+    height: 29.7cm;
+    margin: 30mm 45mm 30mm 45mm;
+    margin: auto auto;
+}
+
+header p,
+h3 {
+    margin: auto;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+header img {
+    width: 150px;
+}
+
+.headerText {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
