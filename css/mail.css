@@ -1,13 +1,12 @@
-body {
+page {
     font-family: sans-serif;
     width: 21cm;
     height: 29.7cm;
-    margin: 30mm 45mm 30mm 45mm;
-    margin: auto auto;
+    padding: 30mm 45mm 30mm 45mm;
+    margin: auto
 }
 
-header p,
-h3 {
+header p, h3 {
     margin: auto;
 }
 
@@ -26,4 +25,24 @@ header img {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+}
+
+.line {
+    text-decoration: underline;
+}
+
+.underaged {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.parent {
+    width: 55ch;
+    margin:auto
+}
+
+.sign {
+    width: 30ch;
+    margin: auto
 }

@@ -9,6 +9,7 @@ article li > a {
 article li > a:hover {
     color: black;
     text-shadow: none;
+    text-decoration: line;
 }
 
 
