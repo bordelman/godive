@@ -41,6 +41,16 @@
             document.getElementById(id).style = `display: ${show ? 'block' : 'none'}`
         }
     </script>
+    <script>
+        $(document).ready(function() {
+            $(window).keydown(function(event) {
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
 </head>
 
 <body onload="course()">
@@ -85,7 +95,7 @@
             </div>
             <div class="row">
                 <label for="email">E-mail:</label><br>
-                <input type="email" id="email" name="email" pattern="([a-zA-Z.])+@([a-zA-Z.])+\.([a-zA-Z.]){2,}" required placeholder="muj@email.cz">
+                <input type="email" id="email" name="email" pattern=".{1,}@.{1,}" required placeholder="muj@email.cz">
             </div>
             <div class="row">
                 <label for="city">Město:</label><br>
