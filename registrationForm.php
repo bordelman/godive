@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel='stylesheet' href='css/confirmation.css'>
-	<title>Tisk přihlášky</title>
+	<title>GoDive | Tisk přihlášky</title>
 </head>
 
 <body>
@@ -29,17 +29,19 @@
 			"id" => "Ice Diver",
 			"dsd" => "Dry Suit Diver",
 		];
-		echo "
-		<div class=\"page\">
-			<header class=\"pageHeader\">
-				<img src=\"http://www.concept.godive.cz/sources/logo.png\" alt=\"godive logo\">
-				<div class=\"headerText column\">
+		?>
+		
+		<div class="page">
+			<header class="pageHeader\">
+				<img src="sources/logo.png" alt="godive logo">
+				<div class="headerText column">
 					<p>Instruktor: IANTD #9801 Ladislav Hájek www.godive.cz</p>
 					<h3>Přihláška do kurzu a přihláška k členství</h3>
-				</div class=\"headerText\">
-				<img src=\"http://www.concept.godive.cz/sources/logoIantd.png\" alt=\"IANTD logo\">
+				</div class="headerText">
+				<img src="sources/logoIantd.png" alt="IANTD logo">
 			</header>
-			<div id=\"personalInfo\">
+			<?=
+			"<div id=\"personalInfo\">
 				<p>Jméno: <b>${_GET["firstName"]} ${_GET["lastName"]}</b>&nbsp;Datum narození: <b>${_GET["date"]}</b></p>
 				<p>Adresa: <b>${_GET["street"]}, ${_GET["city"]}</b></p>
 				<p>PSČ: <b>${_GET["zip"]}</b> Stát: <b>${_GET["state"]}</b></p>

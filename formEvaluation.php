@@ -21,7 +21,7 @@
 			} else {
 				$date = new DateTime($_POST["birthDate"]);
 				$date = $date->format('d.m.Y');
-				$url = "http://www.concept.godive.cz/registrationPrint.php?";
+				$url = "http://www.concept.godive.cz/registrationForm.php?";
 				$courses = [
 					"trialDive" => "Ponor na zkoušku",
 					"owd" => "OWD",

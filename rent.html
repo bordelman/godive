@@ -190,8 +190,8 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><label>Orientační cena cena: </label><input type="number" min=0 name="price" id="price"
-                                disabled></label>
+                        <td><label>Orientační cena cena: </label><input type="number" min=0 step=1 name="price" id="price"
+                                readonly></label>
                         </td>
                         <td></td>
                     </tr>
@@ -203,10 +203,14 @@
                     rezervační formulář</button>
             </div>
             <div id="hidden">
+                <div class="row">
+                    <label for="date">Datum zapůjčení:</label><br>
+                    <input type="date" id="date" name="dateFrom" required >
+                </div>
                 <h3>Základní informace:</h3>
                 <div class="row">
                     <label for="firstName">Křestní jméno:</label><br>
-                    <input type="text" id="firstName" name="firstName" required placeholder="Jméno" autofocus>
+                    <input type="text" id="firstName" name="firstName" required placeholder="Jméno">
                 </div>
                 <div class="row">
                     <label for="lastName">Příjmení:</label><br>

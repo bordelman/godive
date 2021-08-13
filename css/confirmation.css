@@ -39,10 +39,34 @@
 
 .parent {
     width: 55ch;
-    margin:auto
+    margin: auto
 }
 
 .sign {
     width: 30ch;
     margin: auto
+}
+
+table {
+    margin: 3em auto;
+}
+
+td .item {
+    width: 360px;
+}
+
+.centered {
+    margin: auto;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-right {
+    text-align: right;
 }
