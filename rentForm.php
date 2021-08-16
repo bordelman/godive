@@ -8,7 +8,7 @@
 	<title>GoDive | Tisk rezervace</title>
 </head>
 
-<body>
+<body onload="window.print()">
 	<main>
 
 		<div class="page">
@@ -20,7 +20,27 @@
 				</div>
 				<img src="sources/logoIantd.png" alt="IANTD logo">
 			</header>
-			<p>Jméno: <?=$_GET["firstName"]." ".$_GET["lastName"]?></p>
+			<?php
+			$space = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+			$emptyLine = "<span style='text-decoration:underline'>$space</span>";
+			$name = $_GET["zip"] ? $_GET["firstName"] . " " . $_GET["lastName"] : $emptyLine;
+			$address = $_GET["zip"] ? $_GET["street"] . ", " . $_GET["zip"] . " " . $_GET["city"] . ", " . $_GET["state"] : $emptyLine.$emptyLine;
+			$email = $_GET["zip"] ? $_GET["email"] : $emptyLine;
+			$phone = $_GET["zip"] ? $_GET["phone"] : $emptyLine;
+			$height = $_GET["zip"] ? $_GET["height"] : $emptyLine;
+			$weight = $_GET["zip"] ? $_GET["weight"] : $emptyLine;
+			$shoeSize = $_GET["zip"] ? $_GET["shoeSize"] : $emptyLine;
+			$dateFrom = new DateTime($_GET["dateFrom"]);
+			$dateFrom = $dateFrom->format('d.m.Y');
+			$dateTo = date("d.m.Y", strtotime("+" . $_GET["days"] . " day", strtotime($_GET["dateFrom"])));
+			$term = $_GET["days"] ? $dateFrom . " - " . $dateTo . " (" . $_GET["days"] . ")" : $emptyLine.$emptyLine;
+			echo "<p>Jméno: $name</p>
+			<p>Adresa: $address<p>
+			<p>Email: $email</p>
+			<p>Telefon: $phone</p>
+			<p>Číslo OP: <span style=\"text-decoration:underline\">$space</span></p>
+			<p>Výška: $height cm, váha: $weight kg, velikost boty: $shoeSize
+			<p>Termín zapůjčení: $term"?>
 			<table id="rentTable">
 				<thead>
 					<tr>
@@ -152,17 +172,9 @@
 						<td class="t-center"><input type="checkbox" unchecked disabled></td>
 						</td>
 					</tr>
+					<tr><td>&nbsp;</td></tr>
 					<tr>
-						<?php
-						$dateFrom = new DateTime($_GET["dateFrom"]);
-						$dateFrom = $dateFrom->format('d.m.Y');
-						$dateTo = date("d.m.Y", strtotime("+" . $_GET["days"] . " day", strtotime($_GET["dateFrom"])));
-						?>
-						<td>Termín zapůjčení</td>
-						<td colspan="3" class="t-center"><?= $dateFrom . " - " . $dateTo . " (" . $_GET["days"].")" ?></span></td>
-					</tr>
-					<tr>
-						<td class="t-center" colspan="4">Orientační cena cena: <?= $_GET["price"] ?> Kč</td>
+						<td class="t-center" colspan="4">Orientační cena cena: <?= $_GET["price"] ? $_GET["price"] : $emptyLine ?> Kč</td>
 					</tr>
 				</tbody>
 			</table>

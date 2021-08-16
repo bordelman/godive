@@ -39,6 +39,7 @@
 				];
 				$response = [
 					"course" => $_POST["course"],
+					"eanx" => $_POST["EANx"],
 					"firstName" => $_POST["firstName"],
 					"lastName" => $_POST["lastName"],
 					"street" => $_POST["street"],
@@ -51,6 +52,8 @@
 					"memberId" => $_POST["memberId"],
 					"date" => $date
 				];
+				$course = $courses[$_POST["course"]];
+				$course .= $_POST["EANx"]?" + EANx":"";
 				$urlParams = [];
 				foreach ($response as $key => $value) {
 					array_push($urlParams, $key . "=" . urlencode($value));
@@ -64,12 +67,7 @@
 				$header .= "Content-Type: text/html; charset=\"utf-8\"\n";
 				$subject = "Potvrzení přijetí přihlášky";
 				$succes = mb_send_mail($mailTo, $subject, $message, $header);
-				if($succes == 1) {
-					echo "<br> 1 odesláno";
-				} else {
-					echo "<br> 1 neodešlo";
-				}
-				echo "<h1>Děkujeme za přihlášení na kurz<br>" . $courses[$_POST["course"]] . "</h1>
+							echo "<h1>Děkujeme za přihlášení na kurz<br>$course</h1>
 				</div>
 				<div class=\"content\">
 				<p>Vytiskněte si prosím přihlášku, podepište a přineste na první hodinu</p>
@@ -110,7 +108,7 @@
 						array_push($overallCriticalCondition, $value);
 					}
 				}
-				if (count($overallCriticalCondition) > 0) echo "<p class=\"warning\">Z důvodu zdravotních komplikací (" . implode(", ", $overallCriticalCondition) . ") bude pro účast vyžadován souhlas lékaře!</p>";
+				if (count($overallCriticalCondition) > 0) echo "<p class=\"warning\">Ze zdravotních důvodů (" . implode(", ", $overallCriticalCondition) . ") bude pro účast vyžadován souhlas lékaře!</p>";
 				$message = "<h1>Nově zaregistrovaný <a href=$url>uživatel</a> na kurz " . $courses[$_POST["course"]] . "</h1>";
 				$message .= "<p>Jméno: ${_POST["firstName"]} ${_POST["lastName"]}, mobil: ${_POST["phone"]}, email: ${_POST["email"]} </p>";
 				$message .= "<p>Výška: ${_POST["height"]}, váha: ${_POST["weight"]}, velikost boty: ${_POST["shoeSize"]}</p>";
@@ -122,11 +120,7 @@
 				$header .= "Content-Type: text/html; charset=\"utf-8\"\n";
 				$subject = "Informace o nové přihlášce" .  $courses[$_POST["course"]];
 				$succes = mb_send_mail($mailTo, $subject, $message, $header);
-				if($succes == 1) {
-					echo "<br> 2 odesláno";
-				} else {
-					echo "<br> 2 neodešlo";
-				}
+
 			}
 			?>
 		</div>

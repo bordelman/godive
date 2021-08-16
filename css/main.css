@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 .print {
-    display:none;
-}
-@media print {
-    .thankUPage, #header-nav, footer{
-        display: none
-    }
-    .print {
-        display: block
-    }
+    display: none;
 }
 
 * {
@@ -132,6 +124,7 @@ td.item {
     padding-bottom: 1em;
 }
 
+
 /*navigation*/
 
 #header-nav {
@@ -170,7 +163,8 @@ td.item {
     border: rgba(255, 255, 255, 0) solid 3px
 }
 
-#logoIantd:hover, #logoIantdSmall:hover {
+#logoIantd:hover,
+#logoIantdSmall:hover {
     border: white solid 3px
 }
 
@@ -230,6 +224,7 @@ td.item {
     background-image: linear-gradient(rgba(108, 208, 255, 0), rgb(98 204 254));
     height: 15px
 }
+
 
 /*footer*/
 
@@ -310,7 +305,7 @@ footer a:hover {
 }
 
 .warning {
-    color:red;
+    color: red;
     font-weight: bold;
 }
 

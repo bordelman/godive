@@ -8,12 +8,10 @@
 	<title>GoDive | Tisk přihlášky</title>
 </head>
 
-<body>
+<body onload="window.print()">
 	<main>
 		<?php
-
 		$lineSpace = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-
 		$courses = [
 			"trialDive" => "Ponor na zkoušku",
 			"owd" => "OWD",
@@ -29,8 +27,10 @@
 			"id" => "Ice Diver",
 			"dsd" => "Dry Suit Diver",
 		];
+		$course = $courses[$_GET["course"]];
+		$course .= $_GET["eanx"]?" + EANx":"";
 		?>
-		
+
 		<div class="page">
 			<header class="pageHeader\">
 				<img src="sources/logo.png" alt="godive logo">
@@ -46,7 +46,7 @@
 				<p>Adresa: <b>${_GET["street"]}, ${_GET["city"]}</b></p>
 				<p>PSČ: <b>${_GET["zip"]}</b> Stát: <b>${_GET["state"]}</b></p>
 				<p>Email: <b>${_GET["email"]}</b> telefon: <b>${_GET["phone"]}</b></p>
-				<h3>POŽADOVANÝ KURZ/kvalifikace: <b>${courses[$_GET["course"]]}</b></h3>
+				<h3>POŽADOVANÝ KURZ/kvalifikace: <b>$course</b></h3>
 				<p>Já níže podepsaný, se přihlašuji do označeného kurzu potápění vedeného instruktorem - členem IANTD <br> a k
 					členství v IANTD.</p>
 				<p>Prohlašuji, že již jsem kvalifikovaný potápěč a že jsem svoji kvalifikaci

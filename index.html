@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cz">
+<html lang="cs">
 
 <head>
     <meta charset="UTF-8">
@@ -11,10 +11,10 @@
     <script src="index.js" type="text/javascript" defer></script>
     <script src="courseList.js" type="text/javascript" defer></script>
     <script>
-        const showModal = function (modal) {
+        const showModal = function(modal) {
             document.getElementById(modal).style.display = 'block'
         }
-        const hideModal = function (modal) {
+        const hideModal = function(modal) {
             document.getElementById(modal).style.display = 'none'
         }
     </script>
@@ -23,9 +23,6 @@
 
 <body>
     <main>
-        <h1 style="color:red; font-weight: bolder; text-decoration: underline;">
-            koupit jako dárek, backend
-        </h1>
         <div class="welcome">
             <h2>Vítejte na stránkách potápěčské školy</h2>
             <h1>GoDive Plzeň</h1>
@@ -51,7 +48,7 @@
         </section>
         <section class="buttons">
             <span class="btn" onclick="location.href=`/applicationForm.html`">Přihlásit se na kurz</span>
-            <span class="btn">Koupit kurz jako dárek</span>
+            <span class="btn" onclick="location.href=`/voucher.html`">Koupit kurz jako dárek</span>
         </section>
     </main>
     <div class="modalContainer" id="courses" onclick="hideModal(`courses`)">

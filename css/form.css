@@ -6,14 +6,18 @@ form {
     align-items: center;
 }
 
-input, select, option{
+input,
+select,
+option,
+textarea {
     border-radius: 5px;
     color: black;
     text-shadow: none;
     width: 160px;
 }
 
-[type="radio"], [type="checkbox"] {
+[type="radio"],
+[type="checkbox"] {
     width: auto;
 }
 
@@ -52,45 +56,57 @@ p {
     font-size: 0.6em;
     margin: 0 auto
 }
+
 p a:hover {
     color: black;
     text-shadow: none;
 }
-p a{
+
+p a {
     text-decoration: underline;
 }
-.formWarning{
+
+.warning {
     display: none;
-    color:red;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    cursor: help;
+    color: red;
+    font-weight: bold;
+    transition: .3s;
 }
 
 table {
     border-radius: 15px;
     margin-bottom: 15px;
 }
-thead td{
-   min-width: 80px;
+
+thead td {
+    min-width: 80px;
 }
+
 #diveWeight {
-    width:30px
+    width: 30px
 }
- #rentForm {
-     padding: 20px 0;
- }
 
- #daysCount {
+#rentForm {
+    padding: 20px 0;
+}
+
+#daysCount {
     width: 30px;
- }
+}
 
- #price {
+#price {
     width: 50px;
     text-align: center;
- }
- input[disabled]{
-     background-color: white;
- }
+}
 
- #hidden {
-     display: none;
- }
+input[disabled] {
+    background-color: white;
+}
 
+#hidden {
+    display: none;
+}

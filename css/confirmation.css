@@ -1,3 +1,10 @@
+@media print {
+    @page {
+        size: auto;
+        margin: 0;
+    }
+}
+
 .page {
     font-family: sans-serif;
     width: 21cm;
@@ -6,7 +13,8 @@
     margin: auto
 }
 
-.page header p, h3 {
+.page header p,
+h3 {
     margin: auto;
 }
 

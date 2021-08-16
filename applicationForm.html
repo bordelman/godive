@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="CZ">
+<html lang="cs">
 
 <head>
     <meta charset="utf-8">
@@ -28,28 +28,23 @@
         function course() {
             url = window.location.href
             selectValue = url.includes("?") ? url.slice(url.indexOf("?") + 1) : ""
-            if (["trialDive", "owd"].includes(selectValue)) {
-                document.getElementById("memberBlock").style = "display: none"
-            }
+            editPage(selectValue)
             if (selectValue && window.location.href.includes(selectValue)) {
-                document.getElementById("course").value = selectValue
+                $("#course")[0].value = selectValue
             }
         }
     </script>
     <script type="text/javascript">
         function visibleWarning(id, show) {
-            document.getElementById(id).style = `display: ${show ? 'block' : 'none'}`
+            $(`#${id}`).find(".warning").css("display", show ? 'inline-block' : 'none');
         }
     </script>
     <script>
-        $(document).ready(function() {
-            $(window).keydown(function(event) {
-                if (event.keyCode == 13) {
-                    event.preventDefault();
-                    return false;
-                }
-            });
-        });
+        function editPage(course) {
+            $('#memberBlock').css('display', ['trialDive', 'owd'].includes(course) ? 'none' : 'block')
+            $('#EANxLabel input').prop('disabled', course !== "owd")
+            $('#EANxLabel').css('display', course === "owd" ? "block" : "none")
+        }
     </script>
 </head>
 
@@ -59,8 +54,7 @@
             <h3>Základní informace:</h3>
             <div class="row">
                 <label for="course">Zvolený kurz:</label><br>
-                <select id="course" name="course" required placeholder="Kurz" onchange="if (['trialDive', 'owd'].includes(this.value)) {
-                    document.getElementById('memberBlock').style = 'display: none'} else {document.getElementById('memberBlock').style = 'display: block'}">
+                <select id="course" name="course" required placeholder="Kurz" onchange="editPage(this.value)">
                     <option selected hidden value disabled>Vyberte kurz</option>
                     <option value="trialDive">Ponor na zkoušku</option>
                     <option value="owd">OWD</option>
@@ -77,6 +71,7 @@
                     <option value="dsd">Dry Suit Diver</option>
                 </select>
             </div>
+            <label id="EANxLabel" for="EANx"><input type="checkbox" name="EANx" id="EANx"> rozšíření EANx</label>
             <div class="row">
                 <label for="firstName">Křestní jméno:</label><br>
                 <input type="text" id="firstName" name="firstName" required placeholder="Jméno" autofocus>
@@ -128,9 +123,9 @@
             <div id="memberBlock">
                 <div class="row">
                     <label>Člen IANTD</label><br>
-                    <input type="radio" id="member" name="member" value=true required onchange=" if (this.checked) {toggleInput('memberId', false)}">
+                    <input type="radio" id="member" name="member" value=true required onchange=" {toggleInput('memberId', !this.checked)}">
                     <label for="member">Ano</label>
-                    <input type="radio" id="notMember" name="member" checked value=false required onchange=" if (this.checked) {toggleInput('memberId', true)}">
+                    <input type="radio" id="notMember" name="member" checked value=false required onchange=" {toggleInput('memberId', this.checked)}">
                     <label for="notMember">Ne</label>
                 </div>
                 <div class="row" id="memberIdRow" style="transition: 0.3s;">
@@ -140,21 +135,23 @@
             </div>
             <h3>Dotazník o zdravotním stavu:</h3>
             <div class="healthData">
-                <div class="row">
+                <div id="breathing" class="row">
                     <lablel>Dýchací problémy</lablel><br>
-                    <input required type="radio" name="breathingProblems" id="breathingProblem" value=true onchange="if (this.checked) visibleWarning('breathingWarning', true)">
+                    <input required type="radio" name="breathingProblems" id="breathingProblem" value=true onchange="visibleWarning('breathing', this.checked)">
                     <label for="breathingProblem">Ano</label>
-                    <input required type="radio" name="breathingProblems" id="breathingOk" value=false onchange="if (this.checked) visibleWarning('breathingWarning', false)">
+                    <input required type="radio" name="breathingProblems" id="breathingOk" value=false onchange="visibleWarning('breathing', !this.checked)">
                     <label for="breathingOk">Ne</label>
-                    <p class="formWarning" id="breathingWarning">Bude požadován souhlas lékaře!</p>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="breathingWarning">Bude požadován souhlas lékaře!</p> -->
                 </div>
-                <div class="row">
+                <div id="balance" class="row">
                     <lablel>Poruchy rovnováhy</lablel><br>
-                    <input required type="radio" name="balanceProblem" id="balanceProblem" value=true onchange="if (this.checked) visibleWarning('balanceWarning', true)">
+                    <input required type="radio" name="balanceProblem" id="balanceProblem" value=true onchange="visibleWarning('balance', this.checked)">
                     <label for="balanceProblem">Ano</label>
-                    <input required type="radio" name="balanceProblem" id="balanceOk" value=false onchange="if (this.checked) visibleWarning('balanceWarning', false)">
+                    <input required type="radio" name="balanceProblem" id="balanceOk" value=false onchange="visibleWarning('balance', !this.checked)">
                     <label for="balanceOk">Ne</label>
-                    <p class="formWarning" id="balanceWarning">Bude požadován souhlas lékaře!</p>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="balanceWarning">Bude požadován souhlas lékaře!</p> -->
                 </div>
                 <div class="row">
                     <lablel>Alkoholismus</lablel><br>
@@ -170,13 +167,14 @@
                     <input required type="radio" name="diabetesProblem" id="diabetesOk" value=false>
                     <label for="diabetesOk">Ne</label>
                 </div>
-                <div class="row">
+                <div id="asthma" class="row">
                     <lablel>Astma</lablel><br>
-                    <input required type="radio" name="asthmaProblem" id="asthmaProblem" value=true onchange="if (this.checked) visibleWarning('asthmaWarning', true)">
+                    <input required type="radio" name="asthmaProblem" id="asthmaProblem" value=true onchange="visibleWarning('asthma', this.checked)">
                     <label for="asthmaProblem">Ano</label>
-                    <input required type="radio" name="asthmaProblem" id="asthmaOk" value=false onchange="if (this.checked) visibleWarning('asthmaWarning', false)">
+                    <input required type="radio" name="asthmaProblem" id="asthmaOk" value=false onchange="visibleWarning('asthma', !this.checked)">
                     <label for="asthmaOk">Ne</label>
-                    <p class="formWarning" id="asthmaWarning">Bude požadován souhlas lékaře!</p>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="asthmaWarning">Bude požadován souhlas lékaře!</p> -->
                 </div>
                 <div class="row">
                     <lablel>Kouření</lablel><br>
@@ -185,13 +183,14 @@
                     <input required type="radio" name="smokingProblem" id="smokingOk" value=false>
                     <label for="smokingOk">Ne</label>
                 </div>
-                <div class="row">
+                <div id="epilepsy" class="row">
                     <lablel>Epilepsie</lablel><br>
-                    <input required type="radio" name="epilepsyProblem" id="epilepsyProblem" value=true onchange="if (this.checked)  visibleWarning('epilepsyWarning', true)">
+                    <input required type="radio" name="epilepsyProblem" id="epilepsyProblem" value=true onchange="visibleWarning('epilepsy', this.checked)">
                     <label for="epilepsyProblem">Ano</label>
-                    <input required type="radio" name="epilepsyProblem" id="epilepsyOk" value=false onchange="if (this.checked) visibleWarning('epilepsyWarning', false)">
+                    <input required type="radio" name="epilepsyProblem" id="epilepsyOk" value=false onchange="visibleWarning('epilepsy', !this.checked)">
                     <label for="epilepsyOk">Ne</label>
-                    <p class="formWarning" id="epilepsyWarning">Bude požadován souhlas lékaře!</p>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="epilepsyWarning">Bude požadován souhlas lékaře!</p> -->
                 </div>
                 <div class="row">
                     <lablel>Opakovené záněty uší</lablel><br>
@@ -200,21 +199,23 @@
                     <input required type="radio" name="earsProblem" id="earsOk" value=false>
                     <label for="earsOk">Ne</label>
                 </div>
-                <div class="row">
+                <div id="drugs" class="row">
                     <lablel>Drogy / léky</lablel><br>
-                    <input required type="radio" name="drugsProblem" id="drugsProblem" value=true onchange="if (this.checked) visibleWarning('drugsWarning', true)">
+                    <input required type="radio" name="drugsProblem" id="drugsProblem" value=true onchange="visibleWarning('drugs', this.checked)">
                     <label for="drugsProblem">Ano</label>
-                    <input required type="radio" name="drugsProblem" id="drugsOk" value=false onchange="if (this.checked) visibleWarning('drugsWarning', false)">
+                    <input required type="radio" name="drugsProblem" id="drugsOk" value=false onchange="visibleWarning('drugs', !this.checked)">
                     <label for="drugsOk">Ne</label>
-                    <p class="formWarning" id="drugsWarning">Bude požadován souhlas lékaře!</p>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="drugsWarning">Bude požadován souhlas lékaře!</p> -->
                 </div>
-                <div class="row">
+                <div id="cardiac" class="row">
                     <lablel>Srdeční problémy</lablel><br>
-                    <input required type="radio" name="cardiacProblem" id="cardiacProblem" value=true onchange="if (this.checked) visibleWarning('cardiacWarning', true)">
+                    <input required type="radio" name="cardiacProblem" id="cardiacProblem" value=true onchange="visibleWarning('cardiac', this.checked)">
                     <label for="cardiacProblem">Ano</label>
-                    <input required type="radio" name="cardiacProblem" id="cardiacOk" value=false onchange="if (this.checked) visibleWarning('cardiacWarning', false)">
+                    <input required type="radio" name="cardiacProblem" id="cardiacOk" value=false onchange="visibleWarning('cardiac', !this.checked)">
                     <label for="cardiacOk">Ne</label>
-                    <p class="formWarning" id="cardiacWarning">Bude požadován souhlas lékaře!</p>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="cardiacWarning">Bude požadován souhlas lékaře!</p> -->
                 </div>
                 <div class="row">
                     <lablel>Klaustrofobie</lablel><br>
@@ -258,13 +259,14 @@
                     <input required type="radio" name="digestingProblem" id="digestingOk" value=false>
                     <label for="digestingOk">Ne</label>
                 </div>
-                <div class="row">
+                <div id="pregnancy" class="row">
                     <lablel>Těhotenství</lablel><br>
-                    <input required type="radio" name="pregnancyProblem" id="pregnancyProblem" value=true onchange="if (this.checked) visibleWarning('pregnancyWarning', true)">
+                    <input required type="radio" name="pregnancyProblem" id="pregnancyProblem" value=true onchange="visibleWarning('pregnancy', this.checked)">
                     <label for="pregnancyProblem">Ano</label>
-                    <input required type="radio" name="pregnancyProblem" id="pregnancyOk" value=false onchange="if (this.checked) visibleWarning('pregnancyWarning', false)">
+                    <input required type="radio" name="pregnancyProblem" id="pregnancyOk" value=false onchange="visibleWarning('pregnancy', !this.checked)">
                     <label for="pregnancyOk">Ne</label>
-                    <p class="formWarning" id="pregnancyWarning">Bude požadován souhlas lékaře!</p>
+                    <div class="warning" title="Bude požadováno vyjádření lékaře!">!</div>
+                    <!-- <p class="formWarning" id="pregnancyWarning">Bude požadován souhlas lékaře!</p> -->
                 </div>
             </div>
             <div class="row">
