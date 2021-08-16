@@ -57,14 +57,18 @@
 				}
 				$url .= implode("&", $urlParams);
 				mb_internal_encoding("UTF-8");
+				$mailTo = $_POST["email"];
 				$message = "Děkujeme za vaší přihlášku, pokud jste si přihlášku nestáhli/nevytsiknuli, najdete ji na tomto odkazu:\n <b><a href=$url>Přihláška</a></b>";
 				$header = 'From:GoDive@godive.cz;';
 				$header .= "\nMIME-Version: 1.0\n";
 				$header .= "Content-Type: text/html; charset=\"utf-8\"\n";
 				$subject = "Potvrzení přijetí přihlášky";
-				$succes = mb_send_mail($_POST["email"], $subject, $message, $header);
-				if (!$succes)
-					echo "potvrzovací email neodešel";
+				$succes = mb_send_mail($mailTo, $subject, $message, $header);
+				if($succes == 1) {
+					echo "<br> 1 odesláno";
+				} else {
+					echo "<br> 1 neodešlo";
+				}
 				echo "<h1>Děkujeme za přihlášení na kurz<br>" . $courses[$_POST["course"]] . "</h1>
 				</div>
 				<div class=\"content\">
@@ -117,9 +121,12 @@
 				$header .= "\nMIME-Version: 1.0\n";
 				$header .= "Content-Type: text/html; charset=\"utf-8\"\n";
 				$subject = "Informace o nové přihlášce" .  $courses[$_POST["course"]];
-				$succes = mb_send_mail($_POST["email"], $subject, $message, $header);
-				if (!$succes)
-					echo "<p>email do GoDive neodešel, kontaktujte nás prosím na telefonu: <a href='tel:+420 602 148 026'>+420 602 148 026</p>";
+				$succes = mb_send_mail($mailTo, $subject, $message, $header);
+				if($succes == 1) {
+					echo "<br> 2 odesláno";
+				} else {
+					echo "<br> 2 neodešlo";
+				}
 			}
 			?>
 		</div>
