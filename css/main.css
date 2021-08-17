@@ -69,8 +69,8 @@ article {
 
 .modalBody img {
     border-radius: 15px;
-    max-height: 100vh;
-    max-width: 100%;
+    max-height: 90vh;
+    max-width: 90vw;
 }
 
 @media (max-width: 499px) {
@@ -130,7 +130,8 @@ td.item {
 #header-nav {
     text-align: center;
     background-image: url('/sources/header.jpeg');
-    background-position: center;
+    background-position-x: center;
+    background-position-y: bottom;
     width: 100%;
     margin-block: 0;
     height: max-content;

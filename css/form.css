@@ -6,18 +6,14 @@ form {
     align-items: center;
 }
 
-input,
-select,
-option,
-textarea {
+input, select, option, textarea {
     border-radius: 5px;
     color: black;
     text-shadow: none;
     width: 160px;
 }
 
-[type="radio"],
-[type="checkbox"] {
+[type="radio"], [type="checkbox"] {
     width: auto;
 }
 
@@ -109,4 +105,21 @@ input[disabled] {
 
 #hidden {
     display: none;
+}
+
+.voucher {
+    border-radius: 15px;
+    margin: 15px;
+    max-width: 450px;
+    transition: .3s;
+}
+
+@media (max-width: 500px) {
+    .voucher {
+        max-width: 80%;
+    }
+}
+
+.voucher:hover {
+    transform: scale(1.1);
 }

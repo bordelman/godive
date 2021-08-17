@@ -22,6 +22,14 @@
         }
     </script>
     <script>
+        const showModal = function (modal) {
+            $(`#${modal}`).css('display', 'block')
+        }
+        const hideModal = function (modal) {
+            $(`#${modal}`).css('display', 'none')
+        }
+    </script>
+    <script>
         function editPage(course) {
             $('#EANxLabel').css('display', course === "owd" ? "block" : "none")
             $('#EANxLabel input').prop('disabled', course !== "owd")
@@ -36,21 +44,21 @@
             <div class="row">
                 <label for="course">Zvolený kurz:</label><br>
                 <select id="course" name="course" required placeholder="Kurz" onchange="editPage(this.value)">
-					<option selected hidden value disabled>Vyberte kurz</option>
-					<option value="trialDive">Ponor na zkoušku</option>
-					<option value="owd">OWD</option>
-					<option value="aowd">AOWD</option>
-					<option value="nd">Nitrox Diver</option>
-					<option value="dd">Deep Diver</option>
-					<option value="and">Advanced Nitrox Diver</option>
-					<option value="artd">Advanced Recreational Trimix Diver</option>
-					<option value="ntd">Normoxic Trimix Diver</option>
-					<option value="td">Trimix Diver</option>
-					<option value="rd">Rescue Diver</option>
-					<option value="dm">Divemaster</option>
-					<option value="id">Ice Diver</option>
-					<option value="dsd">Dry Suit Diver</option>
-				</select>
+                    <option selected hidden value disabled>Vyberte kurz</option>
+                    <option value="trialDive">Ponor na zkoušku</option>
+                    <option value="owd">OWD</option>
+                    <option value="aowd">AOWD</option>
+                    <option value="nd">Nitrox Diver</option>
+                    <option value="dd">Deep Diver</option>
+                    <option value="and">Advanced Nitrox Diver</option>
+                    <option value="artd">Advanced Recreational Trimix Diver</option>
+                    <option value="ntd">Normoxic Trimix Diver</option>
+                    <option value="td">Trimix Diver</option>
+                    <option value="rd">Rescue Diver</option>
+                    <option value="dm">Divemaster</option>
+                    <option value="id">Ice Diver</option>
+                    <option value="dsd">Dry Suit Diver</option>
+                </select>
             </div>
             <label id="EANxLabel" for="EANx"><input type="checkbox" name="EANx" id="EANx"> rozšíření EANx</label>
             <div class="row">
@@ -63,7 +71,8 @@
             </div>
             <div class="row">
                 <label for="email">Email pro doručení certifikátu:</label><br>
-                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required placeholder="muj@email.cz">
+                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                    required placeholder="muj@email.cz">
             </div>
             <div class="row">
                 <label for="note">Vzkaz na voucher</label><br>
@@ -73,8 +82,13 @@
                 <button class="btn" type="submit">Odeslat žádost</button>
             </div>
         </form>
-        <img style="border-radius: 15px; margin: 15px; max-width: 80%;" src="/sources/vouchers/example.jpg" alt="Náhled voucheru">
+        <img class="voucher" src="/sources/vouchers/example.jpg" alt="Náhled voucheru" onclick="showModal('voucher')">
     </main>
+    <div class="modalContainer" id="voucher" onclick="hideModal('voucher')">
+        <div class="modalBody">
+            <img src="/sources/vouchers/example1024.jpg" alt="Náhled voucheru">
+        </div>
+    </div>
 </body>
 
 </html>
