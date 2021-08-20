@@ -76,7 +76,7 @@ courses = [{
 }];
 courses.forEach((course, index) => {
     let a = document.createElement("a");
-    let link = course.img !== "ccr" ? `courses/${course.img}.html` : "http://www.ccr-meg.cz/"
+    let link = course.img !== "ccr" ? `kurzy/${course.img}.html` : "http://www.ccr-meg.cz/"
     a.href = link;
     a.style.backgroundImage= `url('/sources/${course.img}.png')`
     a.className = "courseItemContainer"

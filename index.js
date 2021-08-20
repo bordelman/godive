@@ -4,17 +4,17 @@ navigation.innerHTML = `
 <nav>
 	<a href="/index.html"><img id="logo" src="/sources/logo.png" alt="GoDive logo"
 		height="100px" width="auto"></a>
-    <a href="https://www.iantd.cz/" target="_blank"><img id="logoIantdSmall" src="/sources/logoIantd.png" alt="IANTD logo"
+    <a href="https://www.iantd.cz/" target="blank"><img id="logoIantdSmall" src="/sources/logoIantd.png" alt="IANTD logo"
 		height="100px" width="auto"></a>
 	<ul class="menu-item-container" id="navMenu">
-		<li><a href="/trialDive.html" title="Ponor na zkoušku">Ponor&nbsp;na&nbsp;zkoušku</a></li>
-		<li><a href="/filling.html" title="Plnění lahví">Plnění&nbsp;lahví</a></li>
-		<li><a href="/rent.html" title="Půjčovna">Půjčovna</a></li>
-		<li><a href="/searching.html" title="Vyhledávání pod vodou">Vyhledávání&nbsp;pod&nbsp;vodou</a></li>
-		<li><a href="/club.html" title="Klub">Klub</a></li>
-		<li><a href="/aboutUs.html" title="O nás">O&nbsp;nás</a></li>
+		<li><a href="/ponor-na-zkousku.html" title="Ponor na zkoušku">Ponor&nbsp;na&nbsp;zkoušku</a></li>
+		<li><a href="/plneni.html" title="Plnění lahví">Plnění&nbsp;lahví</a></li>
+		<li><a href="/pujcovna.html" title="Půjčovna">Půjčovna</a></li>
+		<li><a href="/vyhledavani.html" title="Vyhledávání pod vodou">Vyhledávání&nbsp;pod&nbsp;vodou</a></li>
+		<li><a href="/klub.html" title="Klub">Klub</a></li>
+		<li><a href="/o-nas.html" title="O nás">O&nbsp;nás</a></li>
 	</ul>
-    <a href="https://www.iantd.cz/"><img id="logoIantd" src="/sources/logoIantd.png" alt="GoDive logo"
+    <a href="https://www.iantd.cz/" target="blank"><img id="logoIantd" src="/sources/logoIantd.png" alt="GoDive logo"
 		height="100px" width="auto"></a>
 </nav>
 <div id="transition"></div>

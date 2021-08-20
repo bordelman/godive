@@ -17,7 +17,7 @@
             <h1>Děkujeme za vaší rezervaci</h1>
             <p>Na váš e-mail: <?= $_POST["email"]; ?> byla odeslána kopie vaší rezervace</p>
             <?php
-            $url = "http://www.concept.godive.cz/rentForm.php?";
+            $url = "http://www.godive.cz/rentForm.php?";
             $urlParams = [];
             foreach ($_POST as $key => $value) {
                 if ($_POST[$key])
