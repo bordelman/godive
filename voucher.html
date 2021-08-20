@@ -20,16 +20,12 @@
                 $("#course")[0].value = selectValue
             }
         }
-    </script>
-    <script>
         const showModal = function (modal) {
             $(`#${modal}`).css('display', 'block')
         }
         const hideModal = function (modal) {
             $(`#${modal}`).css('display', 'none')
         }
-    </script>
-    <script>
         function editPage(course) {
             $('#EANxLabel').css('display', course === "owd" ? "block" : "none")
             $('#EANxLabel input').prop('disabled', course !== "owd")
