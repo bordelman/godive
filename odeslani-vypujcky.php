@@ -15,13 +15,13 @@
     <main>
         <div class="content">
             <h1>Děkujeme za vaší rezervaci</h1>
-            <p>Na váš e-mail: <?= $_POST["email"]; ?> byla odeslána kopie vaší rezervace</p>
+            <p>Na váš e-mail: <?= $_POST["email"]; ?> byla odeslána kopie vaší rezervace (přihlášku máte k dispozici ve vaší e-mailové schránce, zkontrolujte prosím i složku s nevyžádanou poštou)</p>
             <?php
             $url = "http://www.godive.cz/rentForm.php?";
             $urlParams = [];
             foreach ($_POST as $key => $value) {
                 if ($_POST[$key])
-                array_push($urlParams, $key . "=" . urlencode($value));
+                    array_push($urlParams, $key . "=" . htmlspecialchars(urlencode($value)));
             }
             $url .= implode("&", $urlParams);
             $mailTo = $_POST["email"];
@@ -32,14 +32,16 @@
             $header .= "Content-Type: text/html; charset=\"utf-8\"\n";
             $subject = "Potvrzení přijetí rezervace";
             $succes = mb_send_mail($mailTo, $subject, $message, $header);
+            if ($succes != 1) echo "<p>Nebyl vám odeslán konfirmační email, prosím kontaktujte nás na <a href='mailto:info@godive.cz'>info@godive.cz</a></p>";
 
+            $mailTo = "info@godive.cz";
             $message = "Nová rezervace.<br><b><a href=$url>Rezervační formulář</a></b>";
             $header = 'From:GoDive@godive.cz;';
             $header .= "\nMIME-Version: 1.0\n";
             $header .= "Content-Type: text/html; charset=\"utf-8\"\n";
             $subject = "Nová rezervace";
             $succes = mb_send_mail($mailTo, $subject, $message, $header);
-
+            if ($succes != 1) echo "<p>Email pro godive nebyl odeslán správně, prosím kontaktujte nás na <a href='mailto:info@godive.cz'>info@godive.cz</a></p>";
             ?>
             <div class="buttons">
                 <a class="btn" href=<?= $url ?> target="_blank">Vytisknout rezervační formulář</a>

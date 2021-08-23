@@ -52,11 +52,11 @@
 					"memberId" => $_POST["memberId"],
 					"date" => $date
 				];
-				$course = $courses[$_POST["course"]];
-				$course .= $_POST["EANx"]?" + EANx":"";
+				$course = htmlspecialchars($courses[$_POST["course"]]);
+				$course .= $_POST["EANx"] ? " + EANx" : "";
 				$urlParams = [];
 				foreach ($response as $key => $value) {
-					array_push($urlParams, $key . "=" . urlencode($value));
+					array_push($urlParams, $key . "=" . urlencode(htmlspecialchars($value)));
 				}
 				$url .= implode("&", $urlParams);
 				mb_internal_encoding("UTF-8");
@@ -67,10 +67,12 @@
 				$header .= "Content-Type: text/html; charset=\"utf-8\"\n";
 				$subject = "Potvrzení přijetí přihlášky";
 				$succes = mb_send_mail($mailTo, $subject, $message, $header);
-							echo "<h1>Děkujeme za přihlášení na kurz<br>$course</h1>
+				if ($succes != 1) echo "<p>Nebyl vám odeslán konfirmační e-mail, prosím kontaktujte nás na <a href='mailto:info@godive.cz'>info@godive.cz</a></p>";
+
+				echo "<h1>Děkujeme za přihlášení na kurz<br>$course</h1>
 				</div>
 				<div class=\"content\">
-				<p>Vytiskněte si prosím přihlášku, podepište a přineste na první hodinu</p>
+				<p>Vytiskněte si prosím přihlášku, podepište a přineste na první hodinu (přihlášku máte k dispozici ve vaší e-mailové schránce, zkontrolujte prosím i složku s nevyžádanou poštou)</p>
 				<div class=\"buttons\">
 				<a class=\"btn\" href=$url target=\"_blank\">Vytisknout přihlášku</button></a>
 				</div>";
@@ -108,11 +110,13 @@
 						array_push($overallCriticalCondition, $value);
 					}
 				}
+
 				if (count($overallCriticalCondition) > 0) echo "<p class=\"warning\">Ze zdravotních důvodů (" . implode(", ", $overallCriticalCondition) . ") bude pro účast vyžadován souhlas lékaře!</p>";
-				$message = "<h1>Nově zaregistrovaný <a href=$url>uživatel</a> na kurz " . $courses[$_POST["course"]] . "</h1>";
-				$message .= "<p>Jméno: ${_POST["firstName"]} ${_POST["lastName"]}, mobil: ${_POST["phone"]}, email: ${_POST["email"]} </p>";
-				$message .= "<p>Výška: ${_POST["height"]}, váha: ${_POST["weight"]}, velikost boty: ${_POST["shoeSize"]}</p>";
-				$message .= "<p>IANTD člen: " . ($_POST["member"] == "true" ? "ANO - " . $_POST["memberId"] : "NE") . "</p>";
+				$mailTo = "info@godive.cz";
+				$message = "<h1>Nově zaregistrovaný <a href=$url>uživatel</a> na kurz $course </h1>";
+				$message .= "<p>Jméno: " . htmlspecialchars($_POST["firstName"]) . " " . htmlspecialchars($_POST["lastName"]) . ", mobil: " . htmlspecialchars($_POST["phone"]) . ", email: " . htmlspecialchars($_POST["email"]) . "</p>";
+				$message .= "<p>Výška: " . htmlspecialchars($_POST["height"]) . ", váha: " . htmlspecialchars($_POST["weight"]) . ", velikost boty: " . htmlspecialchars($_POST["shoeSize"]) . "</p>";
+				$message .= "<p>IANTD člen: " . ($_POST["member"] == "true" ? "ANO - " . htmlspecialchars($_POST["memberId"]) : "NE") . "</p>";
 				$message .= "<p>Udané problémy ve formuláři: " . implode(", ", $overallCondition) . "</p>";
 				$message .= "<p>Udané závažné problémy ve formuláři: " . implode(", ", $overallCriticalCondition) . "</p>";
 				$header = 'From:GoDive@godive.cz;';
@@ -120,7 +124,7 @@
 				$header .= "Content-Type: text/html; charset=\"utf-8\"\n";
 				$subject = "Informace o nové přihlášce" .  $courses[$_POST["course"]];
 				$succes = mb_send_mail($mailTo, $subject, $message, $header);
-
+				if ($succes != 1) echo "<p>Email pro godive nebyl odeslán správně, prosím kontaktujte nás na <a href='mailto:info@godive.cz'>info@godive.cz</a></p>";
 			}
 			?>
 		</div>

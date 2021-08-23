@@ -70,3 +70,22 @@ footer.innerHTML = `
 `;
 
 document.body.appendChild(footer);
+
+
+const script = document.createElement('script');
+script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
+
+const meta = document.createElement("meta")
+meta.name="author"
+meta.content="Jakub Peca, pecaj.dev@gmail.com"
+document.getElementsByTagName('head')[0].appendChild(meta);
+
+const cookieBar = document.createElement("div")
+cookieBar.className="cookieBar"
+cookieBar.innerHTML = `<p class="cookieNotification">Užíváním našich stránek vyjadřujete souhlas s používáním cookies pro analytické účely<p>
+<button onclick="document.cookie='godiveCookie=true'; $('.cookieBar').css('display','none')">X</button>`
+
+if (!document.cookie.includes("godiveCookie=true"))
+document.body.appendChild(cookieBar)

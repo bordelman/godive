@@ -20,7 +20,7 @@
     margin-top: 10px;
 }
 
-#finnsubLogo:hover, #soprasLogo:hover {
+#finnsubLogo:hover, #soprasLogo:hover, .partnerLogo:hover, .partner > a:hover{
     transform: scale(1.2);
 }
 
@@ -49,6 +49,9 @@
     justify-content: space-evenly;
     align-items: center;
 }
+.partner > a {
+    transition: .3s;
+}
 
 .other-partners {
     margin: auto;
@@ -65,10 +68,13 @@ flex-direction: column;
 }
 
 .partnerLogo {
+    transition: .3s;
     max-height: 125px;
     width: auto;
-    padding:15px
+    margin:15px;
+    border-radius: 6px
 }
+
 #cck{
     border-radius: 10000px;
 }
