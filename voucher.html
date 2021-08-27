@@ -3,14 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>GoDive | Přihláška</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="index.js" type="text/javascript" defer></script>
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
-    <script type="text/javascript">
+    <script>
         function course() {
             url = window.location.href
             selectValue = url.includes("?") ? url.slice(url.indexOf("?") + 1) : ""
@@ -19,18 +18,19 @@
                 $("#course")[0].value = selectValue
             }
         }
-        const showModal = function (modal) {
+        const showModal = function(modal) {
             $(`#${modal}`).css('display', 'block')
         }
-        const hideModal = function (modal) {
+        const hideModal = function(modal) {
             $(`#${modal}`).css('display', 'none')
         }
+
         function editPage(course) {
             $('#EANxLabel').css('display', course === "owd" ? "block" : "none")
             $('#EANxLabel input').prop('disabled', course !== "owd")
         }
     </script>
-    <title>GoDive | Potvrzení</title>
+    <title>GoDive | Dárkový poukaz</title>
 </head>
 
 <body onload="course()">
@@ -38,7 +38,7 @@
         <form action="odeslani-voucheru.php" method="POST">
             <div class="row">
                 <label for="course">Zvolený kurz:</label><br>
-                <select id="course" name="course" required placeholder="Kurz" onchange="editPage(this.value)">
+                <select id="course" name="course" required onchange="editPage(this.value)">
                     <option selected hidden value disabled>Vyberte kurz</option>
                     <option value="trialDive">Ponor na zkoušku</option>
                     <option value="owd">OWD</option>
@@ -66,8 +66,7 @@
             </div>
             <div class="row">
                 <label for="email">Email pro doručení certifikátu:</label><br>
-                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                    required placeholder="muj@email.cz">
+                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required placeholder="muj@email.cz">
             </div>
             <div class="row">
                 <label for="note">Vzkaz na voucher</label><br>

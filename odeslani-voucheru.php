@@ -7,7 +7,7 @@
 	<link rel='stylesheet' href='css/main.css'>
 	<link rel='stylesheet' href='css/confirmation.css'>
 	<link rel="icon" href="/sources/logo.ico" type="image/x-icon">
-	<script src='index.js' type='text/javascript' defer></script>
+	<script src='index.js'  defer></script>
 	<title>GoDive | Potvrzení</title>
 </head>
 

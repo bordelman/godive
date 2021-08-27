@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='cz'>
+<html lang='cs'>
 
 <head>
     <meta charset='UTF-8'>
@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='css/filling.css'>
     <link rel="stylesheet" href="css/form.css">
     <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
-    <script src='index.js' type='text/javascript' defer></script>
+    <script src='index.js' defer></script>
     <script>
         let weightPrice = 0
 
@@ -30,8 +30,7 @@
 <body>
     <main>
         <h1>Půjčovna potápěčského vybavení</h1>
-        <p>Podmínkou zapůjčení potápěčské výstroje je předložení potápěčské certifikace, některé z mezinárodně
-            uznávaných potápěčských škol a občanského průkazu</p>
+        <p>Podmínkou zapůjčení potápěčské výstroje je předložení potápěčské certifikace, některé z mezinárodně uznávaných potápěčských škol a občanského průkazu</p>
         <p class='condition'>Jednotlivé součásti výstroje k zapůjčení je nutné předem rezervovat.</p>
         <form action="odeslani-vypujcky.php" method="POST" id=rentForm>
             <table id="rentTable">
@@ -49,149 +48,123 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="checkbox" unchecked name="mask" id="mask" value="Maska"
-                                onchange="changePrice(40*(this.checked?1:-1))">
+                        <td><input type="checkbox" name="mask" id="mask" value="Maska" onchange="changePrice(40*(this.checked?1:-1))">
                         </td>
                         <td class="item"><label for="mask">Maska</label></td>
                         <td>40,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="fin" id="fin" value="Ploutve"
-                                onchange="changePrice(40*(this.checked?1:-1))">
+                        <td><input type="checkbox" name="fin" id="fin" value="Ploutve" onchange="changePrice(40*(this.checked?1:-1))">
                         </td>
                         <td class="item"><label for="fin">Ploutve</label></td>
                         <td>40,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="shoes" id="shoes" value="Neoprenové boty"
-                                onchange="changePrice(30*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="shoes" id="shoes" value="Neoprenové boty" onchange="changePrice(30*(this.checked?1:-1))"></td>
                         <td class="item"><label for="shoes">Neoprenové boty</label></td>
                         <td>30,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="neoprene" id="neoprene" value="Neoprenový oblek"
-                                onchange="changePrice(50*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="neoprene" id="neoprene" value="Neoprenový oblek" onchange="changePrice(50*(this.checked?1:-1))"></td>
                         <td class="item"><label for="neoprene">Neoprenový oblek</label></td>
                         <td>50,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="balaclavaHelmet" id="balaclavaHelmet" value="Kukla"
-                                onchange="changePrice(20*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="balaclavaHelmet" id="balaclavaHelmet" value="Kukla" onchange="changePrice(20*(this.checked?1:-1))"></td>
                         <td class="item"><label for="balaclavaHelmet">Kukla</label></td>
                         <td>20,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="gloves" id="gloves" value="Rukavice"
-                                onchange="changePrice(20*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="gloves" id="gloves" value="Rukavice" onchange="changePrice(20*(this.checked?1:-1))"></td>
                         <td class="item"><label for="gloves">Rukavice</label></td>
                         <td>20,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="drySuit" id="drySuit" value="Suchý oblek"
-                                onchange="changePrice(100*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="drySuit" id="drySuit" value="Suchý oblek" onchange="changePrice(100*(this.checked?1:-1))"></td>
                         <td class="item"><label for="drySuit">Suchý oblek</label></td>
                         <td>100,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="wing" id="wing" value="Žaket/křídlo"
-                                onchange="changePrice(70*(this.checked?1:-1))">
+                        <td><input type="checkbox" name="wing" id="wing" value="Žaket/křídlo" onchange="changePrice(70*(this.checked?1:-1))">
                         </td>
                         <td class="item"><label for="wing">Žaket/křídlo</label></td>
                         <td>70,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="weightBelt" id="weightBelt" value="Zátěžový opasek"
-                                onchange="changePrice(10*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="weightBelt" id="weightBelt" value="Zátěžový opasek" onchange="changePrice(10*(this.checked?1:-1))"></td>
                         <td class="item"><label for="weightBelt">Zátěžový opasek</label></td>
                         <td>10,-</td>
                     </tr>
                     <tr>
-                        <td><input type="number" min=0 max=40 name="diveWeight" id="diveWeight"
-                                onchange="chengWieghtPices(this.value)"><span> ks</span></td>
+                        <td><input type="number" min=0 max=40 name="diveWeight" id="diveWeight" onchange="chengWieghtPices(this.value)"><span> ks</span></td>
                         <td class="item"><label for="diveWeight">Kostka závaží 1kg, 1,5kg, 2kg</label></td>
                         <td>5,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="automatika" id="automatika"
-                                value="Plicní automatika včetně octopusu"
-                                onchange="changePrice(70*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="automatika" id="automatika" value="Plicní automatika včetně octopusu" onchange="changePrice(70*(this.checked?1:-1))"></td>
                         <td class="item"><label for="automatika">Plicní automatika včetně octopusu</label></td>
                         <td>70,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="tank10" id="tank10"
-                                value="Ocelová láhev, 10 litrů, plná/200 bar (vzduch)"
-                                onchange="changePrice(100*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="tank10" id="tank10" value="Ocelová láhev, 10 litrů, plná/200 bar (vzduch)" onchange="changePrice(100*(this.checked?1:-1))"></td>
                         <td class="item"><label for="tank10">Ocelová láhev, 10 litrů, plná/200 bar (vzduch)</label>
                         </td>
                         <td>100,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="tank12" id="tank12"
-                                value="Ocelová láhev, 12 litrů, plná/200 bar (vzduch)"
-                                onchange="changePrice(120*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="tank12" id="tank12" value="Ocelová láhev, 12 litrů, plná/200 bar (vzduch)" onchange="changePrice(120*(this.checked?1:-1))"></td>
                         <td class="item"><label for="tank12">Ocelová láhev, 12 litrů, plná/200 bar (vzduch)</label>
                         </td>
                         <td>120,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="tank15" id="tank15"
-                                value="Ocelová láhev, 15 litrů, plná/200 bar (vzduch)"
-                                onchange="changePrice(140*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="tank15" id="tank15" value="Ocelová láhev, 15 litrů, plná/200 bar (vzduch)" onchange="changePrice(140*(this.checked?1:-1))"></td>
                         <td class="item"><label for="tank15">Ocelová láhev, 15 litrů, plná/200 bar (vzduch)</label>
                         </td>
                         <td>140,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="computer" id="computer" value="Dekompresní počítač"
-                                onchange="changePrice(70*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="computer" id="computer" value="Dekompresní počítač" onchange="changePrice(70*(this.checked?1:-1))"></td>
                         <td class="item"><label for="computer">Dekompresní počítač Suunto Vyber/Vytec/atd.</label>
                         </td>
                         <td>70,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="primaryLight" id="primaryLight"
-                                value="Potápěčské hlavní světlo" onchange="changePrice(150*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="primaryLight" id="primaryLight" value="Potápěčské hlavní světlo" onchange="changePrice(150*(this.checked?1:-1))"></td>
                         <td class="item"><label for="primaryLight">Potápěčské hlavní světlo</label></td>
                         <td>150,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="secundaryLight" id="secundaryLight"
-                                value="Potápěčské světlo malé" onchange="changePrice(50*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="secundaryLight" id="secundaryLight" value="Potápěčské světlo malé" onchange="changePrice(50*(this.checked?1:-1))"></td>
                         <td class="item"><label for="secundaryLight">Potápěčské světlo malé</label></td>
                         <td>50,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="knife" id="knife" value="Potápěčský nůž"
-                                onchange="changePrice(20*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="knife" id="knife" value="Potápěčský nůž" onchange="changePrice(20*(this.checked?1:-1))"></td>
                         <td class="item"><label for="knife">Potápěčský nůž</label></td>
                         <td>20,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="compass" id="compass" value="Potápěčský kompas"
-                                onchange="changePrice(30*(this.checked?1:-1))"></td>
+                        <td><input type="checkbox" name="compass" id="compass" value="Potápěčský kompas" onchange="changePrice(30*(this.checked?1:-1))"></td>
                         <td class="item"><label for="compass">Potápěčský kompas</label></td>
                         <td>30,-</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" unchecked name="buoy" id="buoy"
-                                value="Dekompresní bójka (včetně bubínku)"
-                                onchange="changePrice(20*(this.checked?1:-1))">
+                        <td><input type="checkbox" name="buoy" id="buoy" value="Dekompresní bójka (včetně bubínku)" onchange="changePrice(20*(this.checked?1:-1))">
                         </td>
                         <td class="item"><label for="buoy">Dekompresní bójka (včetně bubínku)</label></td>
                         <td>20,-</td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><label for="days">Počet dní: </label><input type="number" name="days" id="days" value=1
-                                min=1 max=30 onchange="changePrice(0)">
+                        <td><label for="days">Počet dní: </label><input type="number" name="days" id="days" value=1 min=1 max=30 onchange="changePrice(0)">
                         </td>
                         <td></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><label>Orientační cena: </label><input type="number" min=0 step=1 name="price" id="price"
-                                readonly> Kč
+                        <td><label>Orientační cena: <input type="number" min=0 step=1 name="price" id="price" readonly>
+                                Kč</label>
                         </td>
                         <td></td>
                     </tr>
@@ -219,17 +192,15 @@
                 </div>
                 <div class="row">
                     <label for="birthDate">Datum narození:</label><br>
-                    <input type="date" id="birthDate" name="birthDate" required placeholder="01.01.2000">
+                    <input type="date" id="birthDate" name="birthDate" required>
                 </div>
                 <div class="row">
                     <label for="phone">Telefonní číslo:</label><br>
-                    <input type="tel" id="phone" name="phone" pattern="(\+420 *){0,1}(([0-9] *)){9}" required
-                        placeholder="123 456 789">
+                    <input type="tel" id="phone" name="phone" pattern="(\+420 *){0,1}(([0-9] *)){9}" required placeholder="123 456 789">
                 </div>
                 <div class="row">
                     <label for="email">E-mail:</label><br>
-                    <input type="email" id="email" name="email"
-                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required placeholder="muj@email.cz">
+                    <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required placeholder="muj@email.cz">
                 </div>
                 <div class="row">
                     <label for="city">Město:</label><br>
@@ -263,6 +234,7 @@
                     <div class="buttons"><button type="submit" form="rentForm" class="btn">Rezervovat vybavení</button>
                     </div>
                 </div>
+            </div>
         </form>
     </main>
 </body>

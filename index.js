@@ -48,13 +48,6 @@ footer.innerHTML = `
                       transform="translate(15.45 15.44)" data-v-a015fb66=""></path>
             </svg>
         </a>
-        <a href="https://www.facebook.com/groups/GoDiveClub/" target="_blank">
-            <svg id="facebook" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD"
-                             class="facebook icon" data-v-a015fb66="">
-                <path d="M20,0 C8.9541,0 0,8.95435 0,20 C0,31.0457 8.9541,40 20,40 C31.0459,40 40,31.0457 40,20 C40,8.95435 31.0459,0 20,0 Z M22.085,20.8785 L22.085,31.7595 L17.5825,31.7595 L17.5825,20.8789 L15.3335,20.8789 L15.3335,17.1293 L17.5825,17.1293 L17.5825,14.8779 C17.5825,11.819 18.8525,10 22.4609,10 L25.4653,10 L25.4653,13.7501 L23.5874,13.7501 C22.1826,13.7501 22.0898,14.2742 22.0898,15.2521 L22.085,17.1288 L25.4863,17.1288 L25.0884,20.8785 L22.085,20.8785 Z"
-                      data-v-a015fb66=""></path>
-            </svg>
-        </a>
         <a href="https://www.youtube.com/channel/UCiHQsYn1ToM8lhL5KlKAkfA?view_as=subscriber&pbjreload=10"
            target="_blank">
            <svg id="youtube" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD"
@@ -78,14 +71,14 @@ script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
 
 const meta = document.createElement("meta")
-meta.name="author"
-meta.content="Jakub Peca, pecaj.dev@gmail.com"
+meta.name = "author"
+meta.content = "Jakub Peca, pecaj.dev@gmail.com"
 document.getElementsByTagName('head')[0].appendChild(meta);
 
 const cookieBar = document.createElement("div")
-cookieBar.className="cookieBar"
-cookieBar.innerHTML = `<p class="cookieNotification">Užíváním našich stránek vyjadřujete souhlas s používáním cookies pro analytické účely<p>
-<button onclick="document.cookie='godiveCookie=true'; $('.cookieBar').css('display','none')">X</button>`
+cookieBar.className = "cookieBar"
+cookieBar.innerHTML = `<p class="cookieNotification">Užíváním našich stránek vyjadřujete souhlas s používáním cookies pro analytické účely</p>
+<button class="cookieClose" onclick="document.cookie='godiveCookie=true'; $('.cookieBar').css('display','none')">X</button>`
 
 if (!document.cookie.includes("godiveCookie=true"))
-document.body.appendChild(cookieBar)
+    document.body.appendChild(cookieBar)

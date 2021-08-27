@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/courses.css">
     <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
-    <script src="index.js" type="text/javascript" defer></script>
-    <script src="courseList.js" type="text/javascript" defer></script>
+    <script src="index.js" defer></script>
+    <script src="courseList.js" defer></script>
     <script>
         const showModal = function(modal) {
             document.getElementById(modal).style.display = 'block'
@@ -26,6 +26,10 @@
     <main>
         <div class="welcome">
             <h1>Kurzy potápění - Potápěčská škola GoDive Plzeň</h1>
+            <p style="margin: auto; padding: 5px 15px">Škola potápění GoDive byla založena v únoru roku 2018 pod patronací celosvětově uznávaného výcvikového systému IANTD rekreačního a technického potápění. Svým studentům se věnuje od úplně prvních začátečnických krůčků až po náročné trimixové
+                potápění do hloubek 100 metrů a potápění s uzavřeným okruhem eCCR. V roce 2019 byl společně se studenty GoDive školy založen potápěčský klub pro společné cestování za vodou a potápěním &#x1F642; Od roku 2020 škola rozšířila svou činnost
+                také o prodej potápěčské techniky, půjčovnu potápěčského vybavení a plnění potápěčských tlakových lahví vzduch, nitrox, kyslík, hélium, trimix. Potápěčská škola GoDive neustále rozšiřuje své působení a své služby, aby uměla a dokázala
+                uspokojit a i ta nejnáročnější přání a požadavky ze strany široké potápěčské veřejnosti. Zakládáme si na individuálním přístupu ke každému z vás jak během samotného průběhu výcvikové části, tak po ukončení výcviku včetně neomezeného poradenství…</p>
         </div>
         <div class="schemaSmall">
             <img src="sources/courseScheme.png" alt="Schema kurzů IANTD" onclick="showModal('courses')">
@@ -46,10 +50,10 @@
             <h2>Navazující kurzy potápění</h2>
             <div class="courseList" id="advanced"></div>
         </section>
-        <section class="buttons">
+        <div class="buttons">
             <span class="btn" onclick="location.href=`/prihlaska.html`">Přihlásit se na kurz</span>
             <span class="btn" onclick="location.href=`/voucher.html`">Koupit kurz jako dárek</span>
-        </section>
+        </div>
     </main>
     <div class="modalContainer" id="courses" onclick="hideModal(`courses`)">
         <div class="modalBody">

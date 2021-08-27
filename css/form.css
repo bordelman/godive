@@ -6,19 +6,19 @@ form {
     align-items: center;
 }
 
-input, select, option, textarea {
+input,
+select,
+option,
+textarea {
     border-radius: 5px;
     color: black;
     text-shadow: none;
     width: 160px;
 }
 
-[type="radio"], [type="checkbox"] {
+[type="radio"],
+[type="checkbox"] {
     width: auto;
-}
-
-input:focus-visible {
-    padding: auto;
 }
 
 p {
@@ -97,6 +97,7 @@ thead td {
 #price {
     width: 50px;
     text-align: center;
+    cursor: context-menu;
 }
 
 input[disabled] {
