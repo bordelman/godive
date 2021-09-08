@@ -17,11 +17,11 @@
             <h1>Děkujeme za vaší rezervaci</h1>
             <p>Na váš e-mail: <?= $_POST["email"]; ?> byla odeslána kopie vaší rezervace (přihlášku máte k dispozici ve vaší e-mailové schránce, zkontrolujte prosím i složku s nevyžádanou poštou)</p>
             <?php
-            $url = "http://www.godive.cz/rentForm.php?";
+            $url = "https://www.godive.cz/vypujcni-protokol.php?";
             $urlParams = [];
             foreach ($_POST as $key => $value) {
                 if ($_POST[$key])
-                    array_push($urlParams, $key . "=" . htmlspecialchars(urlencode($value)));
+                    array_push($urlParams, $key . "=" . urlencode(htmlspecialchars($value)));
             }
             $url .= implode("&", $urlParams);
             $mailTo = $_POST["email"];

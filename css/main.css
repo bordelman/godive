@@ -15,6 +15,10 @@ u {
     text-decoration: underline !important;
 }
 
+article {
+    text-align: left;
+}
+
 h1 {
     margin-block: 0;
     padding: 15px 0;
@@ -178,7 +182,7 @@ td.item {
     margin-block-end: 15px;
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1380px) {
     #logoIantd {
         display: none
     }
@@ -187,7 +191,7 @@ td.item {
     }
 }
 
-@media (min-width: 1171px) {
+@media (min-width: 1381px) {
     #header-nav ul {
         display: inline-block;
         position: relative;

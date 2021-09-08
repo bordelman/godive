@@ -29,7 +29,7 @@
 			"dsd" => "Dry Suit Diver",
 		];
 		$course = $courses[$_GET["course"]];
-		$course .= $_GET["eanx"]?" + EANx":"";
+		$course .= $_GET["eanx"] ? " + EANx" : "";
 		?>
 
 		<div class="page">
@@ -41,12 +41,16 @@
 				</div class="headerText">
 				<img src="sources/logoIantd.png" alt="IANTD logo">
 			</header>
-			<?=
-			"<div id=\"personalInfo\">
-				<p>Jméno: <b>${_GET["firstName"]} ${_GET["lastName"]}</b>&nbsp;Datum narození: <b>${_GET["date"]}</b></p>
-				<p>Adresa: <b>${_GET["street"]}, ${_GET["city"]}</b></p>
-				<p>PSČ: <b>${_GET["zip"]}</b> Stát: <b>${_GET["state"]}</b></p>
-				<p>Email: <b>${_GET["email"]}</b> telefon: <b>${_GET["phone"]}</b></p>
+			<?php
+			$name = urldecode($_GET["firstName"] . " " . $_GET["lastName"]);
+			$date = urldecode($_GET["date"]);
+			$address = urldecode($_GET["street"] . ", " . $_GET["city"] . " " . $_GET["zip"] . ", " . $_GET["state"]);
+			$email = urldecode($_GET["email"]);
+			$phone = urldecode($_GET["phone"]);
+			echo	"<div id=\"personalInfo\">
+				<p>Jméno: <b>$name</b>&nbsp;Datum narození: <b>$date</b></p>
+				<p>Adresa: <b>$address</b></p>
+				<p>Email: <b>$email</b> telefon: <b>$phone</b></p>
 				<h3>POŽADOVANÝ KURZ/kvalifikace: <b>$course</b></h3>
 				<p>Já níže podepsaný, se přihlašuji do označeného kurzu potápění vedeného instruktorem - členem IANTD <br> a k
 					členství v IANTD.</p>
@@ -55,8 +59,8 @@
 					<span class=\"line\">$lineSpace</span>, což dokládám.
 				</p>
 				<p>Jsem již členem IANTD
-					<input type=\"checkbox\" id=member " . ($_GET["member"] == "true" ? "checked" : "") . " disabled> <label>ANO</label>
-        <input type=\"checkbox\" id=member " . ($_GET["member"] == "false" ? "checked" : "") . " disabled> <label>NE</label></p>
+					<input type=\"checkbox\" " . ($_GET["member"] == "true" ? "checked" : "") . " disabled> <label>ANO</label>
+        <input type=\"checkbox\" " . ($_GET["member"] == "false" ? "checked" : "") . " disabled> <label>NE</label></p>
 			<p>Jsem srozuměn s tím, že aktivace mého členství v IANTD i aktivace platnosti mé kvalifikace je podmíněna
 				úspěšným absolvováním kurzu a přijetím smluních podmínek členství v IANTD , které mne opravňuje k prokazování
 				mnou dosažené potápěčské
@@ -75,7 +79,7 @@
 			</ul>
 			<p>Datum: <span class=\" line\">$lineSpace</span>
 				</p>
-				<p>Podpis: <span class=\"line\">$lineSpace</span>&nbsp;IANTD č.: ". (intval($_GET["memberId"]) > 0 ? "<b>${_GET["memberId"]}</b>" : "<span class=\"line\">$lineSpace</span>")."</p>
+				<p>Podpis: <span class=\"line\">$lineSpace</span>&nbsp;IANTD č.: " . (intval($_GET["memberId"]) > 0 ? "<b>${_GET["memberId"]}</b>" : "<span class=\"line\">$lineSpace</span>") . "</p>
 				<p>Za nezletilého účastníka též zákonný zástupce:</p>
 				<div class=\"underaged\">
 					<p class=\"parent line\">$lineSpace$lineSpace$lineSpace$lineSpace</p>
@@ -86,8 +90,7 @@
 					<p class=\"sign\">podpis</p>
 				</div>
 			</div>
-		</div>
-		";
-		?>
+		</div>";
+			?>
 	</main>
 </body>
