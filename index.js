@@ -18,6 +18,7 @@ navigation.innerHTML = `
     <a href="https://www.iantd.cz/" target="blank"><img id="logoIantd" src="/sources/logoIantd.png" alt="GoDive logo"
 		height="100px" width="auto"></a>
 </nav>
+<img src="https://toplist.cz/dot.asp?id=1796882&njs=1" border="0" alt="TOPlist" width="1" height="1" />
 <div id="transition"></div>
 `;
 document.body.prepend(navigation);
