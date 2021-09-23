@@ -13,7 +13,7 @@ navigation.innerHTML = `
 		<li><a href="/vyhledavani.html" title="Vyhledávání pod vodou">Vyhledávání&nbsp;pod&nbsp;vodou</a></li>
 		<li><a href="/kalendar-akci.html" title="Kalendář akcí">Kalendář akcí</a></li>
 		<li><a href="/o-nas.html" title="O nás">O&nbsp;nás</a></li>
-		<li><a href="https://www.instagram.com/godive.cz/" target="_blank">Fotogalerie</a></li>
+		<li><a href="https://www.instagram.com/godive.cz/" title="Fotogalerie" target="_blank">Fotogalerie</a></li>
 	</ul>
     <a href="https://www.iantd.cz/" target="blank"><img id="logoIantd" src="/sources/logoIantd.png" alt="GoDive logo"
 		height="100px" width="auto"></a>
