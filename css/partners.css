@@ -6,21 +6,14 @@
     margin-bottom: 10px;
 }
 
-#finnsubLogo {
+#finnsubLogo, #soprasLogo, #garminLogo {
     max-height: 80%;
     mix-blend-mode: multiply;
     transition: 0.3s;
     margin-top: 10px;
 }
 
-#soprasLogo {
-    max-height: 80%;
-    mix-blend-mode: multiply;
-    transition: 0.3s;
-    margin-top: 10px;
-}
-
-#finnsubLogo:hover, #soprasLogo:hover, .partnerLogo:hover, .partner > a:hover{
+#finnsubLogo:hover, #soprasLogo:hover, #garminLogo:hover, .partnerLogo:hover, .partner > a:hover{
     transform: scale(1.2);
 }
 

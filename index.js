@@ -80,7 +80,7 @@ document.getElementsByTagName('head')[0].appendChild(meta);
 const cookieBar = document.createElement("div")
 cookieBar.className = "cookieBar"
 cookieBar.innerHTML = `<p class="cookieNotification">Užíváním našich stránek vyjadřujete souhlas s používáním cookies pro analytické účely</p>
-<button class="cookieClose" onclick="document.cookie='godiveCookie=true'; $('.cookieBar').css('display','none')">X</button>`
+<button class="cookieClose" onclick="document.cookie='godiveCookie=true; SameSite=Strict'; $('.cookieBar').css('display','none')">X</button>`
 
 if (!document.cookie.includes("godiveCookie=true"))
     document.body.appendChild(cookieBar)
