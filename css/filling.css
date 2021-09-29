@@ -45,3 +45,7 @@ td {
 .price::after {
     content: ",-";
 }
+
+.countInput {
+    width: 30px;
+}

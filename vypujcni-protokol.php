@@ -37,7 +37,7 @@
 			$term = $_GET["days"] ? $dateFrom . " - " . $dateTo . " (" . $_GET["days"] . ")" : $emptyLine . $emptyLine;
 			echo "<p>Jméno: <b>$name</b></p>
 			<p>Adresa: <b>$address</b></p>
-			<p>Potápěčská kvalice: <b>$license</b></p>
+			<p>Potápěčská kvalifikace: <b>$license</b></p>
 			<p>Email: <b>$email</b></p>
 			<p>Telefon: <b>$phone</b></p>
 			<p>Číslo OP: <span style=\"text-decoration:underline\">$space</span></p>
@@ -55,121 +55,121 @@
 				<tbody>
 					<tr>
 						<td class="item"><label>Maska</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["mask"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["mask"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Ploutve</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["fin"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["fin"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Neoprenové boty</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["shoes"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["shoes"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Neoprenový oblek</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["neoprene"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["neoprene"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Kukla</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["balaclavaHelmet"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["balaclavaHelmet"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Rukavice</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["gloves"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["gloves"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Suchý oblek</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["drySuit"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["drySuit"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Žaket/křídlo</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["wing"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["wing"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Zátěžový opasek</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["weightBelt"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["weightBelt"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
-						<td class="item"><label>Kostka závaží 1kg, 1,5kg, 2kg</label></td>
+						<td class="item"><label>Kostka závaží (1kg, 1,5kg, 2kg)</label></td>
 						<td class="t-right"><span><?= $_GET["diveWeight"] ?> ks</span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Plicní automatika včetně octopusu</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["automatika"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["automatika"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Ocelová láhev, 10 litrů, plná/200 bar (vzduch)</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["tank10"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["tank10"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Ocelová láhev, 12 litrů, plná/200 bar (vzduch)</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["tank12"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["tank12"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Ocelová láhev, 15 litrů, plná/200 bar (vzduch)</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["tank15"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["tank15"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Dekompresní počítač Suunto Vyber/Vytec/atd.</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["computer"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["computer"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Potápěčské hlavní světlo</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["primaryLight"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["primaryLight"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Potápěčské světlo malé</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["secundaryLight"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["secundaryLight"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Potápěčský nůž</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["knife"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["knife"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Potápěčský kompas</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["compass"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["compass"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 					</tr>
 					<tr>
 						<td class="item"><label>Dekompresní bójka (včetně bubínku)</label></td>
-						<td class="t-center"><input type="checkbox" <?= $_GET["buoy"] ? "checked" : "" ?> disabled></td>
+						<td class="t-center "><span><?= $_GET["buoy"]  ?></span></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						<td class="t-center"><input type="checkbox" disabled></td>
 						</td>

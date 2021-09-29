@@ -11,24 +11,19 @@
     <link rel="stylesheet" href="css/form.css">
     <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
     <script>
-        function testResults(form) {
-            Object.entries(form).forEach(input => {
-                console.log(input[1].attributes.name.value, input[1].value)
-                if (input[1].attributes.name.value === "member") console.log("checked", input[1].checked)
-            })
-        }
-
         function toggleInput(name, disabled) {
             $("#" + name)[0].disabled = disabled
         }
 
-        function course() {
+        function prep() {
             url = window.location.href
             selectValue = url.includes("?") ? url.slice(url.indexOf("?") + 1) : ""
             editPage(selectValue)
             if (selectValue && window.location.href.includes(selectValue)) {
                 $("#course")[0].value = selectValue
             }
+
+            $('#birthDate')[0].max = new Date().toLocaleDateString('en-ca')
         }
 
         function visibleWarning(id, show) {
@@ -43,14 +38,15 @@
     </script>
 </head>
 
-<body onload="course()">
+<body onload="prep()">
     <main>
         <form id="prihlaska" name="prihlaska" action="odeslani-prihlasky.php" method="POST">
             <h3>Základní informace:</h3>
             <div class="row">
                 <label for="course">Zvolený kurz:</label><br>
                 <select id="course" name="course" required onchange="editPage(this.value)">
-                    <option selected hidden value disabled>Vyberte kurz</option>
+                    <optgroup label="Kurzy"></optgroup>
+                    <option selected hidden value disabled></option>
                     <option value="trialDive">Ponor na zkoušku</option>
                     <option value="owd">OWD</option>
                     <option value="aowd">AOWD</option>

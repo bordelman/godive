@@ -78,3 +78,10 @@ td .item {
 .t-right {
     text-align: right;
 }
+.countInput {
+    width: 30px;
+}
+
+td {
+    border: solid 1px black
+}
