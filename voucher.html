@@ -56,6 +56,8 @@
                 </select>
             </div>
             <label id="EANxLabel" for="EANx"><input type="checkbox" name="EANx" id="EANx"> rozšíření EANx</label>
+            <p></p>
+            <h3>Objednavatel - fakturační údaje</h3>
             <div class="row">
                 <label for="firstName">Křestní jméno:</label><br>
                 <input type="text" id="firstName" name="firstName" required placeholder="Jméno" autofocus>
@@ -65,12 +67,38 @@
                 <input type="text" id="lastName" name="lastName" required placeholder="Příjmení">
             </div>
             <div class="row">
-                <label for="email">Email pro doručení certifikátu:</label><br>
-                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required placeholder="muj@email.cz">
+                <label for="street">Adresa:</label><br>
+                <input type="text" id="street" name="street" required placeholder="Uličnická 33">
             </div>
             <div class="row">
-                <label for="note">Vzkaz na voucher</label><br>
-                <textarea id="note" maxlength="40" style="resize: none" name="note" placeholder="Sem vepište vzkaz, který chcete mít na voucheru."></textarea>
+                <label for="city">Město:</label><br>
+                <input type="text" id="city" name="city" required placeholder="Městečko">
+            </div>
+
+            <div class="row">
+                <label for="zip">PSČ:</label><br>
+                <input type="text" id="zip" name="zip" pattern="([0-9] *){5}" required placeholder="111 02">
+            </div>
+            <div class="row">
+                <label for="state">Stát:</label><br>
+                <input type="text" id="state" name="state" required placeholder="Česká republika">
+            </div>
+            <div class="row">
+                <label for="email" title="Na tento E-mail bude zaslána faktura, po jejím uhrazení bude zaslán dárkový poukaz">
+                    Email:
+                </label><br>
+                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                    required placeholder="muj@email.cz">
+            </div>
+            <div class="row">
+                <label for="phone">Telefonní číslo - nepovinné:</label><br>
+                <input type="tel" id="phone" name="phone" pattern="(\+420 *){0,1}(([0-9] *)){9}"
+                    placeholder="123 456 789">
+            </div>
+            <div class="row">
+                <label for="note">Vzkaz na voucher:</label><br>
+                <textarea id="note" maxlength="40" style="resize: none" name="note"
+                    placeholder="Sem vepište vzkaz, který chcete mít na voucheru."></textarea>
             </div>
             <div class="buttons">
                 <button class="btn" type="submit">Odeslat žádost</button>
