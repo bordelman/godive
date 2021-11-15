@@ -30,7 +30,6 @@ footer.innerHTML = `
         <h1>Škola potápění GoDive</h1>
         <p><a href="https://goo.gl/maps/V4KhPv95UTV492876" target="_blank">Koterovská 172, 326 00 Plzeň</a></p>
         <p>Mobil: <a href="tel:+420 602 148 026">+420 602 148 026</a></p>
-        <p>Mobil: <a href='tel:+420 733 116 827'>+420 733 116 827</a></p>
         <p>Email: <a href="mailto:info@godive.cz">info@godive.cz</a></p>
         <p>IČ: 63541033</p>
         <p>DIČ: CZ6905012048</p>
