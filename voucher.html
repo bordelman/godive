@@ -18,10 +18,10 @@
                 $("#course")[0].value = selectValue
             }
         }
-        const showModal = function(modal) {
+        const showModal = function (modal) {
             $(`#${modal}`).css('display', 'block')
         }
-        const hideModal = function(modal) {
+        const hideModal = function (modal) {
             $(`#${modal}`).css('display', 'none')
         }
 
@@ -84,7 +84,7 @@
                 <input type="text" id="state" name="state" required placeholder="Česká republika">
             </div>
             <div class="row">
-                <label for="email" title="Na tento E-mail bude zaslána faktura, po jejím uhrazení bude zaslán dárkový poukaz">
+                <label for="email" title="Na tento E-mail bude zaslána faktura, po jejím uhrazení bude zaslán dárkový poukaz.">
                     Email:
                 </label><br>
                 <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
