@@ -7,7 +7,7 @@
 	<link rel='stylesheet' href='css/main.css'>
 	<link rel='stylesheet' href='css/confirmation.css'>
 	<link rel="icon" href="/sources/logo.ico" type="image/x-icon">
-	<script src='index.js'  defer></script>
+	<script src='index.js' defer></script>
 	<title>GoDive | Potvrzení</title>
 </head>
 
@@ -48,9 +48,41 @@
 				</div>
 				";
 
+			$messageBody = '
+			<div>
+				<h5>Fakturační údaje</h5>
+				<table>
+					<tr>
+						<td>Jméno</td>
+						<td>' . $_POST["firstName"] . " " . $_POST["lastName"] . '</td>
+					</tr>
+					<tr>
+						<td>Adresa</td>
+						<td>' . $_POST["street"] . '</td>
+					</tr>
+					<tr>
+						<td>Město</td>
+						<td>' . $_POST["city"] . '</td>
+					</tr>
+					<tr>
+						<td>PSČ</td>
+						<td>' . $_POST["zip"] . '</td>
+					</tr>
+					<tr>
+						<td>Stát</td>
+						<td>' . $_POST["state"] . '</td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>' . $_POST["email"] . '</td>
+					</tr>
+				</table>
+			</div>
+			';
 			$mailTo = "info@godive.cz";
+			//$mailTo = "peckaku@gmail.com";
 			$message = "<h1>Nová žádost o voucher na kurz $course</h1>";
-			$message .= "<p>Jméno: " . htmlspecialchars($_POST["firstName"]) . " " . htmlspecialchars($_POST["lastName"]) . ", email: " . htmlspecialchars($_POST["email"]) . "</p>";
+			$message .= $messageBody;
 			$message .= "<p>Poznámka: " . htmlspecialchars($_POST["note"]) . "</p>";
 			$header = 'From:GoDive@godive.cz;';
 			$header .= "\nMIME-Version: 1.0\n";
@@ -59,6 +91,7 @@
 			$succes = mb_send_mail($mailTo, $subject, $message, $header);
 			if ($succes != 1) echo "<p>Email pro godive nebyl odeslán správně, prosím kontaktujte nás na <a href='mailto:info@godive.cz'>info@godive.cz</a></p>";
 			?>
+
 		</div>
 	</main>
 </body>

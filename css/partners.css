@@ -6,14 +6,15 @@
     margin-bottom: 10px;
 }
 
-#finnsubLogo, #soprasLogo, #garminLogo {
+#finnsubLogo, #soprasLogo, #garminLogo, #shearwaterLogo{
     max-height: 80%;
+    max-width: 100%;
     mix-blend-mode: multiply;
     transition: 0.3s;
     margin-top: 10px;
 }
 
-#finnsubLogo:hover, #soprasLogo:hover, #garminLogo:hover, .partnerLogo:hover, .partner > a:hover{
+#finnsubLogo:hover, #soprasLogo:hover, #garminLogo:hover,  #shearwaterLogo:hover, .partnerLogo:hover, .partner > a:hover{
     transform: scale(1.2);
 }
 
