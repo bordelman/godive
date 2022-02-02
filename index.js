@@ -7,7 +7,8 @@ navigation.innerHTML = `
     <a href="https://www.iantd.cz/" target="blank"><img id="logoIantdSmall" src="/sources/logoIantd.png" alt="IANTD logo"
 		height="100px" width="auto"></a>
 	<ul class="menu-item-container" id="navMenu">
-		<li><a href="/ponor-na-zkousku.html" title="Ponor na zkoušku">Ponor&nbsp;na&nbsp;zkoušku</a></li>
+        <li><a href="/index.html#courses" title="Kurzy">Kurzy potápění</a></li>
+        <li><a href="/ponor-na-zkousku.html" title="Ponor na zkoušku">Ponor&nbsp;na&nbsp;zkoušku</a></li>
 		<li><a href="/plneni.html" title="Plnění lahví">Plnění&nbsp;lahví</a></li>
 		<li><a href="/pujcovna.html" title="Půjčovna">Půjčovna</a></li>
 		<li><a href="/vyhledavani.html" title="Vyhledávání pod vodou">Vyhledávání&nbsp;pod&nbsp;vodou</a></li>

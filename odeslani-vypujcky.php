@@ -6,7 +6,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href='css/main.css'>
     <link rel="icon" href="/sources/logo.ico" type="image/x-icon">
-    <script src='index.js'  defer></script>
+    <script src='index.js?'  defer></script>
     <title>GoDive | Potvrzení</title>
 </head>
 
