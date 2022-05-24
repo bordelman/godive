@@ -2,37 +2,37 @@ courses = [{
     "title": "OWD",
     "maxDepth": 18,
     "gas": "Vzduch",
-    "price": "8 900",
+    "price": "9 900",
     "img": "owd"
 }, {
     "title": "AOWD",
     "maxDepth": 30,
     "gas": "Vzduch",
-    "price": "7 900",
+    "price": "8 900",
     "img": "aowd"
 }, {
     "title": "Nitrox Diver",
     "maxDepth": "",
     "gas": "Až 40% 0<sub>2</sub>",
-    "price": "4 400",
+    "price": "4 900",
     "img": "nd"
 }, {
     "title": "Deep Diver",
     "maxDepth": 40,
     "gas": "",
-    "price": "7 900",
+    "price": "8 900",
     "img": "dd"
 }, {
     "title": "Advanced Nitrox Diver",
     "maxDepth": 40,
     "gas": "Až 100% O<sub>2</sub>",
-    "price": "7 900",
+    "price": "8 900",
     "img": "and"
 }, {
     "title": "Advanced Recreational Trimix&nbsp;Diver",
     "maxDepth": 45,
     "gas": "Směs N<sub>2</sub>/O<sub>2</sub>/He",
-    "price": "7 900",
+    "price": "8 900",
     "img": "artd"
 }, {
     "title": "Normoxic Trimix Diver",
@@ -50,7 +50,7 @@ courses = [{
     "title": "Rescue Diver",
     "maxDepth": "",
     "gas": "",
-    "price": "7 900",
+    "price": "8 900",
     "img": "rd"
 }, {
     "title": "Divemaster",
@@ -62,7 +62,7 @@ courses = [{
     "title": "Ice Diver",
     "maxDepth": "",
     "gas": "",
-    "price": "5 500",
+    "price": "6 500",
     "img": "id"
 }, {
     "title": "Dry Suit Diver",

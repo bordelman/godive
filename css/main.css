@@ -353,3 +353,8 @@ footer a:hover {
 .cookieClose:hover {
     border: darkgray 2px solid;
 }
+
+.tooltiped {
+    text-decoration: underline;
+    cursor: help;
+}

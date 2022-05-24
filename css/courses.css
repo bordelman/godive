@@ -35,7 +35,7 @@
 }
 
 .schemaSmall img {
-    cursor: pointer;
+    cursor: zoom-in;
     width: 150px;
     height: 148px;
     margin: 25px 0 25px 0;
@@ -52,7 +52,7 @@
 }
 
 .schema img {
-    cursor: pointer;
+    cursor: zoom-in;
     width: 350px;
     height: auto;
     margin: 15px 5px;
