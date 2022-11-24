@@ -2,24 +2,24 @@ courses = [{
     "title": "OWD",
     "maxDepth": 18,
     "gas": "Vzduch",
-    "price": "9 900",
+    "price": "11 900",
     "img": "owd"
 }, {
     "title": "AOWD",
     "maxDepth": 30,
-    "gas": "Vzduch",
+    "gas": "Vzduch,<br>EAN do 40% O<sub>2</sub>",
     "price": "8 900",
     "img": "aowd"
 }, {
     "title": "Nitrox Diver",
     "maxDepth": "",
-    "gas": "Až 40% 0<sub>2</sub>",
+    "gas": "Až 40% O<sub>2</sub>",
     "price": "4 900",
     "img": "nd"
 }, {
     "title": "Deep Diver",
     "maxDepth": 40,
-    "gas": "",
+    "gas": "Vzduch,<br>EAN do 40% O<sub>2</sub>",
     "price": "8 900",
     "img": "dd"
 }, {
@@ -48,27 +48,27 @@ courses = [{
     "img": "td"
 }, {
     "title": "Rescue Diver",
-    "maxDepth": "",
-    "gas": "",
+    "maxDepth": 30,
+    "gas": "Vzduch,<br>EAN do 40% O<sub>2</sub><br>použití pro první pomoc O<sub>2</sub>",
     "price": "8 900",
     "img": "rd"
 }, {
     "title": "Divemaster",
-    "maxDepth": "",
-    "gas": "",
+    "maxDepth": 40,
+    "gas": "Vzduch,<br>EANx až O<sub>2</sub>",
     "price": "17 900",
     "img": "dm"
 }, {
     "title": "Ice Diver",
-    "maxDepth": "",
-    "gas": "",
-    "price": "6 500",
+    "maxDepth": 30,
+    "gas": "Vzduch,<br>EAN do 40% O<sub>2</sub>",
+    "price": "7 900",
     "img": "id"
 }, {
     "title": "Dry Suit Diver",
-    "maxDepth": "",
-    "gas": "",
-    "price": "4 400",
+    "maxDepth": 30,
+    "gas": "Vzduch,<br>EAN do 40% O<sub>2</sub>",
+    "price": "4 900",
     "img": "dsd"
 }, {
     "title": "Plně uzavřené okruhy",

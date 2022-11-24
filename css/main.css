@@ -133,9 +133,8 @@ td.item {
 
 #header-nav {
     text-align: center;
-    background-image: url('/sources/header.jpeg');
-    background-position-x: center;
-    background-position-y: bottom;
+    background: linear-gradient(transparent 80%, rgb(98, 204, 254)), url('/sources/header.jpeg');
+    background-size: cover;
     width: 100%;
     margin-block: 0;
     height: max-content;

@@ -4,7 +4,7 @@ navigation.innerHTML = `
 <nav>
 	<a href="/index.html"><img id="logo" src="/sources/logo.png" alt="GoDive logo"
 		height="100px" width="auto"></a>
-    <a href="https://www.iantd.cz/" target="blank"><img id="logoIantdSmall" src="/sources/logoIantd.png" alt="IANTD logo"
+    <a href="https://www.iantd.cz/" target="_blank"><img id="logoIantdSmall" src="/sources/logoIantd.png" alt="IANTD logo"
 		height="100px" width="auto"></a>
 	<ul class="menu-item-container" id="navMenu">
         <li><a href="/index.html#courses" title="Kurzy">Kurzy potápění</a></li>
@@ -16,11 +16,10 @@ navigation.innerHTML = `
 		<li><a href="/o-nas.html" title="O nás">O&nbsp;nás</a></li>
 		<li><a href="https://www.instagram.com/godive.cz/" title="Fotogalerie" target="_blank">Fotogalerie</a></li>
 	</ul>
-    <a href="https://www.iantd.cz/" target="blank"><img id="logoIantd" src="/sources/logoIantd.png" alt="GoDive logo"
+    <a href="https://www.iantd.cz/" target="_blank"><img id="logoIantd" src="/sources/logoIantd.png" alt="GoDive logo"
 		height="100px" width="auto"></a>
 </nav>
 <img src="https://toplist.cz/dot.asp?id=1796882&njs=1" border="0" alt="TOPlist" width="1" height="1" />
-<div id="transition"></div>
 `;
 document.body.prepend(navigation);
 

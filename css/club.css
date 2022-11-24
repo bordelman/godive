@@ -5,3 +5,13 @@
     border-radius: 10px;
     min-height: 500px;
 }
+
+main a {
+    text-decoration: underline;
+}
+
+main a:hover {
+    color: black;
+    text-shadow: none;
+    text-decoration: line;
+}

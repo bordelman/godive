@@ -56,17 +56,17 @@ const products = {
 	},
 	tank10: {
 		label: "Ocelová láhev, 10 litrů, plná/200 bar (vzduch)",
-		price: 100,
+		price: 150,
 		count: 0
 	},
 	tank12: {
 		label: "Ocelová láhev, 12 litrů, plná/200 bar (vzduch)",
-		price: 120,
+		price: 170,
 		count: 0
 	},
 	tank15: {
 		label: "Ocelová láhev, 15 litrů, plná/200 bar (vzduch)",
-		price: 140,
+		price: 200,
 		count: 0
 	},
 	computer: {
