@@ -70,6 +70,15 @@ courses = [{
     "gas": "Vzduch,<br>EAN do 40% O<sub>2</sub>",
     "price": "4 900",
     "img": "dsd"
+},{
+    "title": "Technical Diver",
+    "maxDepth": 54,
+    "gas": "",
+    "price": "8 900",
+    "img": "tecd"
+}, {
+    "title": "IANTD instruktor",
+    "img": "instructor"
 }, {
     "title": "Plně uzavřené okruhy",
     "img": "ccr"
@@ -80,7 +89,7 @@ courses.forEach((course, index) => {
     a.href = link;
     a.style.backgroundImage= `url('/sources/${course.img}.png')`
     a.className = "courseItemContainer"
-    if (index !== courses.length - 1) {
+    if (index < courses.length - 2) {
         a.innerHTML = `
     <table class="courseInfo">
         <thead>

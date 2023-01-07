@@ -17,8 +17,8 @@
                 if (document.getElementById('pricelistContainer')) {
                     clearInterval(waitForElement)
                     let data = {
-                        air: {
-                            mixture: 'Vzduch',
+                        goDive: {
+                            mixture: 'GoDive klub 10,-Kč/litr (vzduch)',
                             collumnHead: 'Zbytkový tlak (bar)',
                             pricelist: [
                                 ['0-50', 57, 100, 111, 120, 150],
@@ -31,8 +31,24 @@
                                 [120, 23, 40, 45, 48, 60],
                                 [130, 20, 35, 39, 42, 53],
                                 [140, 18, 30, 34, 36, 45],
-                                [150, 15, 25, 28, 30, 38],
-                                ['160 a více', 12, 20, 23, 24, 30]
+                                ['150 a více', 15, 25, 28, 30, 38]
+                            ]
+                        },
+                        others: {
+                            mixture: 'Ostatní 15 kč/litr (vzduch)',
+                            collumnHead: 'Zbytkový tlak (bar)',
+                            pricelist: [
+                                ['0-50', 81, 150, 167, 180, 225],
+                                [60, 57, 105, 117, 126, 158],
+                                [70, 53, 98, 109, 117, 147],
+                                [80, 49, 90, 101, 108, 135],
+                                [90, 45, 83, 92, 99, 124],
+                                [100, 41, 75, 84, 90, 113],
+                                [110, 37, 68, 76, 81, 102],
+                                [120, 33, 60, 67, 72, 90],
+                                [130, 29, 53, 59, 63, 79],
+                                [140, 25, 45, 51, 54, 68],
+                                ['150 a více', 21, 38, 42, 45, 57]
                             ]
                         }
                     }
@@ -90,7 +106,7 @@
         <h1>Plnění potápěčských lahví</h1>
         <p class='condition'>! Plníme výhradně láhve pro potápěče v dobrém technickém stavu a s platnou tlakovou zkouškou !</p>
         <div id='pricelistContainer'></div>
-        <p>Cena kyslíku určeného pro dýchání 0,35 Kč/litr.<br>Cena hélia 4.6 (99,996%) určeného pro dýchání 1,20 Kč/litr.<br> Potápěčské láhve plníme do druhého dne od jejich převzetí nebo dle domluvy. U vzduchu, trimixových směsí, EANx směsí, kyslíku a
+        <p>Cena kyslíku určeného pro dýchání 0,35 Kč/litr.<br>Cena hélia 4.6 (99,996%) určeného pro dýchání 0,90 Kč/litr.<br> Potápěčské láhve plníme do druhého dne od jejich převzetí nebo dle domluvy. U vzduchu, trimixových směsí, EANx směsí, kyslíku a
             hélia odečítáme zbytkový tlak v lahvích. Plyny plníme na tlak 200bar pomocí kompresoru <span  class="tooltiped" title='Technická data:
       Rychloběžný, třívalcový, třístupňový
       Plnící tlak: max.232 bar
@@ -111,7 +127,8 @@
       Minimální rychlost čerpání: 15 cyklů / minutu
       Maximální rychlost čerpání: 140 cyklů / minutu'>MPS C2</span></p>
         <div class="buttons">
-            <a href="/sources/cenik-plneni-potapecskych-lahvi.pdf" class="btn" download>Stáhnout ceník</a>
+            <a href="/sources/plneni-lahvi-godive.pdf" class="btn" download>Stáhnout ceník plnění lahví - GoDive klub</a>
+            <a href="/sources/plneni-lahvi-ostatni.pdf" class="btn" download>Stáhnout ceník plnění lahví - ostatní</a>
         </div>
     </main>
 </body>

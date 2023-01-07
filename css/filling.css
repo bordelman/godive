@@ -30,11 +30,11 @@ table {
     width: 85px;
 }
 
-#nitrox {
+#others {
     background-image: url('/sources/nitroxBlur.png');
 }
 
-#air {
+#goDive {
     background-image: url('/sources/airBlur.png');
 }
 
