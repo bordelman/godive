@@ -29,6 +29,12 @@ courses = [{
     "price": "8 900",
     "img": "and"
 }, {
+    "title": "Technical Diver",
+    "maxDepth": 54,
+    "gas": "",
+    "price": "8 900",
+    "img": "tecd"
+}, {
     "title": "Advanced Recreational Trimix&nbsp;Diver",
     "maxDepth": 45,
     "gas": "Směs N<sub>2</sub>/O<sub>2</sub>/He",
@@ -71,12 +77,6 @@ courses = [{
     "price": "4 900",
     "img": "dsd"
 },{
-    "title": "Technical Diver",
-    "maxDepth": 54,
-    "gas": "",
-    "price": "8 900",
-    "img": "tecd"
-}, {
     "title": "IANTD instruktor",
     "img": "instructor"
 }, {
