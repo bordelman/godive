@@ -6,7 +6,7 @@
     margin-bottom: 10px;
 }
 
-#finnsubLogo, #soprasLogo, #garminLogo, #shearwaterLogo{
+#finnsubLogo, #soprasLogo, #garminLogo, #shearwaterLogo, #apeksLogo{
     max-height: 80%;
     max-width: 100%;
     mix-blend-mode: multiply;
@@ -14,7 +14,7 @@
     margin-top: 10px;
 }
 
-#finnsubLogo:hover, #soprasLogo:hover, #garminLogo:hover,  #shearwaterLogo:hover, .partnerLogo:hover, .partner > a:hover{
+#finnsubLogo:hover, #soprasLogo:hover, #garminLogo:hover,  #shearwaterLogo:hover, #apeksLogo:hover, .partnerLogo:hover, .partner > a:hover{
     transform: scale(1.2);
 }
 
