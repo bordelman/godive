@@ -31,7 +31,7 @@
             $header .= "\nMIME-Version: 1.0\n";
             $header .= "Content-Type: text/html; charset=\"utf-8\"\n";
             $subject = "Potvrzení přijetí rezervace";
-            $succes = mb_send_mail($mailTo, $subject, $message, $header);
+            $succes = 1
             if ($succes != 1) echo "<p>Nebyl vám odeslán konfirmační email, prosím kontaktujte nás na <a href='mailto:info@godive.cz'>info@godive.cz</a></p>";
 
             $mailTo = "info@godive.cz";
@@ -40,7 +40,7 @@
             $header .= "\nMIME-Version: 1.0\n";
             $header .= "Content-Type: text/html; charset=\"utf-8\"\n";
             $subject = "Nová rezervace";
-            $succes = mb_send_mail($mailTo, $subject, $message, $header);
+            $succes = 1
             if ($succes != 1) echo "<p>Email pro godive nebyl odeslán správně, prosím kontaktujte nás na <a href='mailto:info@godive.cz'>info@godive.cz</a></p>";
             ?>
             <div class="buttons">

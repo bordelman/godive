@@ -49,7 +49,13 @@ footer.innerHTML = `
                       transform="translate(15.45 15.44)" data-v-a015fb66=""></path>
             </svg>
         </a>
-        <a href="https://www.youtube.com/channel/UCiHQsYn1ToM8lhL5KlKAkfA?view_as=subscriber&pbjreload=10"
+        <a href='https://www.facebook.com/GoDive.cz' target='_blank'>
+                <svg id='facebook' xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'
+                     fill="#BDBDBD">
+                    <path d='M20,0 C8.9541,0 0,8.95435 0,20 C0,31.0457 8.9541,40 20,40 C31.0459,40 40,31.0457 40,20 C40,8.95435 31.0459,0 20,0 Z M22.085,20.8785 L22.085,31.7595 L17.5825,31.7595 L17.5825,20.8789 L15.3335,20.8789 L15.3335,17.1293 L17.5825,17.1293 L17.5825,14.8779 C17.5825,11.819 18.8525,10 22.4609,10 L25.4653,10 L25.4653,13.7501 L23.5874,13.7501 C22.1826,13.7501 22.0898,14.2742 22.0898,15.2521 L22.085,17.1288 L25.4863,17.1288 L25.0884,20.8785 L22.085,20.8785 Z'></path>
+                </svg>
+            </a>
+        <a href="https://www.youtube.com/@ladislavhajek8936"
            target="_blank">
            <svg id="youtube" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD"
                 class="youtube icon" data-v-a015fb66="">

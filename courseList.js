@@ -31,7 +31,7 @@ courses = [{
 }, {
     "title": "Technical Diver",
     "maxDepth": 54,
-    "gas": "",
+    "gas": "Až 100% O<sub>2</sub>",
     "price": "8 900",
     "img": "tecd"
 }, {
